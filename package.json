@@ -1,0 +1,19 @@
+{
+  "name": "budget-statement-assistant",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "type": "module",	 
+  "scripts": {
+    "start": "tsc && node build/main.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@acaldas/document-model-libs": "^1.0.15"
+  },
+  "devDependencies": {
+    "typescript": "^4.9.3"
+  }
+}
