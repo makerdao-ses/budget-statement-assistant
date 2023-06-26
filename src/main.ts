@@ -26,17 +26,17 @@ assistant class with necessary properties
 
 await assistant.importWalletLineItems(document, address);
 */
-document.addLineItem('0xb5eb779ce300024edb3df9b6c007e312584f6f4f',
-    [
-        {
-            actual: 12,
-            category: { ref: 'makerdao/expense-category', id: 'Compensation&Benefits', title: 'Compensation&Benefits' },
-            group: { ref: "makerdao/budget-category", id: "makerdao/core-unit/ses", title: 'SES' },
-            forecast: [{
-                month: "2023-06",
-                budgetCap: 122,
-                value: 11
-            }]
-        },
+// document.addLineItem('0xb5eb779ce300024edb3df9b6c007e312584f6f4f',
+//     [
+//         {
+//             actual: 12,
+//             category: { ref: 'makerdao/expense-category', id: 'Compensation&Benefits', title: 'Compensation&Benefits' },
+//             group: { ref: "makerdao/budget-category", id: "makerdao/core-unit/ses", title: 'SES' },
+//             forecast: [{
+//                 month: "2023-06",
+//                 budgetCap: 122,
+//                 value: 11
+//             }]
+//         },
 
-    ])
+//     ])
