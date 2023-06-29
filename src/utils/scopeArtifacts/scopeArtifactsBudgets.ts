@@ -29,11 +29,11 @@ BudgetCap:
 */
 
 
-function structureData(data) {
-    let hierarchy = {};
-    let currentL0, currentL1, currentL2, currentL3, currentL4;
+function structureData(data: any) {
+    let hierarchy: any = {};
+    let currentL0: string, currentL1: string, currentL2: string, currentL3: string, currentL4;
 
-    data.forEach(item => {
+    data.forEach((item: any) => {
         if (item.L0) {
             currentL0 = item.L0;
             hierarchy[currentL0] = item;
@@ -87,9 +87,9 @@ function structureData(data) {
 const structuredJson = JSON.parse(fs.readFileSync('scopeArtifacts.json', 'utf8'));
 
 let budgets = [];
-let budgetCaps = [];
+let budgetCaps: any = [];
 
-function processObject(obj, parentId) {
+function processObject(obj: any, parentId: any) {
     for (let key in obj) {
         if (typeof obj[key] === 'object' && obj[key] !== null) {
             let splitKey = key.split(')');
