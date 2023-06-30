@@ -4,12 +4,14 @@ import {
     LineItem,
     BudgetStatement
 } from '@acaldas/document-model-libs/budget-statement';
+import ColumnTagInterpreter from './columnTagIntepreter.js';
+import { fetchData } from './utils/googleAuth.js';
 
 const document = new BudgetStatement()
 document.setOwner({ title: 'Sustainable Ecosystem Scaling CoreUnit', ref: "makerdao/core-unit", id: "SES-001" })
 document.addAccount([{ address: 'testAddress' }])
 
-console.log(document.owner)
+// console.log(document.owner)
 
 // const settings = { ... };
 // const assistant = new BudgetStatementAssistant(settings);
@@ -40,3 +42,7 @@ await assistant.importWalletLineItems(document, address);
 //         },
 
 //     ])
+
+const rawData = await fetchData();
+const columnTagInterpreter = new ColumnTagInterpreter(rawData, "DAI")
+columnTagInterpreter.processData();
