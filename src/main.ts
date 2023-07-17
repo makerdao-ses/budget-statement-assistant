@@ -46,3 +46,4 @@ await assistant.importWalletLineItems(document, address);
 const rawData = await fetchData();
 const columnTagInterpreter = new ColumnTagInterpreter(rawData, "DAI")
 columnTagInterpreter.processData();
+console.log("Parsed spreadsheet data by leveledMonthsByCategory", columnTagInterpreter.leveledMonthsByCategory) 
