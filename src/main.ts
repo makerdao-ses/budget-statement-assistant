@@ -11,6 +11,30 @@ const document = new BudgetStatement()
 document.setOwner({ title: 'Sustainable Ecosystem Scaling CoreUnit', ref: "makerdao/core-unit", id: "SES-001" })
 document.addAccount([{ address: 'testAddress' }])
 
+// saving to file 
+/* 
+Script shuold create one document for every month.  
+For every gsheet add the associated account to the document, wallet and lineItems
+
+Input params for the script
+    - list of gsheet urls ( should include params as in budgetTool - walletAddress, walletName, currency)
+    - owner (document.setOwner({ title: 'Sustainable Ecosystem Scaling CoreUnit', ref: "makerdao/core-unit", id: "SES-001" }))
+    - account
+
+Output:
+- list of budgetStatement files each for their givem month containing relevant accounts and lineItems
+
+Goal is to open these files in the connect app. 
+
+// once this first version is done, we can add the forecasted 3 months to the current month.
+
+*/
+
+
+
+
+// document.saveToFile('test.json');
+
 // console.log(document.owner)
 
 // const settings = { ... };
@@ -46,4 +70,5 @@ await assistant.importWalletLineItems(document, address);
 const rawData = await fetchData();
 const columnTagInterpreter = new ColumnTagInterpreter(rawData, "DAI")
 columnTagInterpreter.processData();
-console.log("Parsed spreadsheet data by leveledMonthsByCategory", columnTagInterpreter.leveledMonthsByCategory) 
+const result = columnTagInterpreter.leveledMonthsByCategory;
+console.log("Parsed spreadsheet data by leveledMonthsByCategory", result) 
