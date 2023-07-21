@@ -212,6 +212,11 @@ export default class ColumnTagInterpreter {
                     if (arrFilter[item][1].certain) {
                         let cellValue = this.rawData[i][arrFilter[item][1].column];
                         if (arrFilter[item][1].parseFunction) {
+                            // if (typeof (this as any)[arrFilter[item][1].parseFunction] === 'function') {
+                            //     arr[arrFilter[item][0]] = (this as any)[arrFilter[item][1].parseFunction](cellValue);
+                            // } else {
+                            //     console.error('Invalid parse function:', arrFilter[item][1].parseFunction);
+                            // }
                             arr[arrFilter[item][0]] = (this as any)[arrFilter[item][1].parseFunction](cellValue);
                             // arr[arrFilter[item][0]] = this[arrFilter[item][1].parseFunction](cellValue);
                         } else {
@@ -395,6 +400,17 @@ export default class ColumnTagInterpreter {
         let result: number = match ? parseFloat(match.join('')) : NaN;
         return isNaN(result) ? numberString : result;
 
+    }
+
+    // parse the direct into boolean
+    tryParseBoolean(directValue: any) {
+        if (!isNaN(directValue)) {
+            return directValue > 0
+        }
+        if (directValue === '1') {
+            return true
+        }
+        return false
     }
 
     filterByMonth = () => {
