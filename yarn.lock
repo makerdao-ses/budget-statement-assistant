@@ -2,19 +2,19 @@
 # yarn lockfile v1
 
 
-"@acaldas/document-model-graphql@^1.0.10":
-  version "1.0.11"
-  resolved "https://registry.yarnpkg.com/@acaldas/document-model-graphql/-/document-model-graphql-1.0.11.tgz#5d2fbc7707a0b00ad5bfdf126cbcdfa47fe045a3"
-  integrity sha512-m3n3wjMMFUXUgOe8RqJoymhdlzV86c+bq69/Xl+R7X9T1AqScVjJgDrne2KhOhm15MozFTrLZUcti5NSobnoVQ==
+"@acaldas/document-model-graphql@^1.0.13":
+  version "1.0.13"
+  resolved "https://registry.yarnpkg.com/@acaldas/document-model-graphql/-/document-model-graphql-1.0.13.tgz#0afddfa11f44fff3d2bf7ebf7996668b0381ac77"
+  integrity sha512-gNrffbZvS7oh5pg9eC7qQ8N5cKfsDSWG6gzVwmLPJxE0NXpcnJx03/gtKX23l1kGQizlTCySf1ShPrVH3qgGZg==
   dependencies:
     zod "^3.21.4"
 
-"@acaldas/document-model-libs@^1.0.15":
-  version "1.0.15"
-  resolved "https://registry.yarnpkg.com/@acaldas/document-model-libs/-/document-model-libs-1.0.15.tgz#7e462545fdaa3aa7bb84f6288c782f6c7bbcf567"
-  integrity sha512-asXSrfmDdwEJkdKpUQg8PmW5UQW7TrVwxOjZN9qNB1LycY88bFAaLFfjC26F5cC+8V05JDIUbnE/rR8oihvgSw==
+"@acaldas/document-model-libs@^1.0.16":
+  version "1.0.16"
+  resolved "https://registry.yarnpkg.com/@acaldas/document-model-libs/-/document-model-libs-1.0.16.tgz#d923d397a0f2745cbbe65505ded97a2083758bc9"
+  integrity sha512-qtPiDoHYxHgINwJFIUy8Pu2Rn+TZos+mr71eJaEbZWfot58Y8WjTJSsdCLPvxh+urNWWV9bFOrztUPJQZkI1OA==
   dependencies:
-    "@acaldas/document-model-graphql" "^1.0.10"
+    "@acaldas/document-model-graphql" "^1.0.13"
     immer "^9.0.19"
     json-stringify-deterministic "^1.0.8"
     jszip "^3.10.1"
