@@ -44,6 +44,9 @@ export async function authorize() {
     return client;
 }
 
+// SES "1OfROr_XNpWA4FksRrqrXtk3UJ7tPmJ4tR3mVk_Uu5KM"  // "1b. 🧪 Incubator - Monthly Payments"
+// SF "1-9sH-zXYssfvWO7Z_OrOfikmClRAV5UnWkopQZWraao" // "Template"
+
 export async function fetchData(spreadsheetId = "1-9sH-zXYssfvWO7Z_OrOfikmClRAV5UnWkopQZWraao", sheetName = "Template") {
     try {
         const auth = await authorize();
