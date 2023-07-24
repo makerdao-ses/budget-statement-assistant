@@ -2,18 +2,23 @@ import {
     actions,
     BudgetStatementDocument,
     LineItem,
-    BudgetStatement
+    BudgetStatement,
 } from '@acaldas/document-model-libs/budget-statement';
 import ColumnTagInterpreter from './columnTagIntepreter.js';
 import { fetchData } from './utils/googleAuth.js';
+import { run } from './utils/exportToFile.js';
 
-const document = new BudgetStatement()
-document.setOwner({ title: 'Sustainable Ecosystem Scaling CoreUnit', ref: "makerdao/core-unit", id: "SES-001" })
-document.addAccount([{ address: 'testAddress' }])
 
-// saving to file 
-/* 
-Script shuold create one document for every month.  
+// const document = new BudgetStatement()
+// document.setOwner({ title: 'Sustainable Ecosystem Scaling CoreUnit', ref: "makerdao/core-unit", id: "SES-001" })
+// document.addAccount([{ address: 'testAddress' }])
+// document.saveToFile('test.json');
+
+run()
+
+// saving to file
+/*
+Script shuold create one document for every month.
 For every gsheet add the associated account to the document, wallet and lineItems
 
 Input params for the script
@@ -24,7 +29,7 @@ Input params for the script
 Output:
 - list of budgetStatement files each for their givem month containing relevant accounts and lineItems
 
-Goal is to open these files in the connect app. 
+Goal is to open these files in the connect app.
 
 // once this first version is done, we can add the forecasted 3 months to the current month.
 
@@ -67,8 +72,3 @@ await assistant.importWalletLineItems(document, address);
 
 //     ])
 
-const rawData = await fetchData();
-const columnTagInterpreter = new ColumnTagInterpreter(rawData, "DAI")
-columnTagInterpreter.processData();
-const result = columnTagInterpreter.leveledMonthsByCategory;
-console.log("Parsed spreadsheet data by leveledMonthsByCategory", result) 
