@@ -1,7 +1,4 @@
 import {
-    actions,
-    BudgetStatementDocument,
-    LineItem,
     BudgetStatement
 } from '@acaldas/document-model-libs/budget-statement';
 import ColumnTagInterpreter from '../columnTagIntepreter.js';
@@ -29,8 +26,6 @@ interface IGroupData {
 export const run = async () => {
     const lineItems = await mapDataByMonth()
     const budgetStatements = await createBudgetStatements(lineItems);
-    const oneBudgetStatement = budgetStatements[0];
-    oneBudgetStatement.saveToFile(`/${oneBudgetStatement.month}.json`);
     saveToFile(budgetStatements);
 
 }
@@ -54,10 +49,10 @@ const mapDataByMonth = async () => {
 const saveToFile = async (budgetStatements: any) => {
     // Saving to file
     try {
-        budgetStatements.forEach((budgetStatement: any) => {
-            budgetStatement.saveToFile(`/${budgetStatement.month}.json`);
+        budgetStatements.forEach(async (budgetStatement: any) => {
+            await budgetStatement.saveToFile(`savedDocuments/${budgetStatement.month}.json`);
         });
-        console.log(`${budgetStatements.length} files saved successfully`)
+        console.log(`${budgetStatements.length} files saved successfully in savedDocuments folder.`)
     } catch (error) {
         console.log(error)
     }
