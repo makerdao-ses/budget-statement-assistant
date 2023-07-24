@@ -2,3 +2,4 @@ node_modules
 build
 credentials.json
 token.json
+savedDocuments
