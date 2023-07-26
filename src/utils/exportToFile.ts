@@ -22,6 +22,20 @@ interface IGroupData {
     [date: string]: ICategoryData;
 }
 
+interface ILineItem {
+    actual: number;
+    budgetCap: number;
+    category: { ref: string, id: string, title: string };
+    forecast: {
+        budgetCap: number
+        month: string
+        value: number
+    }[];
+    group: { ref: string, id: string, title: string } | null;
+    headcountExpense: boolean;
+    payment: number;
+}
+
 
 export const run = async () => {
     const lineItems = await mapDataByMonth()
@@ -124,11 +138,12 @@ const parseToLineItems = (data: any) => {
         }
         for (const category in data[month]) {
             for (const group in data[month][category]) {
-                const lineItem: any = {
+                addNextThreeMonthsForecast(data, category, group, month)
+                const lineItem: ILineItem = {
                     actual: data[month][category][group].actual,
                     budgetCap: data[month][category][group].budget,
                     category: { ref: "makerdao/expense-category", id: category, title: category },
-                    // forecast: data[month][category][group].forecast,
+                    forecast: addNextThreeMonthsForecast(data, category, group, month),
                     group: group !== 'undefined' ? { ref: "makerdao/budget-category", id: group, title: group } : null,
                     headcountExpense: isHeadcountExpense(category),
                     payment: data[month][category][group].paid,
@@ -140,3 +155,57 @@ const parseToLineItems = (data: any) => {
 
     return lineItems;
 }
+
+const getNextThreeMonths = (selectedMonth: string) => {
+    if (selectedMonth !== undefined) {
+        const date = selectedMonth;
+        let monthsToUpload = [];
+        monthsToUpload.push(date);
+
+        const toNumber = date.split('-');
+        let year = Number(toNumber[0])
+        let month = Number(toNumber[1])
+        let yearString = String(year);
+
+        for (let i = 1; i <= 3; i++) {
+            let newMonth = month + i;
+            let leading0 = newMonth < 10 ? '0' : '';
+            let monthString = leading0 + String(newMonth)
+
+            if (newMonth > 12) {
+                yearString = String(year + 1)
+            }
+            if (newMonth === 13) {
+                monthString = '01'
+            }
+            if (newMonth === 14) {
+                monthString = '02'
+            }
+            if (newMonth === 15) {
+                monthString = '03'
+            }
+            let result = yearString.concat('-').concat(monthString)
+            monthsToUpload.push(result)
+        }
+        return monthsToUpload;
+    }
+}
+
+const addNextThreeMonthsForecast = (data: any, category: string, group: string, selectedMonth: string) => {
+    const forecasts: { budgetCap: number, month: string, value: number }[] = [];
+
+    const monthsToUpload = getNextThreeMonths(selectedMonth);
+
+    for (const month of monthsToUpload as any) {
+        const isDataPresent = Object.hasOwn(data, month);
+        const forecast = {
+            budgetCap: isDataPresent ? data[month][category][group].budget : 0,
+            month,
+            value: isDataPresent ? data[month][category][group].forecast : 0
+        }
+        forecasts.push(forecast)
+    }
+
+    return forecasts;
+}
+
