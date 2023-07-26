@@ -17,13 +17,13 @@ import fs from 'fs';
 Budget: 
     - parentId
     - name
-    - code
+    - code // can also be null
     - start
     - end
 
 BudgetCap:
     - budgetId
-    - expenseCategoryId
+    - expenseCategoryId // expected to be null
     - amount
     - currency
 */

@@ -1,5 +1,6 @@
 import {
-    BudgetStatement
+    BudgetStatement,
+    BudgetStatementDocument
 } from '@acaldas/document-model-libs/budget-statement';
 import ColumnTagInterpreter from '../columnTagIntepreter.js';
 import { fetchData } from './googleAuth.js';
@@ -38,10 +39,19 @@ interface ILineItem {
 
 
 export const run = async () => {
+    // const lineItems = await mapDataByMonth()
+    // const budgetStatements = await createBudgetStatements(lineItems);
+    // saveToFile(budgetStatements);
+    // step 0: hardcode params sheetUrl, walletAddress, walletName, currency, month
+    // step 1: check if the budget statement doc already exists for the given month
+    // step 2: create new budget statement if needed or load the existing one
+    // step 3: rumwithParams fn
+}
+
+const runWithParams = async (sheetUrl: string, walletAddress: string, walletName: string, currency: string, budgetStatementDocument: BudgetStatementDocument, month: string) => {
     const lineItems = await mapDataByMonth()
     const budgetStatements = await createBudgetStatements(lineItems);
     saveToFile(budgetStatements);
-
 }
 
 const getParsedData = async () => {
