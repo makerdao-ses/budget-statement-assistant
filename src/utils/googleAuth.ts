@@ -47,8 +47,9 @@ export async function authorize() {
 // SES "1OfROr_XNpWA4FksRrqrXtk3UJ7tPmJ4tR3mVk_Uu5KM"  // "1b. 🧪 Incubator - Monthly Payments"
 // SF "1-9sH-zXYssfvWO7Z_OrOfikmClRAV5UnWkopQZWraao" // "Template"
 
-export async function fetchData(spreadsheetId = "1-9sH-zXYssfvWO7Z_OrOfikmClRAV5UnWkopQZWraao", sheetName = "Template") {
+export async function fetchData(sheetUrl: string) {
     try {
+        const { spreadsheetId, sheetName }: any = await parseSpreadSheetLink(sheetUrl);
         const auth = await authorize();
         const sheets = google.sheets('v4');
         const range = `${sheetName}`
@@ -60,7 +61,30 @@ export async function fetchData(spreadsheetId = "1-9sH-zXYssfvWO7Z_OrOfikmClRAV5
         }
         return rows;
     } catch (err) {
-        console.log(`The API returned an error: ${err}`)
-        return
+        throw Error(err as any)
+    }
+}
+
+async function parseSpreadSheetLink(sheetUrl: string) {
+    try {
+        const auth = await authorize();
+        const pattern = /\/spreadsheets\/d\/([^\/]+)\/edit[^#]*(?:#gid=([0-9]+))?/gm
+        let result = pattern.exec(sheetUrl)
+        if (result == undefined) throw Error("Invalid sheet url");
+        const spreadsheetId = result[1];
+        const tabId = Number(result[2])
+
+        // Getting Sheet Name
+        const sheets = google.sheets('v4');
+        const sheetNameResponse: any = await sheets.spreadsheets.get({ auth, spreadsheetId });
+        if (sheetNameResponse == undefined) throw Error("Invalid sheet url");
+        const sheetData = sheetNameResponse.data.sheets.filter((item: any) => {
+            if (item.properties.sheetId == tabId)
+                return item.properties.title
+        })
+        const sheetName = sheetData[0].properties.title;
+        return { spreadsheetId, sheetName }
+    } catch (error) {
+        console.log(`The API returned an error ${error}`)
     }
 }
