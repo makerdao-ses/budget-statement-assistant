@@ -133,6 +133,7 @@ export default class ColumnTagInterpreter {
     }
 
     updateFilter = () => {
+        if (this.rawData === undefined) { throw Error('No raw data found. Please check the spreadsheet.') }
         for (let i = 0; i < this.rawData.length; i++) {
             this.tryParseFilterRow(this.rawData[i], i)
         }
@@ -199,6 +200,7 @@ export default class ColumnTagInterpreter {
     }
 
     parseRowData = () => {
+        if (this.rawData === undefined) { throw new Error('No raw data found. Please check the spreadsheet.') }
         this.budgets = {}
         this.resetFilterIndex();
 
