@@ -32,7 +32,7 @@ interface ILineItem {
         month: string
         value: number
     }[];
-    group: { ref: string, id: string, title: string } | null;
+    group: { ref: string, id: string, title: string, color: string } | null;
     headcountExpense: boolean;
     payment: number;
 }
@@ -40,7 +40,8 @@ interface ILineItem {
 export const runWithParams = async (sheetUrl: string, walletAddress: string, walletName: string, currency: string, budgetStatementDocument?: BudgetStatementDocument, month?: string) => {
     const lineItems = await mapDataByMonth(sheetUrl)
     // console.log(lineItems)
-    // const budgetStatements = await createBudgetStatements(lineItems);
+    const budgetStatements = await createBudgetStatements(lineItems, walletAddress, walletName);
+    // console.log(budgetStatements)
     // saveToFile(budgetStatements);
 }
 
@@ -73,7 +74,7 @@ const saveToFile = async (budgetStatements: any) => {
 
 }
 
-const createBudgetStatements = async (lineItems: any) => {
+const createBudgetStatements = async (lineItems: any, walletAddress: string, walletName: string) => {
     // Populating budget statements
     const budgetStatements = [];
     for (const month in lineItems) {
@@ -81,8 +82,8 @@ const createBudgetStatements = async (lineItems: any) => {
             'Sustainable Ecosystem Scaling CoreUnit',
             "makerdao/core-unit",
             "SES-001",
-            "0xF2f5C73fa04406b1995e397B55c24aB1f3eA726C",
-            'Permanent Team',
+            walletAddress,
+            walletName,
             month,
             lineItems[month]
         )
@@ -96,6 +97,7 @@ const createBudgetStatements = async (lineItems: any) => {
 const createBudgetStatement = (title: string, ref: string, id: string, address: string, walletName: string, month: string, monthLineItems: []) => {
     let document = new BudgetStatement()
     document.setOwner({ title, ref, id })
+    document.setName(`${id} - ${month} Expense Report`);
     document.addAccount([{ address, name: walletName }])
     document.addLineItem(address, monthLineItems)
     document.setMonth(month)
@@ -139,12 +141,13 @@ const parseToLineItems = (data: any) => {
         for (const category in data[month]) {
             for (const group in data[month][category]) {
                 addNextThreeMonthsForecast(data, category, group, month)
+                const bCap = typeof data[month][category][group].budget == 'number' ? data[month][category][group].budget : 0;
                 const lineItem: ILineItem = {
-                    actual: data[month][category][group].actual,
-                    budgetCap: data[month][category][group].budget,
+                    actual: parseFloat(data[month][category][group].actual),
+                    budgetCap: parseFloat(bCap),
                     category: { ref: "makerdao/expense-category", id: category, title: category },
                     forecast: addNextThreeMonthsForecast(data, category, group, month),
-                    group: group !== 'undefined' ? { ref: "makerdao/budget-category", id: group, title: group } : null,
+                    group: group == 'undefined' || group == '' ? null : { ref: "makerdao/budget-category", id: group, title: group, color: "#000000" },
                     headcountExpense: isHeadcountExpense(category),
                     payment: data[month][category][group].paid,
                 };
@@ -199,9 +202,9 @@ const addNextThreeMonthsForecast = (data: any, category: string, group: string, 
     for (const month of monthsToUpload as any) {
         const isDataPresent = Object.hasOwn(data, month);
         const forecast = {
-            budgetCap: isDataPresent ? data[month][category][group].budget : 0,
+            budgetCap: isDataPresent ? parseFloat(data[month][category][group].budget) : 0,
             month,
-            value: isDataPresent ? data[month][category][group].forecast : 0
+            value: isDataPresent ? parseFloat(data[month][category][group].forecast) : 0
         }
         forecasts.push(forecast)
     }
