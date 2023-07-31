@@ -40,7 +40,7 @@ interface ILineItem {
 export const runWithParams = async (sheetUrl: string, walletAddress: string, walletName: string, currency: string, budgetStatementDocument?: BudgetStatementDocument, month?: string) => {
     const lineItems = await mapDataByMonth(sheetUrl)
     // console.log(lineItems)
-    const budgetStatements = await createBudgetStatements(lineItems, walletAddress, walletName);
+    const budgetStatements = await createBudgetStatements(lineItems, walletAddress, walletName, month);
     // console.log(budgetStatements)
     // saveToFile(budgetStatements);
 }
@@ -74,10 +74,10 @@ const saveToFile = async (budgetStatements: any) => {
 
 }
 
-const createBudgetStatements = async (lineItems: any, walletAddress: string, walletName: string) => {
+const createBudgetStatements = async (lineItems: any, walletAddress: string, walletName: string, month?: string) => {
     // Populating budget statements
     const budgetStatements = [];
-    for (const month in lineItems) {
+    if (month && lineItems[month]) {
         let document = createBudgetStatement(
             'Sustainable Ecosystem Scaling CoreUnit',
             "makerdao/core-unit",
@@ -88,10 +88,22 @@ const createBudgetStatements = async (lineItems: any, walletAddress: string, wal
             lineItems[month]
         )
         budgetStatements.push(document);
+        return budgetStatements;
+    } else {
+        for (const monthInLineItem in lineItems) {
+            let document = createBudgetStatement(
+                'Sustainable Ecosystem Scaling CoreUnit',
+                "makerdao/core-unit",
+                "SES-001",
+                walletAddress,
+                walletName,
+                monthInLineItem,
+                lineItems[monthInLineItem]
+            )
+            budgetStatements.push(document);
+        }
+        return budgetStatements;
     }
-    // console.log(budgetStatements.length)
-    // console.log(budgetStatements[0].getAccount('0xF2f5C73fa04406b1995e397B55c24aB1f3eA726C'))
-    return budgetStatements;
 }
 
 const createBudgetStatement = (title: string, ref: string, id: string, address: string, walletName: string, month: string, monthLineItems: []) => {
