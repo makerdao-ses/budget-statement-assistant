@@ -37,11 +37,28 @@ interface ILineItem {
     payment: number;
 }
 
-export const runWithParams = async (sheetUrl: string, walletAddress: string, walletName: string, currency: string, budgetStatementDocument?: BudgetStatementDocument, month?: string) => {
+export const runWithParams = async (sheetUrl: string, walletAddress: string, walletName: string, currency: string, bsDocumentPath?: string, month?: string) => {
     const lineItems = await mapDataByMonth(sheetUrl)
-    // console.log(lineItems)
-    const budgetStatements = await createBudgetStatements(lineItems, walletAddress, walletName, month);
-    // console.log(budgetStatements)
+    // console.log(lineItems[month as any])
+
+    // verify if there's an exisiting budget statement
+    const existingDocument = await readFromFile(bsDocumentPath);
+    if (existingDocument && (existingDocument instanceof BudgetStatement)) {
+        console.log('Existing budget statement found. Updating...')
+        if (existingDocument.month == month) {
+            updateExistingBudgetStatement(lineItems[month], existingDocument, walletAddress, walletName, month);
+        }
+    } else {
+        console.log('Existing budget statement not found. Creating...')
+        const budgetStatements = await createBudgetStatements(lineItems, walletAddress, walletName, month, bsDocumentPath);
+        saveToFile(budgetStatements);
+    }
+
+
+    // const budgetStatements = await createBudgetStatements(lineItems, walletAddress, walletName, month);
+    // const existingLineItem: any = budgetStatements[0].getLineItem(walletAddress, { category: 'Compensation & Benefits', group: 'Powerhouse' })
+    // console.log(existingLineItem.actual)
+    // console.log(budgetStatements[0].getLineItems(walletAddress))
     // saveToFile(budgetStatements);
 }
 
@@ -74,7 +91,10 @@ const saveToFile = async (budgetStatements: any) => {
 
 }
 
-const createBudgetStatements = async (lineItems: any, walletAddress: string, walletName: string, month?: string) => {
+const createBudgetStatements = async (lineItems: any, walletAddress: string, walletName: string, month?: string, bsDocumentPath?: string) => {
+    // Loading existing budget statement
+    const existingDocument = await readFromFile(bsDocumentPath);
+
     // Populating budget statements
     const budgetStatements = [];
     if (month && lineItems[month]) {
@@ -98,7 +118,7 @@ const createBudgetStatements = async (lineItems: any, walletAddress: string, wal
                 walletAddress,
                 walletName,
                 monthInLineItem,
-                lineItems[monthInLineItem]
+                lineItems[monthInLineItem],
             )
             budgetStatements.push(document);
         }
@@ -106,7 +126,15 @@ const createBudgetStatements = async (lineItems: any, walletAddress: string, wal
     }
 }
 
-const createBudgetStatement = (title: string, ref: string, id: string, address: string, walletName: string, month: string, monthLineItems: []) => {
+const createBudgetStatement = (
+    title: string,
+    ref: string,
+    id: string,
+    address: string,
+    walletName: string,
+    month: string,
+    monthLineItems: []
+) => {
     let document = new BudgetStatement()
     document.setOwner({ title, ref, id })
     document.setName(`${id} - ${month} Expense Report`);
@@ -116,6 +144,50 @@ const createBudgetStatement = (title: string, ref: string, id: string, address: 
     return document;
 }
 
+const updateExistingBudgetStatement = (
+    monthLineItems: [ILineItem],
+    existingDocument: any,
+    address: string,
+    walletName: string,
+    month: string
+) => {
+    const document = existingDocument;
+    // check if account exists, if yes, update account, if not, add account
+    document.getAccount(address)
+    const existingAccount = document.getAccount(address);
+    if (!existingAccount && existingAccount.name !== walletName) {
+        document.addAccount([{ address, name: walletName }])
+    }
+
+    // check if owner needs to be updated
+    // TO DO - check if owner is the same, if not, update owner
+    const existingOwner = document.owner;
+
+    // updating lineItems
+    for (let monthLineItem of monthLineItems) {
+        const existingLineItem = document.getLineItem(address, { category: monthLineItem.category.title, group: monthLineItem.group?.title });
+        if (!existingLineItem) {
+            console.log('Adding new lineItem', monthLineItem.category.title, monthLineItem.group?.title)
+            document.addLineItem(address, monthLineItem)
+        } else {
+            console.log('updating lineItem', monthLineItem.category.title)
+            document.updateLineItem(address, [{
+                actual: monthLineItem.actual,
+                budgetCap: monthLineItem.budgetCap,
+                category: monthLineItem.category.title,
+                forecast: monthLineItem.forecast,
+                group: monthLineItem.group?.title,
+                headCountExpense: monthLineItem.headcountExpense,
+                payment: monthLineItem.payment,
+
+            }])
+        }
+    }
+
+    saveToFile([document]);
+
+
+}
 
 
 const addToOrganizedData = (data: IData) => {
@@ -222,5 +294,18 @@ const addNextThreeMonthsForecast = (data: any, category: string, group: string, 
     }
 
     return forecasts;
+}
+
+export const readFromFile = async (path: string | undefined) => {
+    // Reading file
+    try {
+        if (path) {
+            const document = await BudgetStatement.fromFile(path)
+            return document;
+        }
+        return null;
+    } catch (error) {
+        console.log(error)
+    }
 }
 
