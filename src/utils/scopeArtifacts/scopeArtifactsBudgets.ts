@@ -1,31 +1,17 @@
 // import knex from 'knex';
 import scopeArtifacts from './scopeArtifactsData.js';
 import fs from 'fs';
+import knex from 'knex';
 
 
 // Connect to database selected in the .env file
-// const db = knex({
-//     client: 'pg',
-//     connection: process.env.PG_CONNECTION_STRING,
-//     idleTimeoutMillis: 0,
-// });
+const db = knex({
+    client: 'pg',
+    connection: process.env.PG_CONNECTION_STRING,
+});
 
-/* Required values to fill in DB:
 
-Budget: 
-    - parentId
-    - name
-    - code // can also be null
-    - start
-    - end
-
-BudgetCap:
-    - budgetId
-    - expenseCategoryId // expected to be null
-    - amount
-    - currency
-*/
-
+// Support functions
 
 function structureData(data: any) {
     let hierarchy: any = {};
@@ -82,6 +68,16 @@ const writeToFileSync = (data: any, fileName: string) => {
     });
 };
 
+const formatToTimeZone = (date: string) => {
+    if (date == '' || date == 'N/A' || date == undefined || date == 'Ongoing') {
+        return null;
+    } else {
+        const tDate = new Date(date).toISOString();
+        return tDate;
+    }
+
+}
+
 async function processObject(obj: any, parentId: any, budgets: any[], budgetCaps: any[]) {
 
     for (let key in obj) {
@@ -89,8 +85,8 @@ async function processObject(obj: any, parentId: any, budgets: any[], budgetCaps
             let splitKey = key.split(')');
             let code = splitKey.length > 1 && splitKey[1] !== ' ' ? splitKey[0] : null;
             let name = splitKey[1] ? splitKey[1].trim() : key;
-            let start = obj[key]['DAI Budget Start'] || '';
-            let end = obj[key]['DAI Budget End'] || '';
+            let start = formatToTimeZone(obj[key]['DAI Budget Start']) || null;
+            let end = formatToTimeZone(obj[key]['DAI Budget End']) || null;
             let id = budgets.length + 1;
 
             budgets.push({
@@ -136,4 +132,31 @@ const getBudgetData = async () => {
     return { budgets, budgetCaps };
 };
 
-const { budgets, budgetCaps } = await getBudgetData();
+
+
+const insertBudgetsInDB = async () => {
+    // Deleting all budgets and budgetCaps from DB before adding updated ones
+    await db('Budget').del().returning('*');
+    await db('BudgetCap').del();
+    console.log('Deleted all budgets and budget caps from DB');
+
+    const { budgets, budgetCaps } = await getBudgetData();
+    // Inserting budgets
+    const insertedBudgets = await db('Budget').insert(budgets).returning('*');
+    console.log('Inserted budgets: ', insertedBudgets.length);
+
+    // Inserting budget caps
+    const insertedBudgetCaps = await db('BudgetCap').insert(budgetCaps).returning('*');
+    console.log('Inserted budget caps: ', insertedBudgetCaps.length);
+}
+
+
+// Uncomment to write budgets and budgetCaps to file and inspect data
+
+// const { budgets, budgetCaps } = await getBudgetData();
+// writeToFileSync(budgets, 'budgets');
+// writeToFileSync(budgetCaps, 'budgetCaps');
+
+
+// To insert budgets and budgetCaps in DB
+await insertBudgetsInDB();
