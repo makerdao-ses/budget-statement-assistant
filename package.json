@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "start": "tsc && node build/main.js",
-    "dev": "tsc-watch --onSuccess \"node build/main.js\""
+    "dev": "tsc-watch --onSuccess \"node build/main.js\"",
+    "scopes": "tsc && node build/utils/scopeArtifacts/scopeArtifactsBudgets.js"
   },
   "keywords": [],
   "author": "",
