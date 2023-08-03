@@ -10,8 +10,6 @@ import fs from 'fs';
 //     idleTimeoutMillis: 0,
 // });
 
-// console.log(scopeArtifacts)
-
 /* Required values to fill in DB:
 
 Budget: 
@@ -31,7 +29,12 @@ BudgetCap:
 
 function structureData(data: any) {
     let hierarchy: any = {};
-    let currentL0: string, currentL1: string, currentL2: string, currentL3: string, currentL4;
+    let currentL0: string = "", currentL1: string = "", currentL2: string = "", currentL3: string = "", currentL4: string = "";
+
+    // Filter out empty objects
+    data = data.filter((item: any) => {
+        return Object.values(item).some(value => value !== "");
+    });
 
     data.forEach((item: any) => {
         if (item.L0) {
@@ -59,41 +62,32 @@ function structureData(data: any) {
             }
             hierarchy[currentL0][currentL1][currentL2][currentL3] = item;
         }
-        // if (item.L4) {
-        //     currentL4 = item.L4;
-        //     if (!hierarchy[currentL0][currentL1][currentL2][currentL3]) {
-        //         hierarchy[currentL0][currentL1][currentL2][currentL3] = {};
-        //     }
-        //     hierarchy[currentL0][currentL1][currentL2][currentL3][currentL4] = item;
-        // }
+        if (item.L4) {
+            currentL4 = item.L4;
+            if (!hierarchy[currentL0]) hierarchy[currentL0] = {};
+            if (!hierarchy[currentL0][currentL1]) hierarchy[currentL0][currentL1] = {};
+            if (!hierarchy[currentL0][currentL1][currentL2]) hierarchy[currentL0][currentL1][currentL2] = {};
+            if (!hierarchy[currentL0][currentL1][currentL2][currentL3]) hierarchy[currentL0][currentL1][currentL2][currentL3] = {};
+            hierarchy[currentL0][currentL1][currentL2][currentL3][currentL4] = item;
+        }
     });
     return hierarchy;
 }
 
-// let structuredData = structureData(scopeArtifacts);
-// structuredData
-// console.log(structuredData);
 
-// const writeToFile = (data) => {
-//     fs.writeFile('scopeArtifacts.json', JSON.stringify(data), (err) => {
-//         if (err) throw err;
-//         console.log('The file has been saved!');
-//     });
-// };
+const writeToFileSync = (data: any, fileName: string) => {
+    fs.writeFile(`src/utils/scopeArtifacts/${fileName}.json`, JSON.stringify(data), (err) => {
+        if (err) throw err;
+        console.log('The file has been saved!');
+    });
+};
 
-// writeToFile(structuredData);
+async function processObject(obj: any, parentId: any, budgets: any[], budgetCaps: any[]) {
 
-
-const structuredJson = JSON.parse(fs.readFileSync('scopeArtifacts.json', 'utf8'));
-
-let budgets = [];
-let budgetCaps: any = [];
-
-function processObject(obj: any, parentId: any) {
     for (let key in obj) {
         if (typeof obj[key] === 'object' && obj[key] !== null) {
             let splitKey = key.split(')');
-            let code = splitKey[0];
+            let code = splitKey.length > 1 && splitKey[1] !== ' ' ? splitKey[0] : null;
             let name = splitKey[1] ? splitKey[1].trim() : key;
             let start = obj[key]['DAI Budget Start'] || '';
             let end = obj[key]['DAI Budget End'] || '';
@@ -108,18 +102,38 @@ function processObject(obj: any, parentId: any) {
                 end: end
             });
 
+            // Adding DAI budget caps
             let amount = obj[key]['Committed Budget (DAI) New '] || 0;
-            budgetCaps.push({
-                budgetId: id,
-                amount: amount,
-                currency: 'DAI'
-            });
+            if (amount !== 0) {
+                budgetCaps.push({
+                    budgetId: id,
+                    amount,
+                    currency: 'DAI'
+                });
+            }
 
-            processObject(obj[key], id);
+            // Adding MKR budget caps
+            amount = obj[key]['Committed Budget Grand Total  (MKR) '] || 0;
+            if (amount !== 0) {
+                budgetCaps.push({
+                    budgetId: id,
+                    amount,
+                    currency: 'MKR'
+                });
+            }
+
+            processObject(obj[key], id, budgets, budgetCaps);
         }
     }
 }
 
-processObject(structuredJson, null);
+const getBudgetData = async () => {
+    let budgets: any = [];
+    let budgetCaps: any = [];
 
-console.log(budgetCaps);
+    const structuredData = structureData(scopeArtifacts);
+    await processObject(structuredData, null, budgets, budgetCaps);
+    return { budgets, budgetCaps };
+};
+
+const { budgets, budgetCaps } = await getBudgetData();
