@@ -4,3 +4,4 @@ credentials.json
 token.json
 savedDocuments
 .DS_Store
+.env
