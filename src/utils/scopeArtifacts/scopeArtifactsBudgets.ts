@@ -83,7 +83,7 @@ async function processObject(obj: any, parentId: any, budgets: any[], budgetCaps
     for (let key in obj) {
         if (typeof obj[key] === 'object' && obj[key] !== null) {
             let splitKey = key.split(')');
-            let code = splitKey.length > 1 && splitKey[1] !== ' ' ? splitKey[0] : null;
+            let code = splitKey.length > 1 && splitKey[1] !== '' ? splitKey[0] : null;
             let name = splitKey[1] ? splitKey[1].trim() : key;
             let id = budgets.length + 1;
 
