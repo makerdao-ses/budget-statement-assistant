@@ -85,8 +85,6 @@ async function processObject(obj: any, parentId: any, budgets: any[], budgetCaps
             let splitKey = key.split(')');
             let code = splitKey.length > 1 && splitKey[1] !== ' ' ? splitKey[0] : null;
             let name = splitKey[1] ? splitKey[1].trim() : key;
-            let start = formatToTimeZone(obj[key]['DAI Budget Start']) || null;
-            let end = formatToTimeZone(obj[key]['DAI Budget End']) || null;
             let id = budgets.length + 1;
 
             budgets.push({
@@ -94,8 +92,6 @@ async function processObject(obj: any, parentId: any, budgets: any[], budgetCaps
                 parentId: parentId,
                 name: name,
                 code: code,
-                start: start,
-                end: end
             });
 
             // Adding DAI budget caps
@@ -104,7 +100,9 @@ async function processObject(obj: any, parentId: any, budgets: any[], budgetCaps
                 budgetCaps.push({
                     budgetId: id,
                     amount,
-                    currency: 'DAI'
+                    currency: 'DAI',
+                    start: formatToTimeZone(obj[key]['DAI Budget Start']) || null,
+                    end: formatToTimeZone(obj[key]['DAI Budget End']) || null
                 });
             }
 
@@ -114,7 +112,9 @@ async function processObject(obj: any, parentId: any, budgets: any[], budgetCaps
                 budgetCaps.push({
                     budgetId: id,
                     amount,
-                    currency: 'MKR'
+                    currency: 'MKR',
+                    start: formatToTimeZone(obj[key]['MKR Start']) || null,
+                    end: formatToTimeZone(obj[key]['MKR End']) || null
                 });
             }
 
@@ -136,8 +136,8 @@ const getBudgetData = async () => {
 
 const insertBudgetsInDB = async () => {
     // Deleting all budgets and budgetCaps from DB before adding updated ones
-    await db('Budget').del().returning('*');
     await db('BudgetCap').del();
+    await db('Budget').del().returning('*');
     console.log('Deleted all budgets and budget caps from DB');
 
     const { budgets, budgetCaps } = await getBudgetData();
