@@ -106,12 +106,15 @@ class BudgetScript {
         return hierarchy;
     }
 
-    private formatToTimeZone = (date: string) => {
-        if (date == '' || date == 'N/A' || date == undefined || date == 'Ongoing') {
+    private formatToTimeZone = (inputDate: string) => {
+        if (inputDate == '' || inputDate == 'N/A' || inputDate == undefined || inputDate == 'Ongoing') {
             return null;
         } else {
-            const tDate = new Date(date).toISOString();
-            return tDate;
+            const date = new Date(inputDate);
+            date.setUTCHours(0, 0, 0, 0);
+            date.setUTCDate(date.getUTCDate() + 1);
+            const outputDate = date.toISOString();
+            return outputDate;
         }
 
     }
