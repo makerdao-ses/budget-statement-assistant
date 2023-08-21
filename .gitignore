@@ -5,3 +5,5 @@ token.json
 savedDocuments
 .DS_Store
 .env
+budgetCaps.json
+budgets.json
