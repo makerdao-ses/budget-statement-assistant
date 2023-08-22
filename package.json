@@ -13,7 +13,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@acaldas/document-model-libs": "^1.0.16",
+    "@acaldas/document-model-libs": "^1.0.21",
     "@google-cloud/local-auth": "^2.1.1",
     "googleapis": "^118.0.0",
     "knex": "^2.5.1",

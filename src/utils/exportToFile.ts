@@ -58,14 +58,16 @@ export class ExportToFile {
 
         // verify if there's an exisiting budget statement
         const existingDocument = await this.readFromFile(bsDocumentPath);
+        console.log('existingDocument', existingDocument)
         if (existingDocument && (existingDocument instanceof BudgetStatement)) {
             console.log('Existing budget statement found. Updating...')
-            if (existingDocument.month == month) {
-                this.updateExistingBudgetStatement(lineItems[month], existingDocument, walletAddress, walletName, month);
+            // Check month
+            if (existingDocument) {
+                this.updateExistingBudgetStatement(lineItems[month as string], existingDocument, walletAddress, walletName);
             }
         } else {
             console.log('Existing budget statement not found. Creating...')
-            const budgetStatements = await this.createBudgetStatements(lineItems, walletAddress, walletName, month, bsDocumentPath);
+            const budgetStatements = await this.createBudgetStatements(lineItems, walletAddress, walletName, month);
             this.saveToFile(budgetStatements);
         }
 
@@ -100,9 +102,7 @@ export class ExportToFile {
 
     }
 
-    createBudgetStatements = async (lineItems: any, walletAddress: string, walletName: string, month?: string, bsDocumentPath?: string) => {
-        // Loading existing budget statement
-        const existingDocument = await this.readFromFile(bsDocumentPath);
+    createBudgetStatements = async (lineItems: any, walletAddress: string, walletName: string, month?: string) => {
 
         // Populating budget statements
         const budgetStatements = [];
@@ -147,9 +147,12 @@ export class ExportToFile {
         let document = new BudgetStatement()
         document.setOwner({ title, ref, id })
         document.setName(`${id} - ${month} Expense Report`);
-        document.addAccount([{ address, name: walletName }])
-        document.addLineItem(address, monthLineItems)
-        document.setMonth(month)
+        document.addAccount({ address, name: walletName })
+        monthLineItems.forEach((lineItem: any) => {
+            lineItem.accountId = address;
+            document.addLineItem(lineItem)
+        })
+        document.setMonth({ month });
         return document;
     }
 
@@ -158,7 +161,6 @@ export class ExportToFile {
         existingDocument: any,
         address: string,
         walletName: string,
-        month: string
     ) => {
         const document = existingDocument;
         // check if account exists, if yes, update account, if not, add account
