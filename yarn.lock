@@ -9,10 +9,10 @@
   dependencies:
     zod "^3.21.4"
 
-"@acaldas/document-model-libs@^1.0.21":
-  version "1.0.21"
-  resolved "https://registry.yarnpkg.com/@acaldas/document-model-libs/-/document-model-libs-1.0.21.tgz#2e120ea55371d38819c4f0b71adc9d8e62ab9439"
-  integrity sha512-u1PSBKaMbbp2dxeE5CJr4p6S43HjNxvGqLo/iAwNunDcFUlm66i2vuN1at6Lipx54ATZT1oWx2yYOblzqbz9pA==
+"@acaldas/document-model-libs@^1.0.22":
+  version "1.0.22"
+  resolved "https://registry.yarnpkg.com/@acaldas/document-model-libs/-/document-model-libs-1.0.22.tgz#4e986b6d043a47fc7a37e0b2d3132a33bd3cd233"
+  integrity sha512-LiUyFATgp07WrDUF/MkACB886CntpfJu5D9ur6x+orZ3aPI18AaZi3M7v+E0ScfaukpEJTZqncWCvVn8c3whTA==
   dependencies:
     "@acaldas/document-model-graphql" "^1.0.18"
     immer "^9.0.19"
