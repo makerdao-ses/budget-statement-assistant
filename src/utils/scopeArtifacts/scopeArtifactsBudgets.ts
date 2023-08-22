@@ -107,7 +107,7 @@ class BudgetScript {
     }
 
     private formatToTimeZone = (inputDate: string) => {
-        if (inputDate == '' || inputDate == 'N/A' || inputDate == undefined || inputDate == 'Ongoing') {
+        if (inputDate == '' || inputDate == 'N/A' || inputDate == undefined || inputDate == 'Ongoing' || inputDate == 'Ends when budget is used ') {
             return null;
         } else {
             const date = new Date(inputDate);
@@ -166,4 +166,4 @@ class BudgetScript {
 
 }
 
-new BudgetScript().saveToJSON();
+new BudgetScript().insertBudgetsInDB();
