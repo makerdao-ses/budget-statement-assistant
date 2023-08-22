@@ -24,6 +24,7 @@ interface IGroupData {
 }
 
 interface ILineItem {
+    accountId: string;
     actual: number;
     budgetCap: number;
     category: { ref: string, id: string, title: string };
@@ -42,6 +43,7 @@ export class ExportToFile {
     ref: string;
     id: string;
     currency: string = 'DAI';
+    address: string = '';
 
     constructor(title: string, ref: string, id: string) {
         this.title = title;
@@ -53,17 +55,17 @@ export class ExportToFile {
 
     runWithParams = async (sheetUrl: string, walletAddress: string, walletName: string, currency: string, bsDocumentPath?: string, month?: string) => {
         this.currency = currency;
+        this.address = walletAddress;
         const lineItems = await this.mapDataByMonth(sheetUrl)
         // console.log(lineItems[month as any])
 
         // verify if there's an exisiting budget statement
-        const existingDocument = await this.readFromFile(bsDocumentPath);
-        console.log('existingDocument', existingDocument)
+        const existingDocument = await this.readFromFile(bsDocumentPath) as BudgetStatement;;
         if (existingDocument && (existingDocument instanceof BudgetStatement)) {
             console.log('Existing budget statement found. Updating...')
             // Check month
-            if (existingDocument) {
-                this.updateExistingBudgetStatement(lineItems[month as string], existingDocument, walletAddress, walletName);
+            if (existingDocument.state.month == month) {
+                this.updateExistingBudgetStatement(lineItems[month], existingDocument, walletAddress, walletName);
             }
         } else {
             console.log('Existing budget statement not found. Creating...')
@@ -93,7 +95,7 @@ export class ExportToFile {
         // Saving to file
         try {
             budgetStatements.forEach(async (budgetStatement: any) => {
-                await budgetStatement.saveToFile(`savedDocuments/${budgetStatement.month}.json`);
+                await budgetStatement.saveToFile(`savedDocuments/`);
             });
             console.log(`${budgetStatements.length} files saved successfully in savedDocuments folder.`)
         } catch (error) {
@@ -158,39 +160,41 @@ export class ExportToFile {
 
     updateExistingBudgetStatement = (
         monthLineItems: [ILineItem],
-        existingDocument: any,
+        existingDocument: BudgetStatement,
         address: string,
         walletName: string,
     ) => {
         const document = existingDocument;
         // check if account exists, if yes, update account, if not, add account
-        const existingAccount = document.getAccount(address);
-        if (!existingAccount) {
-            document.addAccount([{ address, name: walletName }])
+        if (document.state.accounts.findIndex((account: any) => account.address == address) == -1) {
+            document.addAccount({ address, name: walletName })
         }
 
         // check if owner needs to be updated
         // TO DO - check if owner is the same, if not, update owner
-        const existingOwner = document.owner;
 
         // updating lineItems
+
+        const documentLineItems = document.state.accounts.find((account: any) => account.address == address)?.lineItems;
+        
         for (let monthLineItem of monthLineItems) {
-            const existingLineItem = document.getLineItem(address, { category: monthLineItem.category.title, group: monthLineItem.group?.title });
+            const existingLineItem = documentLineItems?.find((lineItem: any) => lineItem.category.title == monthLineItem.category.title && lineItem.group?.title == monthLineItem.group?.title);
             if (!existingLineItem) {
                 console.log('Adding new lineItem', monthLineItem.category.title, monthLineItem.group?.title)
-                document.addLineItem(address, [monthLineItem])
+                document.addLineItem(monthLineItem)
             } else {
                 console.log('updating lineItem', monthLineItem.category.title)
-                document.updateLineItem(address, [{
+                document.updateLineItem({
+                    accountId: monthLineItem.accountId,
                     actual: monthLineItem.actual,
                     budgetCap: monthLineItem.budgetCap,
                     category: monthLineItem.category.title,
                     forecast: monthLineItem.forecast,
                     group: monthLineItem.group?.title,
-                    headCountExpense: monthLineItem.headcountExpense,
+                    headcountExpense: monthLineItem.headcountExpense,
                     payment: monthLineItem.payment,
 
-                }])
+                })
             }
         }
 
@@ -237,6 +241,7 @@ export class ExportToFile {
                     this.addNextThreeMonthsForecast(data, category, group, month)
                     const bCap = typeof data[month][category][group].budget == 'number' ? data[month][category][group].budget : 0;
                     const lineItem: ILineItem = {
+                        accountId: this.address,
                         actual: parseFloat(data[month][category][group].actual),
                         budgetCap: parseFloat(bCap),
                         category: { ref: "makerdao/expense-category", id: category, title: category },
