@@ -59,6 +59,7 @@ class BudgetScript {
     };
 
 
+    // Structures the budgets data in a hierarchical way
     private structureData(data: any) {
         let hierarchy: any = {};
         let currentL0: string = "", currentL1: string = "", currentL2: string = "", currentL3: string = "", currentL4: string = "";
@@ -68,7 +69,9 @@ class BudgetScript {
             return Object.values(item).some(value => value !== "");
         });
 
-        data.forEach((item: any) => {
+
+        let counter = 0;
+        data.forEach((item: any, index: any) => {
             if (item.L0) {
                 currentL0 = item.L0;
                 hierarchy[currentL0] = item;
@@ -89,10 +92,17 @@ class BudgetScript {
             }
             if (item.L3) {
                 currentL3 = item.L3;
+
                 if (!hierarchy[currentL0][currentL1][currentL2]) {
                     hierarchy[currentL0][currentL1][currentL2] = {};
                 }
-                hierarchy[currentL0][currentL1][currentL2][currentL3] = item;
+                if (!hierarchy[currentL0][currentL1][currentL2][currentL3]) {
+                    hierarchy[currentL0][currentL1][currentL2][currentL3] = {};
+                    counter = 0;
+                }
+                // count the duplicate L3s
+                hierarchy[currentL0][currentL1][currentL2][currentL3][item.L3 + counter++] = item;
+
             }
             if (item.L4) {
                 currentL4 = item.L4;
@@ -102,6 +112,7 @@ class BudgetScript {
                 if (!hierarchy[currentL0][currentL1][currentL2][currentL3]) hierarchy[currentL0][currentL1][currentL2][currentL3] = {};
                 hierarchy[currentL0][currentL1][currentL2][currentL3][currentL4] = item;
             }
+
         });
         return hierarchy;
     }
@@ -119,6 +130,7 @@ class BudgetScript {
 
     }
 
+    // Recursively processes the structured data and adds budgets and budget caps to the arrays
     private async processObject(obj: any, parentId: any, budgets: any[], budgetCaps: any[]) {
 
         for (let key in obj) {
@@ -128,19 +140,44 @@ class BudgetScript {
                 let name = splitKey[1] ? splitKey[1].trim() : key;
                 let id = budgets.length + 1;
 
-                budgets.push({
-                    id: id,
-                    parentId: parentId,
-                    name: name,
-                    code: code,
-                });
+                let repeatableName = '';
+                // Remove last charecter from name if it is a number
+                if (!isNaN(name[name.length - 1] as any)) {
+                    repeatableName = name.slice(0, -1);
+                }
 
-                // Adding DAI budget caps
-                let amount = obj[key]['Committed Budget (DAI) New '] || 0;
-                if (amount !== 0) {
+                const sameBudget = budgets.find((budget: any) => budget.name === repeatableName);
+                if (sameBudget) {
+                    id = sameBudget.id;
+                }
+
+                if (!sameBudget) {
+                    budgets.push({
+                        id: id,
+                        parentId: parentId,
+                        name: name,
+                        code: code,
+                    });
+                }
+
+                // Adding immediate budget caps
+                const immediateAmount = obj[key]['Immediate Budget (DAI)'];
+                if (immediateAmount !== 0 && immediateAmount !== '' && immediateAmount !== undefined) {
                     budgetCaps.push({
                         budgetId: id,
-                        amount,
+                        amount: immediateAmount,
+                        currency: 'DAI',
+                        start: this.formatToTimeZone(obj[key]['Approved by Excutive vote/Source of Truth']),
+                        end: null
+                    });
+                }
+
+                // Adding DAI budget caps
+                const daiAmount = obj[key]['Committed Budget (DAI) New '] || 0;
+                if (daiAmount !== 0 && daiAmount !== immediateAmount) {
+                    budgetCaps.push({
+                        budgetId: id,
+                        amount: daiAmount,
                         currency: 'DAI',
                         start: this.formatToTimeZone(obj[key]['DAI Budget Start']) || null,
                         end: this.formatToTimeZone(obj[key]['DAI Budget End']) || null
@@ -148,11 +185,11 @@ class BudgetScript {
                 }
 
                 // Adding MKR budget caps
-                amount = obj[key]['Committed Budget Grand Total  (MKR) '] || 0;
-                if (amount !== 0) {
+                const mkrAmount = obj[key]['Committed Budget Grand Total  (MKR) '] || 0;
+                if (mkrAmount !== 0) {
                     budgetCaps.push({
                         budgetId: id,
-                        amount,
+                        amount: mkrAmount,
                         currency: 'MKR',
                         start: this.formatToTimeZone(obj[key]['MKR Start']) || null,
                         end: this.formatToTimeZone(obj[key]['MKR End']) || null
@@ -166,4 +203,4 @@ class BudgetScript {
 
 }
 
-new BudgetScript().insertBudgetsInDB();
+new BudgetScript().saveToJSON();
