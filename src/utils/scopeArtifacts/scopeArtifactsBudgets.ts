@@ -174,25 +174,29 @@ class BudgetScript {
 
                 // Adding DAI budget caps
                 const daiAmount = obj[key]['Committed Budget (DAI) New '] || 0;
-                if (daiAmount !== 0 && daiAmount !== immediateAmount) {
+                const daiStart = this.formatToTimeZone(obj[key]['DAI Budget Start']) || null;
+                const daiEnd = this.formatToTimeZone(obj[key]['DAI Budget End']) || null; 
+                if (daiAmount !== 0 && daiAmount !== immediateAmount && daiStart !== daiEnd) {
                     budgetCaps.push({
                         budgetId: id,
                         amount: daiAmount,
                         currency: 'DAI',
-                        start: this.formatToTimeZone(obj[key]['DAI Budget Start']) || null,
-                        end: this.formatToTimeZone(obj[key]['DAI Budget End']) || null
+                        start: daiStart,
+                        end: daiEnd
                     });
                 }
 
                 // Adding MKR budget caps
                 const mkrAmount = obj[key]['Committed Budget Grand Total  (MKR) '] || 0;
-                if (mkrAmount !== 0) {
+                const mkrStart = this.formatToTimeZone(obj[key]['MKR Start']) || null;
+                const mkrEnd = this.formatToTimeZone(obj[key]['MKR End']) || null;
+                if (mkrAmount !== 0 && mkrStart !== mkrEnd) {
                     budgetCaps.push({
                         budgetId: id,
                         amount: mkrAmount,
                         currency: 'MKR',
-                        start: this.formatToTimeZone(obj[key]['MKR Start']) || null,
-                        end: this.formatToTimeZone(obj[key]['MKR End']) || null
+                        start: mkrStart,
+                        end: mkrEnd
                     });
                 }
 
