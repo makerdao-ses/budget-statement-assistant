@@ -7,3 +7,4 @@ savedDocuments
 .env
 budgetCaps.json
 budgets.json
+/coverage
