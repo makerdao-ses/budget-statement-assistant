@@ -1,13 +1,14 @@
 import { Knex } from "knex";
 import { AnalyticsPath } from "./AnalyticsPath.js";
-import { values } from "lodash";
-import { 
+import pkg from "lodash";
+const { values } = pkg;
+import {
     AnalyticsSeriesQuery,
     AnalyticsSeries,
-    AnalyticsMetric, 
-    AnalyticsMetricString, 
-    getAnalyticsMetricEnum, 
-    getAnalyticsMetricString 
+    AnalyticsMetric,
+    AnalyticsMetricString,
+    getAnalyticsMetricEnum,
+    getAnalyticsMetricString
 } from "./AnalyticsQuery.js";
 
 export class AnalyticsStore {
@@ -43,7 +44,7 @@ export class AnalyticsStore {
 
     public async getMatchingSeries(query: AnalyticsSeriesQuery): Promise<AnalyticsSeries[]> {
         const analyticsView = this._buildViewQuery(
-            'AV', 
+            'AV',
             Object.keys(query.select),
             query.metrics.map(m => getAnalyticsMetricString(m)),
             query.currency.firstSegment().filters,
@@ -72,9 +73,9 @@ export class AnalyticsStore {
     }
 
     public async addSeriesValues(inputs: AnalyticsSeriesInput[]) {
-        const dimensionsMap:DimensionsMap = {};
+        const dimensionsMap: DimensionsMap = {};
 
-        for (let i=0; i<inputs.length; i++) {            
+        for (let i = 0; i < inputs.length; i++) {
             const record = await this._knex<AnalyticsSeriesRecord>('AnalyticsSeries').insert({
                 start: inputs[i].start,
                 end: inputs[i].end || null,
@@ -103,7 +104,7 @@ export class AnalyticsStore {
         for (const [dim, pathMap] of Object.entries(dimensionsMap)) {
             await this._linkDimensions(dim, pathMap);
         }
-        
+
         return values;
     }
 
@@ -125,11 +126,11 @@ export class AnalyticsStore {
             dimensions.forEach(
                 d => result.dimensions[d] = AnalyticsPath.fromString(r[`dim_${d}`] ? r[`dim_${d}`].slice(0, -1) : '?'));
 
-            return result;            
+            return result;
         });
     }
 
-    private _buildViewQuery(name: string, dimensions:string[], metrics:string[], units:string[]|null, until:Date|null) {
+    private _buildViewQuery(name: string, dimensions: string[], metrics: string[], units: string[] | null, until: Date | null) {
         const baseQuery = this._knex('AnalyticsSeries as AS_inner')
             .select('*')
             .whereIn('metric', metrics);
@@ -149,7 +150,7 @@ export class AnalyticsStore {
         return `(${baseQuery.toString()}) AS "${name}"`;
     }
 
-    private _buildDimensionQuery(dimension:string) {
+    private _buildDimensionQuery(dimension: string) {
         const seriesIdRef = this._knex.ref('AS_inner.id');
 
         return this._knex('AnalyticsSeries_AnalyticsDimension as ASAD')
@@ -167,13 +168,13 @@ export class AnalyticsStore {
 
         for (const [path, ids] of Object.entries(pathMap)) {
             const i = dimensionIds.findIndex(record => record.path == path);
-            
-            const dimensionId = (i < 0) ? 
-                await this._createDimensionPath(dimension, path) : 
+
+            const dimensionId = (i < 0) ?
+                await this._createDimensionPath(dimension, path) :
                 dimensionIds[i].id;
 
-            for (let j=0; j<ids.length; j++) {
-                await this._knex('AnalyticsSeries_AnalyticsDimension').insert({seriesId: ids[j], dimensionId});
+            for (let j = 0; j < ids.length; j++) {
+                await this._knex('AnalyticsSeries_AnalyticsDimension').insert({ seriesId: ids[j], dimensionId });
             }
         }
     }
