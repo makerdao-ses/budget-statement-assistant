@@ -1,6 +1,9 @@
 import scopeArtifacts from './scopeArtifactsData.js';
 import fs from 'fs';
 import knex from 'knex';
+import { AnalyticsStore } from '../analytics/AnalyticsStore.js';
+import { AnalyticsPath } from '../analytics/AnalyticsPath.js';
+import { AnalyticsMetric } from '../analytics/AnalyticsQuery.js';
 
 
 /* 
@@ -17,6 +20,58 @@ class BudgetScript {
             client: 'pg',
             connection: process.env.PG_CONNECTION_STRING,
         });
+    }
+
+    public insertInAnalyticsStore = async () => {
+        const { budgets, budgetCaps } = await this.getBudgetData();
+        const store = new AnalyticsStore(this.db);
+
+        const series: any[] = this.createSeries(budgets, budgetCaps);
+
+        // clean old data from DB, 'atlasBudget/...' is the source of all budgets
+        await store.clearSeriesBySource(AnalyticsPath.fromString('atlasBudget'));
+
+        // insert new data
+        const insertedSeries = await store.addSeriesValues(series);
+        console.log('Series added to DB: ', insertedSeries.length);
+
+    }
+
+    private createSeries = (budgets: any, budgetCaps: any) => {
+        const series: any = [];
+        budgets.forEach((budget: any) => {
+            const selectedBudgetCaps: any = budgetCaps.filter((budgetCap: any) => budgetCap.budgetId === budget.id);
+            const budgetSource = AnalyticsPath.fromString(`atlasBudget/${budget.name}`);
+
+            // Cannot add parent budgets with null starter dates. Only budgets with budget caps are added
+            // series.push({
+            //     start: null,
+            //     end: null,
+            //     source: budgetSource,
+            //     value: 0,
+            //     unit: null,
+            //     metric: AnalyticsMetric.Budget,
+            //     dimensions: {
+            //         budget: budgetSource,
+            //     }
+            // });
+            if (selectedBudgetCaps.length > 0) {
+                selectedBudgetCaps.forEach((budgetCap: any) => {
+                    series.push({
+                        start: budgetCap.start,
+                        end: budgetCap.end,
+                        source: budgetSource,
+                        value: budgetCap.amount,
+                        unit: budgetCap.currency,
+                        metric: AnalyticsMetric.Budget,
+                        dimensions: {
+                            budget: budgetSource,
+                        }
+                    });
+                });
+            }
+        });
+        return series;
     }
 
     public insertBudgetsInDB = async () => {
@@ -118,10 +173,18 @@ class BudgetScript {
     }
 
     private formatToTimeZone = (inputDate: string) => {
-        if (inputDate == '' || inputDate == 'N/A' || inputDate == undefined || inputDate == 'Ongoing' || inputDate == 'Ends when budget is used ') {
+        if (inputDate == '' ||
+            inputDate == 'N/A' ||
+            inputDate == undefined ||
+            inputDate == 'Ongoing' ||
+            inputDate == 'Ends when budget is used ' ||
+            inputDate == 'Pending' ||
+            inputDate == 'Ongoing bugbounty' ||
+            inputDate == '?'
+        ) {
             return null;
         } else {
-            const date = new Date(inputDate);
+            const date = new Date(inputDate.toString());
             date.setUTCHours(0, 0, 0, 0);
             date.setUTCDate(date.getUTCDate() + 1);
             const outputDate = date.toISOString();
@@ -162,12 +225,13 @@ class BudgetScript {
 
                 // Adding immediate budget caps
                 const immediateAmount = obj[key]['Immediate Budget (DAI)'];
-                if (immediateAmount !== 0 && immediateAmount !== '' && immediateAmount !== undefined) {
+                const startDate = this.formatToTimeZone(obj[key]['Approved by Excutive vote/Source of Truth']);
+                if (immediateAmount !== 0 && immediateAmount !== '' && immediateAmount !== undefined && startDate !== null) {
                     budgetCaps.push({
                         budgetId: id,
                         amount: immediateAmount,
                         currency: 'DAI',
-                        start: this.formatToTimeZone(obj[key]['Approved by Excutive vote/Source of Truth']),
+                        start: startDate,
                         end: null
                     });
                 }
@@ -175,7 +239,7 @@ class BudgetScript {
                 // Adding DAI budget caps
                 const daiAmount = obj[key]['Committed Budget (DAI) New '] || 0;
                 const daiStart = this.formatToTimeZone(obj[key]['DAI Budget Start']) || null;
-                const daiEnd = this.formatToTimeZone(obj[key]['DAI Budget End']) || null; 
+                const daiEnd = this.formatToTimeZone(obj[key]['DAI Budget End']) || null;
                 if (daiAmount !== 0 && daiAmount !== immediateAmount && daiStart !== daiEnd) {
                     budgetCaps.push({
                         budgetId: id,
@@ -207,4 +271,4 @@ class BudgetScript {
 
 }
 
-new BudgetScript().saveToJSON();
+new BudgetScript().insertInAnalyticsStore()
