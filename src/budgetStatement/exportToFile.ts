@@ -2,7 +2,7 @@ import {
     BudgetStatement,
     BudgetStatementDocument
 } from '@acaldas/document-model-libs/budget-statement';
-import ColumnTagInterpreter from '../columnTagIntepreter.js';
+import ColumnTagInterpreter from '../budgetStatement/columnTagIntepreter.js';
 import { fetchData } from './googleAuth.js';
 import { isHeadcountExpense } from './expenseCategoryMap.js';
 

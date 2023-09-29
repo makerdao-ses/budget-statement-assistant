@@ -1,4 +1,4 @@
-import { ExportToFile } from './utils/exportToFile.js';
+import { ExportToFile } from './exportToFile.js';
 
 const exportToFile = new ExportToFile('Sustainable Ecosystem Scaling CoreUnit', 'makerdao/core-unit', 'SES-001');
 
