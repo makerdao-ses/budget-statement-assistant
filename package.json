@@ -7,7 +7,7 @@
   "scripts": {
     "budgetDocument": "tsc && node build/budgetStatement/main.js",
     "dev": "tsc-watch --onSuccess \"node build/budgetStatement/main.js\"",
-    "scopes": "tsc && node build/utils/scopeArtifacts/scopeArtifactsBudgets.js",
+    "scopes": "tsc && node build/scopeArtifacts/scopeArtifactsBudgets.js",
     "build": "tsc",
     "test": "jest -c ./jest.config.js --watchAll"
   },

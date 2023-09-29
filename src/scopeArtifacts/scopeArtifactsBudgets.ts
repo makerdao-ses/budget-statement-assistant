@@ -1,9 +1,9 @@
 import scopeArtifacts from './scopeArtifactsData.js';
 import fs from 'fs';
 import knex from 'knex';
-import { AnalyticsStore } from '../analytics/AnalyticsStore.js';
-import { AnalyticsPath } from '../analytics/AnalyticsPath.js';
-import { AnalyticsMetric } from '../analytics/AnalyticsQuery.js';
+import { AnalyticsStore } from '../utils/analytics/AnalyticsStore.js';
+import { AnalyticsPath } from '../utils/analytics/AnalyticsPath.js';
+import { AnalyticsMetric } from '../utils/analytics/AnalyticsQuery.js';
 
 
 /* 
@@ -107,7 +107,7 @@ class BudgetScript {
 
 
     private saveToJson = (data: any, fileName: string) => {
-        fs.writeFile(`src/utils/scopeArtifacts/${fileName}.json`, JSON.stringify(data), (err) => {
+        fs.writeFile(`src/scopeArtifacts/${fileName}.json`, JSON.stringify(data), (err) => {
             if (err) throw err;
             console.log(`The ${fileName} file has been saved!`);
         });
@@ -271,4 +271,4 @@ class BudgetScript {
 
 }
 
-new BudgetScript().insertInAnalyticsStore()
+new BudgetScript().saveToJSON()
