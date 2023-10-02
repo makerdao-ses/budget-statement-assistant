@@ -8,6 +8,7 @@
     "budgetDocument": "tsc && node build/budgetStatement/main.js",
     "dev": "tsc-watch --onSuccess \"node build/budgetStatement/main.js\"",
     "scopes": "tsc && node build/scopeArtifacts/scopeArtifactsBudgets.js",
+    "mip40s": "tsc && node build/mip40s/mip40Budgets.js",
     "build": "tsc",
     "test": "jest -c ./jest.config.js --watchAll"
   },
