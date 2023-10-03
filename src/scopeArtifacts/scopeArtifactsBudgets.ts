@@ -179,6 +179,7 @@ class BudgetScript {
             inputDate == 'Ongoing' ||
             inputDate == 'Ends when budget is used ' ||
             inputDate == 'Pending' ||
+            inputDate == 'Pending ' ||
             inputDate == 'Ongoing bugbounty' ||
             inputDate == '?'
         ) {
@@ -223,7 +224,7 @@ class BudgetScript {
                     });
                 }
 
-                // Adding immediate budget caps
+                // Adding immediate DAI budget caps
                 const immediateAmount = obj[key]['Immediate Budget (DAI)'];
                 const startDate = this.formatToTimeZone(obj[key]['Approved by Excutive vote/Source of Truth']);
                 if (immediateAmount !== 0 && immediateAmount !== '' && immediateAmount !== undefined && startDate !== null) {
@@ -247,6 +248,20 @@ class BudgetScript {
                         currency: 'DAI',
                         start: daiStart,
                         end: daiEnd
+                    });
+                }
+
+                // Adding immediate MKR budget caps
+                const immediateMKRAmount = obj[key]['Immediate Budget (MKR)'] || 0;
+                const immediateMKRStart = this.formatToTimeZone(obj[key]['MKR Approved by Excutive vote ']);
+
+                if (immediateMKRAmount !== 0 && immediateMKRAmount !== '' && immediateMKRAmount !== undefined && immediateMKRStart !== null) {
+                    budgetCaps.push({
+                        budgetId: id,
+                        amount: immediateMKRAmount,
+                        currency: 'MKR',
+                        start: immediateMKRStart,
+                        end: null
                     });
                 }
 
