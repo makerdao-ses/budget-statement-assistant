@@ -11,6 +11,14 @@ This script is used to insert budgets and budget caps in the DB or to save them 
 Raw budgets data is taken from the scopeArtifactsData.js file
 */
 
+type Budget = {
+    id: number,
+    parentId: number,
+    name: string,
+    code: string | null,
+    budgetCode?: string,
+}
+
 class BudgetScript {
 
     db: any;
@@ -23,13 +31,14 @@ class BudgetScript {
     }
 
     public insertInAnalyticsStore = async () => {
-        const { budgets, budgetCaps } = await this.getBudgetData();
+        const { budgets, budgetCaps } = await this.getBudgetData(true);
         const store = new AnalyticsStore(this.db);
 
         const series: any[] = this.createSeries(budgets, budgetCaps);
+        console.log('Series created: ', series.length)
 
         // clean old data from DB, 'atlasBudget/...' is the source of all budgets
-        await store.clearSeriesBySource(AnalyticsPath.fromString('atlasBudget'));
+        await store.clearSeriesBySource(AnalyticsPath.fromString('powerhouse'));
 
         // insert new data
         const insertedSeries = await store.addSeriesValues(series);
@@ -41,7 +50,7 @@ class BudgetScript {
         const series: any = [];
         budgets.forEach((budget: any) => {
             const selectedBudgetCaps: any = budgetCaps.filter((budgetCap: any) => budgetCap.budgetId === budget.id);
-            const budgetSource = AnalyticsPath.fromString(`atlasBudget/${budget.name}`);
+            const budgetSource = AnalyticsPath.fromString(`powerhouse/google-sheets/1deoWg8fda4dNgehkYJ6SQBDT8QcGJ-9rKDwHdh-ZMZg/274217432`);
 
             // Cannot add parent budgets with null starter dates. Only budgets with budget caps are added
             // series.push({
@@ -57,6 +66,7 @@ class BudgetScript {
             // });
             if (selectedBudgetCaps.length > 0) {
                 selectedBudgetCaps.forEach((budgetCap: any) => {
+                    const fn = budgetCap.start !== null && budgetCap.end !== null ? 'DssVest' : 'Single';
                     series.push({
                         start: budgetCap.start,
                         end: budgetCap.end,
@@ -64,8 +74,9 @@ class BudgetScript {
                         value: budgetCap.amount,
                         unit: budgetCap.currency,
                         metric: AnalyticsMetric.Budget,
+                        fn: fn,
                         dimensions: {
-                            budget: budgetSource,
+                            budget: AnalyticsPath.fromString(budget.budgetCode || '')
                         }
                     });
                 });
@@ -80,7 +91,7 @@ class BudgetScript {
         await this.db('Budget').del().returning('*');
         console.log('Deleted all budgets and budget caps from DB');
 
-        const { budgets, budgetCaps } = await this.getBudgetData();
+        const { budgets, budgetCaps } = await this.getBudgetData(false);
         // Inserting budgets
         const insertedBudgets = await this.db('Budget').insert(budgets).returning('*');
         console.log('Inserted budgets: ', insertedBudgets.length);
@@ -91,17 +102,17 @@ class BudgetScript {
     }
 
     public async saveToJSON() {
-        const { budgets, budgetCaps } = await this.getBudgetData();
+        const { budgets, budgetCaps } = await this.getBudgetData(false);
         this.saveToJson(budgets, 'budgets');
         this.saveToJson(budgetCaps, 'budgetCaps');
     }
 
-    private getBudgetData = async () => {
+    private getBudgetData = async (withBudgetCodes: boolean) => {
         let budgets: any = [];
         let budgetCaps: any = [];
 
         const structuredData = this.structureData(scopeArtifacts);
-        await this.processObject(structuredData, null, budgets, budgetCaps);
+        await this.processObject(structuredData, null, budgets, budgetCaps, withBudgetCodes);
         return { budgets, budgetCaps };
     };
 
@@ -195,10 +206,10 @@ class BudgetScript {
     }
 
     // Recursively processes the structured data and adds budgets and budget caps to the arrays
-    private async processObject(obj: any, parentId: any, budgets: any[], budgetCaps: any[]) {
+    private async processObject(obj: any, parentId: any, budgets: any[], budgetCaps: any[], withBudgetCodes: boolean) {
 
         for (let key in obj) {
-            if (typeof obj[key] === 'object' && obj[key] !== null) {
+            if (typeof obj[key] === 'object' && obj[key] != null) {
                 let splitKey = key.split(')');
                 let code = splitKey.length > 1 && splitKey[1] !== '' ? splitKey[0] : null;
                 let name = splitKey[1] ? splitKey[1].trim() : key;
@@ -215,13 +226,22 @@ class BudgetScript {
                     id = sameBudget.id;
                 }
 
+                let budget: Budget = {
+                    id: id,
+                    parentId: parentId,
+                    name: name,
+                    code: code,
+                }
+
+                if (withBudgetCodes) {
+                    budget = {
+                        ...budget,
+                        budgetCode: obj[key]['Budget Codes'],
+                    }
+                }
+
                 if (!sameBudget) {
-                    budgets.push({
-                        id: id,
-                        parentId: parentId,
-                        name: name,
-                        code: code,
-                    });
+                    budgets.push(budget);
                 }
 
                 // Adding immediate DAI budget caps
@@ -279,11 +299,11 @@ class BudgetScript {
                     });
                 }
 
-                this.processObject(obj[key], id, budgets, budgetCaps);
+                this.processObject(obj[key], id, budgets, budgetCaps, withBudgetCodes);
             }
         }
     }
 
 }
 
-new BudgetScript().saveToJSON()
+new BudgetScript().insertInAnalyticsStore()
