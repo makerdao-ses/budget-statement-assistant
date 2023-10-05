@@ -19,6 +19,7 @@
   "dependencies": {
     "@acaldas/document-model-libs": "^1.0.22",
     "@google-cloud/local-auth": "^2.1.1",
+    "date-fns": "^2.30.0",
     "googleapis": "^118.0.0",
     "knex": "^2.5.1",
     "lodash": "^4.17.21",
