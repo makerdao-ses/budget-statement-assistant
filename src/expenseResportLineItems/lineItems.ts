@@ -17,15 +17,15 @@ class LineItemsScript {
 
     public insertInAnalyticsStore = async () => {
         const series = await this.createSeries();
-        console.log('created series', series.length);
+        console.log('created series', series[0].source.toString());
         const store = new AnalyticsStore(this.db);
         
-        // clean old lineItem series
-        await store.clearSeriesBySource(AnalyticsPath.fromString('expenseReportLineItems'));
+        // // clean old lineItem series
+        // await store.clearSeriesBySource(AnalyticsPath.fromString('expenseReportLineItems'));
 
-        // insert new data
-        const insertedSeries = await store.addSeriesValues(series);
-        console.log('inserted series', insertedSeries.length);
+        // // insert new data
+        // const insertedSeries = await store.addSeriesValues(series);
+        // console.log('inserted series', insertedSeries.length);
 
     }
 
@@ -35,16 +35,16 @@ class LineItemsScript {
 
         for (let i = 0; i < lineItems.length; i++) {
             const lineItem = lineItems[i];
-            const ownerCode = await this.getOwner(lineItem.budgetStatementWalletId);
+            const {code, budgetStatementId} = await this.getOwner(lineItem.budgetStatementWalletId) as any;
             const serie = {
                 start: new Date(lineItem.month),
                 end: null,
-                source: AnalyticsPath.fromString(`expenseReportLineItems/${ownerCode}`),
+                source: AnalyticsPath.fromString(`powerhouse/legacy-api/budget-statements/${budgetStatementId}`),
                 unit: lineItem.currency,
                 value: lineItem.actual,
                 metric: AnalyticsMetric.Actuals,
                 dimensions: {
-                    category: AnalyticsPath.fromString(`expenseReportLineItems/${ownerCode}/${lineItem.canonicalBudgetCategory}`)
+                    category: AnalyticsPath.fromString(`expenseReportLineItems/${code}/${lineItem.canonicalBudgetCategory}`)
                 }
             };
             series.push(serie)
@@ -60,14 +60,14 @@ class LineItemsScript {
     }
 
     private getOwner = async (budgetStatementWalletId: string) => {
-        const owner = await this.db('BudgetStatementWallet').where('BudgetStatementWallet.id', budgetStatementWalletId)
+        const result = await this.db('BudgetStatementWallet').where('BudgetStatementWallet.id', budgetStatementWalletId)
             .join('BudgetStatement', 'BudgetStatement.id', 'BudgetStatementWallet.budgetStatementId')
             .join('CoreUnit', 'CoreUnit.id', 'BudgetStatement.ownerId')
-            .select('CoreUnit.code');
-        if (owner.length === 0) {
+            .select('CoreUnit.code', 'BudgetStatementWallet.budgetStatementId');
+        if (result.length === 0) {
             return 'Delegates'
         } else {
-            return owner[0].code;
+            return {code: result[0].code, budgetStatementId: result[0].budgetStatementId}
         }
     }
 
