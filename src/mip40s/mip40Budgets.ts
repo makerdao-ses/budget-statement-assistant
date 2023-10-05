@@ -40,6 +40,7 @@ class Mip40BudgetScript {
             const { mip40BudgetPeriod, mip40Wallet } = mip40Budget;
 
             const cuCode = await this.getCuCode(mip40Budget.mip40Spn);
+            const source = AnalyticsPath.fromString(`powerhouse/legacy-api/mip40/${mip40Budget.mip40Spn}`)
 
             // Skip if there is a budget period
             if (mip40BudgetPeriod.length === 0) continue;
@@ -52,12 +53,14 @@ class Mip40BudgetScript {
                         const mkrSerie = {
                             start: new Date(budgetPeriodStart),
                             end: new Date(budgetPeriodEnd),
-                            source: AnalyticsPath.fromString(`mip40/${mip40Budget.mip40Spn}`),
+                            source,
                             unit: 'MKR',
                             value: 0,
                             metric: AnalyticsMetric.Budget,
                             dimensions: {
                                 budget: AnalyticsPath.fromString(`atlas/legacy/core-units/${cuCode}`),
+                                wallet: AnalyticsPath.fromString(`atlas/${wallet.name}`),
+
                             }
                         }
                         series.push(mkrSerie)
@@ -70,16 +73,18 @@ class Mip40BudgetScript {
 
                         wallet.mip40BudgetLineItem.forEach((lineItem: any) => {
                             const totalBudget = lineItem.budgetCap * nrOfmonths;
+                            const headCount = lineItem.headcountExpense ? 'headcount' : 'non-headcount';
                             let serie = {
                                 start: new Date(budgetPeriodStart),
                                 end: new Date(budgetPeriodEnd),
-                                source: AnalyticsPath.fromString(`mip40/${mip40Budget.mip40Spn}/${wallet.address}`),
+                                source,
                                 value: budgetPeriodStart !== null && budgetPeriodEnd !== null ? totalBudget : lineItem.budgetCap,
                                 unit: 'DAI',
                                 metric: AnalyticsMetric.Budget,
                                 dimensions: {
                                     budget: AnalyticsPath.fromString(`atlas/legacy/core-units/${cuCode}`),
-                                    category: AnalyticsPath.fromString(`mip40/${mip40Budget.mip40Spn}/${wallet.address}/${lineItem.budgetCategory}`),
+                                    category: AnalyticsPath.fromString(`atlas/${headCount}/mip40/${mip40Budget.mip40Spn}/${wallet.address}/${lineItem.budgetCategory}`),
+                                    wallet: AnalyticsPath.fromString(`atlas/${wallet.name}`),
                                 }
                             }
                             series.push(serie);
