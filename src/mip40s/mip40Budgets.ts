@@ -2,6 +2,7 @@ import { AnalyticsPath } from "../utils/analytics/AnalyticsPath.js"
 import { AnalyticsMetric } from "../utils/analytics/AnalyticsQuery.js"
 import { AnalyticsStore } from "../utils/analytics/AnalyticsStore.js"
 import knex from 'knex';
+import { eachMonthOfInterval } from "date-fns";
 
 class Mip40BudgetScript {
 
@@ -63,12 +64,17 @@ class Mip40BudgetScript {
                     }
                     // DAI budget serie
                     if (!mip40Budget.mkrOnly && wallet.mip40BudgetLineItem.length > 0) {
+
+                        // Get number of months in budget period
+                        const nrOfmonths = eachMonthOfInterval({ start: new Date(budgetPeriodStart), end: new Date(budgetPeriodEnd) }).length;
+
                         wallet.mip40BudgetLineItem.forEach((lineItem: any) => {
+                            const totalBudget = lineItem.budgetCap * nrOfmonths;
                             let serie = {
                                 start: new Date(budgetPeriodStart),
                                 end: new Date(budgetPeriodEnd),
                                 source: AnalyticsPath.fromString(`mip40/${mip40Budget.mip40Spn}/${wallet.address}`),
-                                value: lineItem.budgetCap,
+                                value: budgetPeriodStart !== null && budgetPeriodEnd !== null ? totalBudget : lineItem.budgetCap,
                                 unit: 'DAI',
                                 metric: AnalyticsMetric.Budget,
                                 dimensions: {
