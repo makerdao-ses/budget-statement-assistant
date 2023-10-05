@@ -17,15 +17,15 @@ class LineItemsScript {
 
     public insertInAnalyticsStore = async () => {
         const series = await this.createSeries();
-        console.log('created series', series[0].source.toString());
+        console.log('created series', series.length);
         const store = new AnalyticsStore(this.db);
         
-        // // clean old lineItem series
-        // await store.clearSeriesBySource(AnalyticsPath.fromString('expenseReportLineItems'));
+        // clean old lineItem series
+        await store.clearSeriesBySource(AnalyticsPath.fromString('expenseReportLineItems'));
 
-        // // insert new data
-        // const insertedSeries = await store.addSeriesValues(series);
-        // console.log('inserted series', insertedSeries.length);
+        // insert new data
+        const insertedSeries = await store.addSeriesValues(series);
+        console.log('inserted series', insertedSeries.length);
 
     }
 
