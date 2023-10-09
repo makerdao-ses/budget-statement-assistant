@@ -28,7 +28,6 @@ class SnapshotLineItemsScript {
 
         // exit the process
         process.exit();
-
     }
 
     private createSeries = async () => {

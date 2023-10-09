@@ -27,6 +27,8 @@ class LineItemsScript {
         const insertedSeries = await store.addSeriesValues(series);
         console.log('inserted series', insertedSeries.length);
 
+        // exit the process
+        process.exit();
     }
 
     private createSeries = async () => {

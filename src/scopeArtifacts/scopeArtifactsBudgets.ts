@@ -44,6 +44,8 @@ class BudgetScript {
         const insertedSeries = await store.addSeriesValues(series);
         console.log('Series added to DB: ', insertedSeries.length);
 
+        // exit the process
+        process.exit();
     }
 
     private createSeries = (budgets: any, budgetCaps: any) => {
