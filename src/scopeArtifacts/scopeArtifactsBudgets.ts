@@ -303,6 +303,4 @@ export default class BudgetScript {
         }
     }
 
-}
-
-new BudgetScript().insertInAnalyticsStore()
+};
