@@ -79,6 +79,4 @@ export default class SnapshotLineItemsScript {
 
         return result;
     }
-}
-
-new SnapshotLineItemsScript().insertInAnalyticsStore();
+};
