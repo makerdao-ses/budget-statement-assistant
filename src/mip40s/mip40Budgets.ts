@@ -7,8 +7,10 @@ import { eachMonthOfInterval } from "date-fns";
 export default class Mip40BudgetScript {
 
     db: any;
+    mip40Spn: string | undefined;
 
-    constructor() {
+    constructor(mip40Spn: string | undefined) {
+        this.mip40Spn = mip40Spn;
         this.db = knex({
             client: 'pg',
             connection: process.env.PG_CONNECTION_STRING,
@@ -16,23 +18,28 @@ export default class Mip40BudgetScript {
     }
 
     public insertInAnalyticsStore = async () => {
-
-
         const store = new AnalyticsStore(this.db);
         const series: any = await this.createSeries();
         console.log('Mip40 series created: ', series.length);
 
-        // clean old data from DB, 'atlasBudget/...' is the source of all budgets
-        await store.clearSeriesBySource(AnalyticsPath.fromString('powerhouse/legacy-api/mip40'));
+
+        let path = 'powerhouse/legacy-api/mip40';
+        if (this.mip40Spn) {
+            path = path + '/' + this.mip40Spn;
+        }
+        // clean old mip40 series
+        await store.clearSeriesBySource(AnalyticsPath.fromString(path));
 
         // insert new data
         const insertedSeries = await store.addSeriesValues(series);
         console.log('Mip40 series added to DB: ', insertedSeries.length);
-
     }
 
     private createSeries = async () => {
-        const mip40Budgets = await this.getMip40Budgets();
+        let mip40Budgets = await this.getMip40Budgets();
+        if (this.mip40Spn) {
+            mip40Budgets = mip40Budgets.filter((mip40Budget: any) => mip40Budget.mip40Spn === this.mip40Spn);
+        }
 
         const series: any = [];
 
@@ -157,6 +164,4 @@ export default class Mip40BudgetScript {
         const cu = await this.db('CoreUnit').where('id', cuId[0].cuId).select('code');
         return cu[0].code;
     }
-}
-
-new Mip40BudgetScript().insertInAnalyticsStore();
+};
