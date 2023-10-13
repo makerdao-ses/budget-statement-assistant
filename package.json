@@ -9,7 +9,6 @@
     "dev": "tsc-watch --onSuccess \"node build/budgetStatement/main.js\"",
     "scopes": "tsc && node build/scopeArtifacts/scopeArtifactsBudgets.js",
     "mip40s": "tsc && node build/mip40s/mip40Budgets.js",
-    "lineItems": "tsc && node build/expenseReportLineItems/lineItems.js",
     "snapshotLineItems": "tsc && node build/snapshotReportLineItems/snapshotLineItems.js",
     "generate-analytics": "npm run build && node build/utils/generateAnalytics.js",
     "build": "tsc",
