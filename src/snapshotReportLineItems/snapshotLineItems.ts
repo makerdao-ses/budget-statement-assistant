@@ -16,7 +16,7 @@ class SnapshotLineItemsScript {
 
     public insertInAnalyticsStore = async () => {
         const series = await this.createSeries();
-        console.log('created series', series.length);
+        console.log('Snapshot lineitems series created', series.length);
         const store = new AnalyticsStore(this.db);
 
         // clean old lineItem series
@@ -24,10 +24,8 @@ class SnapshotLineItemsScript {
 
         // insert new data
         const insertedSeries = await store.addSeriesValues(series);
-        console.log('inserted series', insertedSeries.length);
+        console.log('Snapshot lineitems inserted series', insertedSeries.length);
 
-        // exit the process
-        process.exit();
     }
 
     private createSeries = async () => {

@@ -23,14 +23,12 @@ class Mip40BudgetScript {
         console.log('Mip40 series created: ', series.length);
 
         // clean old data from DB, 'atlasBudget/...' is the source of all budgets
-        await store.clearSeriesBySource(AnalyticsPath.fromString('mip40'));
+        await store.clearSeriesBySource(AnalyticsPath.fromString('powerhouse/legacy-api/mip40'));
 
         // insert new data
         const insertedSeries = await store.addSeriesValues(series);
         console.log('Mip40 series added to DB: ', insertedSeries.length);
 
-        // exit the process
-        process.exit();
     }
 
     private createSeries = async () => {

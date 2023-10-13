@@ -35,17 +35,14 @@ class BudgetScript {
         const store = new AnalyticsStore(this.db);
 
         const series: any[] = this.createSeries(budgets, budgetCaps);
-        console.log('Series created: ', series.length)
+        console.log('Scope Artifacts Series created: ', series.length)
 
         // clean old data from DB, 'atlasBudget/...' is the source of all budgets
-        await store.clearSeriesBySource(AnalyticsPath.fromString('powerhouse'));
+        await store.clearSeriesBySource(AnalyticsPath.fromString('powerhouse/google-sheets'));
 
         // insert new data
         const insertedSeries = await store.addSeriesValues(series);
-        console.log('Series added to DB: ', insertedSeries.length);
-
-        // exit the process
-        process.exit();
+        console.log('Scope Artifacts Series added to DB: ', insertedSeries.length);
     }
 
     private createSeries = (budgets: any, budgetCaps: any) => {

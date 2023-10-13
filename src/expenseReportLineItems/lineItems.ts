@@ -17,7 +17,7 @@ class LineItemsScript {
 
     public insertInAnalyticsStore = async () => {
         const series = await this.createSeries();
-        console.log('created series', series.length);
+        console.log('Budget statement lineitems created series', series.length);
         const store = new AnalyticsStore(this.db);
 
         // clean old lineItem series
@@ -25,10 +25,8 @@ class LineItemsScript {
 
         // insert new data
         const insertedSeries = await store.addSeriesValues(series);
-        console.log('inserted series', insertedSeries.length);
+        console.log('Budget statement lineitems inserted series', insertedSeries.length);
 
-        // exit the process
-        process.exit();
     }
 
     private createSeries = async () => {
