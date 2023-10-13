@@ -7,8 +7,10 @@ import knex from 'knex';
 export default class LineItemsScript {
 
     db: any;
+    budgetStatementId: number | undefined;
 
-    constructor() {
+    constructor(budgetStatementId: number | undefined) {
+        this.budgetStatementId = budgetStatementId;
         this.db = knex({
             client: 'pg',
             connection: process.env.PG_CONNECTION_STRING,
@@ -17,15 +19,19 @@ export default class LineItemsScript {
 
     public insertInAnalyticsStore = async () => {
         const series = await this.createSeries();
-        console.log('Budget statement lineitems created series', series.length);
+        console.log('Budget statement lineitems series created: ', series.length);
         const store = new AnalyticsStore(this.db);
 
         // clean old lineItem series
-        await store.clearSeriesBySource(AnalyticsPath.fromString('powerhouse/legacy-api/budget-statements'));
+        let path = 'powerhouse/legacy-api/budget-statements';
+        if (this.budgetStatementId) {
+            path = path + '/' + this.budgetStatementId;
+        }
+        await store.clearSeriesBySource(AnalyticsPath.fromString(path));
 
         // insert new data
         const insertedSeries = await store.addSeriesValues(series);
-        console.log('Budget statement lineitems inserted series', insertedSeries.length);
+        console.log('Succesfully inserted in DB', insertedSeries.length);
 
     }
 
@@ -71,8 +77,15 @@ export default class LineItemsScript {
 
 
     private getLineItems = async () => {
-        const lineItems = await this.db('BudgetStatementLineItem').where('actual', '>', 0).select('*');
-        return lineItems;
+        const baseQuery = this.db('BudgetStatementLineItem')
+            .join('BudgetStatementWallet', 'BudgetStatementWallet.id', 'BudgetStatementLineItem.budgetStatementWalletId')
+            .where('BudgetStatementLineItem.actual', '>', 0)
+            .select('BudgetStatementLineItem.*');
+
+        if (this.budgetStatementId) {
+            baseQuery.where('BudgetStatementWallet.budgetStatementId', this.budgetStatementId);
+        }
+        return await baseQuery;
     }
 
     private getOwner = async (budgetStatementWalletId: string) => {
@@ -94,6 +107,4 @@ export default class LineItemsScript {
         }
     }
 
-}
-
-new LineItemsScript().insertInAnalyticsStore();
+};
