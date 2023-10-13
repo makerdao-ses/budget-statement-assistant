@@ -11,6 +11,7 @@
     "mip40s": "tsc && node build/mip40s/mip40Budgets.js",
     "lineItems": "tsc && node build/expenseResportLineItems/lineItems.js",
     "snapshotLineItems": "tsc && node build/snapshotReportLineItems/snapshotLineItems.js",
+    "generate-analytics": "npm run build && node build/utils/generateAnalytics.js",
     "build": "tsc",
     "test": "jest -c ./jest.config.js --watchAll"
   },
