@@ -4,7 +4,7 @@ import { AnalyticsStore } from "../utils/analytics/AnalyticsStore.js"
 import knex from 'knex';
 
 
-class LineItemsScript {
+export default class LineItemsScript {
 
     db: any;
 

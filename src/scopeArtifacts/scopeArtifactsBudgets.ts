@@ -19,7 +19,7 @@ type Budget = {
     budgetCode?: string,
 }
 
-class BudgetScript {
+export default class BudgetScript {
 
     db: any;
 

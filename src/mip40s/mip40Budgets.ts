@@ -4,7 +4,7 @@ import { AnalyticsStore } from "../utils/analytics/AnalyticsStore.js"
 import knex from 'knex';
 import { eachMonthOfInterval } from "date-fns";
 
-class Mip40BudgetScript {
+export default class Mip40BudgetScript {
 
     db: any;
 

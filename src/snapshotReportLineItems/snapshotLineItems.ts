@@ -3,7 +3,7 @@ import { AnalyticsMetric } from "../utils/analytics/AnalyticsQuery.js";
 import { AnalyticsStore } from "../utils/analytics/AnalyticsStore.js";
 import knex from 'knex';
 
-class SnapshotLineItemsScript {
+export default class SnapshotLineItemsScript {
 
     db: any;
 
