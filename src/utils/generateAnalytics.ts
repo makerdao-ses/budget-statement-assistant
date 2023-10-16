@@ -38,6 +38,12 @@ export async function generateAnalytics(path?: string,) {
             await googleSheetsScript.insertInAnalyticsStore();
             console.log('we have chose google sheets');
             break;
+        case 'powerhouse':
+            await new BudgetScript().insertInAnalyticsStore();
+            await new Mip40BudgetScript(undefined).insertInAnalyticsStore();
+            await new LineItemsScript(undefined).insertInAnalyticsStore();
+            await new SnapshotLineItemsScript().insertInAnalyticsStore();
+            break;
         default:
             console.error(
                 'Invalid path, make sure to choose one of the following: budget-statements, mip40, snapshot-reports, google-sheets'
@@ -52,7 +58,7 @@ export async function generateAnalytics(path?: string,) {
 
 const getSelectedPath = (segments: string[]) => {
     return segments.find((segment) => {
-        return segment === 'budget-statements' || segment === 'mip40' || segment === 'snapshot-reports' || segment === 'google-sheets'
+        return segment === 'budget-statements' || segment === 'mip40' || segment === 'snapshot-reports' || segment === 'google-sheets' || segment === 'powerhouse'
     })
 }
 
