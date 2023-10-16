@@ -25,7 +25,6 @@ export async function generateAnalytics(path?: string,) {
             if (segments[segments.length - 1] !== 'mip40' && typeof segments[segments.length - 1] === 'string') {
                 mip40PathParameter = segments[segments.length - 1];
             }
-            console.log(mip40PathParameter);
             const mip40Script = new Mip40BudgetScript(mip40PathParameter);
             await mip40Script.insertInAnalyticsStore();
             break;
@@ -36,7 +35,6 @@ export async function generateAnalytics(path?: string,) {
         case 'google-sheets':
             const googleSheetsScript = new BudgetScript();
             await googleSheetsScript.insertInAnalyticsStore();
-            console.log('we have chose google sheets');
             break;
         case 'powerhouse':
             await new BudgetScript().insertInAnalyticsStore();
