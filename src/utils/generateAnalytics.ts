@@ -55,8 +55,11 @@ export async function generateAnalytics(path?: string,) {
 }
 
 const getSelectedPath = (segments: string[]) => {
+    if (segments[0] !== 'powerhouse') {
+        return null;
+    }
     return segments.find((segment) => {
-        return segment === 'budget-statements' || segment === 'mip40' || segment === 'snapshot-reports' || segment === 'google-sheets' || segment === 'powerhouse'
+        return segment === 'budget-statements' || segment === 'mip40' || segment === 'snapshot-reports' || segment === 'google-sheets' || (segment === 'powerhouse' && segments.length === 1)
     })
 }
 
