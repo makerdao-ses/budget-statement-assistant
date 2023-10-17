@@ -40,7 +40,7 @@ export default class SnapshotLineItemsScript {
             const serie = {
                 start: snapshot.timestamp,
                 end: null,
-                source: AnalyticsPath.fromString(`powerhouse/legacy-api/snapshot-reports/${snapshot.id}`),
+                source: AnalyticsPath.fromString(`powerhouse/legacy-api/snapshot-reports/${snapshot.snapshotId}`),
                 unit: snapshot.token,
                 value: snapshot.amount,
                 metric: AnalyticsMetric.PaymentsOnChain,
