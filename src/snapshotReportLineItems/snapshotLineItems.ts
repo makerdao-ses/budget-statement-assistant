@@ -6,8 +6,10 @@ import knex from 'knex';
 export default class SnapshotLineItemsScript {
 
     db: any;
+    snapshotId: number | undefined;
 
-    constructor() {
+    constructor(snapshotId: number | undefined) {
+        this.snapshotId = snapshotId;
         this.db = knex({
             client: 'pg',
             connection: process.env.PG_CONNECTION_STRING,
@@ -71,12 +73,16 @@ export default class SnapshotLineItemsScript {
     }
 
     private getSnapshotLineItems = async () => {
-        const result = await this.db('Snapshot')
+        const baseQuery = this.db('Snapshot')
             .join('SnapshotAccount', 'SnapshotAccount.snapshotId', 'Snapshot.id')
             .join('SnapshotAccountTransaction', 'SnapshotAccountTransaction.snapshotAccountId', 'SnapshotAccount.id')
             .where('SnapshotAccount.accountType', 'singular')
             .where('SnapshotAccount.offChain', false);
 
-        return result;
+        if (this.snapshotId) {
+            baseQuery.where('Snapshot.id', this.snapshotId);
+        }
+
+        return await baseQuery;
     }
 };

@@ -29,7 +29,11 @@ export async function generateAnalytics(path?: string,) {
             await mip40Script.insertInAnalyticsStore();
             break;
         case 'snapshot-reports':
-            const snapshotScript = new SnapshotLineItemsScript();
+            let snapshotPathParameter = undefined;
+            if (!isNaN(Number(segments[segments.length - 1]))) {
+                snapshotPathParameter = Number(segments[segments.length - 1]);
+            }
+            const snapshotScript = new SnapshotLineItemsScript(snapshotPathParameter);
             await snapshotScript.insertInAnalyticsStore();
             break;
         case 'google-sheets':
@@ -40,7 +44,7 @@ export async function generateAnalytics(path?: string,) {
             await new BudgetScript().insertInAnalyticsStore();
             await new Mip40BudgetScript(undefined).insertInAnalyticsStore();
             await new LineItemsScript(undefined).insertInAnalyticsStore();
-            await new SnapshotLineItemsScript().insertInAnalyticsStore();
+            await new SnapshotLineItemsScript(undefined).insertInAnalyticsStore();
             break;
         default:
             console.error(
