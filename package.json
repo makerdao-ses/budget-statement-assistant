@@ -6,6 +6,7 @@
   "type": "module",
   "scripts": {
     "budgetDocument": "tsc && node build/budgetStatement/main.js",
+    "scopes": "tsc && node build/scopeArtifacts/scopeArtifactsBudgets.js",
     "dev": "tsc-watch --onSuccess \"node build/budgetStatement/main.js\"",
     "generate-analytics": "node build/utils/generateAnalytics.js",
     "build": "tsc",

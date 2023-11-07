@@ -17,6 +17,8 @@ type Budget = {
     name: string,
     code: string | null,
     budgetCode?: string,
+    image: string | null,
+    description: string | null,
 }
 
 export default class BudgetScript {
@@ -230,6 +232,8 @@ export default class BudgetScript {
                     parentId: parentId,
                     name: name,
                     code: code,
+                    description: obj[key]['Budget Description'],
+                    image: null
                 }
 
                 if (withBudgetCodes) {
