@@ -77,13 +77,22 @@ export default class BudgetScript {
                         metric: AnalyticsMetric.Budget,
                         fn: fn,
                         dimensions: {
-                            budget: AnalyticsPath.fromString(budget.budgetCode || '')
+                            budget: AnalyticsPath.fromString(this.getCode(budget.budgetCode) || '')
                         }
                     });
                 });
             }
         });
         return series;
+    }
+
+    getCode = (budgetCode: string) => {
+        // check if code contains 'atlas' if it does, return the code without 'atlas'
+        if (budgetCode.includes('atlas')) {
+            return budgetCode.replace('atlas', '');
+        } else {
+            return budgetCode;
+        }
     }
 
     public insertBudgetsInDB = async () => {
