@@ -33,14 +33,15 @@ export default class BudgetScript {
     }
 
     public insertInAnalyticsStore = async () => {
-        const { budgets, budgetCaps } = await this.getBudgetData(true);
-        const store = new AnalyticsStore(this.db);
+        const { budgets, budgetCaps } = await this.getBudgetData();
+        this.addBudgetPaths(budgets, null, "", "");
 
         const series: any[] = this.createSeries(budgets, budgetCaps);
         console.log('Scope Artifacts Series created: ', series.length)
 
-        // clean old data from DB, 'atlasBudget/...' is the source of all budgets
-        await store.clearSeriesBySource(AnalyticsPath.fromString('powerhouse/google-sheets'));
+        const store = new AnalyticsStore(this.db);
+        await store.clearSeriesBySource(AnalyticsPath.fromString('powerhouse/google-sheets'), true);
+        console.log('Removed old Scope Artifacts Series from DB')
 
         // insert new data
         const insertedSeries = await store.addSeriesValues(series);
@@ -68,7 +69,7 @@ export default class BudgetScript {
             if (selectedBudgetCaps.length > 0) {
                 selectedBudgetCaps.forEach((budgetCap: any) => {
                     const fn = budgetCap.start !== null && budgetCap.end !== null ? 'DssVest' : 'Single';
-                    series.push({
+                    let serie: any = {
                         start: budgetCap.start,
                         end: budgetCap.end,
                         source: budgetSource,
@@ -77,21 +78,52 @@ export default class BudgetScript {
                         metric: AnalyticsMetric.Budget,
                         fn: fn,
                         dimensions: {
-                            budget: AnalyticsPath.fromString(this.getCode(budget.budgetCode) || '')
+                            budget: AnalyticsPath.fromString(budget.codePath),
                         }
-                    });
+                    }
+                    // needs to expand char varying length in db to add image and description
+                    // if (budget.image) {
+                    //     serie = {
+                    //         ...serie,
+                    //         dimensions: {
+                    //             ...serie.dimensions,
+                    //             image: AnalyticsPath.fromString(budget.image),
+                    //         }
+                    //     }
+                    // }
+                    // if (budget.description) {
+                    //     serie = {
+                    //         ...serie,
+                    //         dimensions: {
+                    //             ...serie.dimensions,
+                    //             description: AnalyticsPath.fromString(budget.description),
+                    //         }
+                    //     }
+                    // }
+                    series.push(serie);
                 });
             }
         });
         return series;
     }
 
-    getCode = (budgetCode: string) => {
-        // check if code contains 'atlas' if it does, return the code without 'atlas'
-        if (budgetCode.includes('atlas')) {
-            return budgetCode.replace('atlas', '');
-        } else {
-            return budgetCode;
+    addBudgetPaths(
+        budgets: any[],
+        parentId: number | string | null,
+        idPath: string,
+        codePath: string,
+    ) {
+        for (const budget of budgets) {
+            if (budget.parentId == parentId) {
+                budget.idPath = idPath + budget.id;
+                budget.codePath = codePath + (budget.code || "");
+                this.addBudgetPaths(
+                    budgets,
+                    budget.id,
+                    budget.idPath + "/",
+                    budget.codePath + "/",
+                );
+            }
         }
     }
 
@@ -101,7 +133,7 @@ export default class BudgetScript {
         await this.db('Budget').del().returning('*');
         console.log('Deleted all budgets and budget caps from DB');
 
-        const { budgets, budgetCaps } = await this.getBudgetData(false);
+        const { budgets, budgetCaps } = await this.getBudgetData();
         // Inserting budgets
         const insertedBudgets = await this.db('Budget').insert(budgets).returning('*');
         console.log('Inserted budgets: ', insertedBudgets.length);
@@ -112,17 +144,17 @@ export default class BudgetScript {
     }
 
     public async saveToJSON() {
-        const { budgets, budgetCaps } = await this.getBudgetData(false);
+        const { budgets, budgetCaps } = await this.getBudgetData();
         this.saveToJson(budgets, 'budgets');
         this.saveToJson(budgetCaps, 'budgetCaps');
     }
 
-    private getBudgetData = async (withBudgetCodes: boolean) => {
+    private getBudgetData = async () => {
         let budgets: any = [];
         let budgetCaps: any = [];
 
         const structuredData = this.structureData(scopeArtifacts);
-        await this.processObject(structuredData, null, budgets, budgetCaps, withBudgetCodes);
+        await this.processObject(structuredData, null, budgets, budgetCaps);
         return { budgets, budgetCaps };
     };
 
@@ -216,7 +248,7 @@ export default class BudgetScript {
     }
 
     // Recursively processes the structured data and adds budgets and budget caps to the arrays
-    private async processObject(obj: any, parentId: any, budgets: any[], budgetCaps: any[], withBudgetCodes: boolean) {
+    private async processObject(obj: any, parentId: any, budgets: any[], budgetCaps: any[]) {
 
         for (let key in obj) {
             if (typeof obj[key] === 'object' && obj[key] != null) {
@@ -242,15 +274,9 @@ export default class BudgetScript {
                     name: name,
                     code: code,
                     description: obj[key]['Budget Description'],
-                    image: null
+                    image: obj[key]['Image']
                 }
 
-                if (withBudgetCodes) {
-                    budget = {
-                        ...budget,
-                        budgetCode: obj[key]['Budget Codes'],
-                    }
-                }
 
                 if (!sameBudget) {
                     budgets.push(budget);
@@ -311,7 +337,7 @@ export default class BudgetScript {
                     });
                 }
 
-                this.processObject(obj[key], id, budgets, budgetCaps, withBudgetCodes);
+                this.processObject(obj[key], id, budgets, budgetCaps);
             }
         }
     }
