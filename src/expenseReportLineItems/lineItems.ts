@@ -27,7 +27,7 @@ export default class LineItemsScript {
         if (this.budgetStatementId) {
             path = path + '/' + this.budgetStatementId;
         }
-        await store.clearSeriesBySource(AnalyticsPath.fromString(path));
+        await store.clearSeriesBySource(AnalyticsPath.fromString(path), true);
 
         // insert new data
         const insertedSeries = await store.addSeriesValues(series);

@@ -28,7 +28,7 @@ export default class Mip40BudgetScript {
             path = path + '/' + this.mip40Spn;
         }
         // clean old mip40 series
-        await store.clearSeriesBySource(AnalyticsPath.fromString(path));
+        await store.clearSeriesBySource(AnalyticsPath.fromString(path), true);
 
         // insert new data
         const insertedSeries = await store.addSeriesValues(series);
