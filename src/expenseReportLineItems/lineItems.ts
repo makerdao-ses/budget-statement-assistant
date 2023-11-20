@@ -39,10 +39,27 @@ export default class LineItemsScript {
         const lineItems = await this.getLineItems();
         const series: any = [];
 
+        let addedFteMonths = new Set<string>();
         for (let i = 0; i < lineItems.length; i++) {
             const lineItem = lineItems[i];
             const headCount = lineItem.headcountExpense ? 'headcount' : 'non-headcount';
-            const { code, ownerType, budgetStatementId, wallet } = await this.getOwner(lineItem.budgetStatementWalletId) as any;
+            const { code, ownerType, budgetStatementId, wallet, ftes } = await this.getOwner(lineItem.budgetStatementWalletId) as any;
+            if (ftes && !addedFteMonths.has(lineItem.month.toISOString())) {
+                const fteSerie = {
+                    start: new Date(lineItem.month),
+                    end: null,
+                    source: AnalyticsPath.fromString(`powerhouse/legacy-api/budget-statements/${budgetStatementId}`),
+                    value: ftes,
+                    unit: 'FTE',
+                    metric: AnalyticsMetric.FTEs,
+                    dimensions: {
+                        budget: AnalyticsPath.fromString(`atlas/${this.getBudgetType(ownerType, code)}`),
+                        category: AnalyticsPath.fromString(`atlas/${headCount}/${lineItem.canonicalBudgetCategory}`),
+                    }
+                }
+                series.push(fteSerie);
+                addedFteMonths.add(lineItem.month.toISOString());
+            }
             const serie = {
                 start: new Date(lineItem.month),
                 end: null,
@@ -92,7 +109,8 @@ export default class LineItemsScript {
         const result = await this.db('BudgetStatementWallet').where('BudgetStatementWallet.id', budgetStatementWalletId)
             .join('BudgetStatement', 'BudgetStatement.id', 'BudgetStatementWallet.budgetStatementId')
             .join('CoreUnit', 'CoreUnit.id', 'BudgetStatement.ownerId')
-            .select('CoreUnit.code', 'CoreUnit.type', 'BudgetStatementWallet.budgetStatementId', 'BudgetStatementWallet.address');
+            .join('BudgetStatementFtes', 'BudgetStatementFtes.budgetStatementId', 'BudgetStatement.id')
+            .select('CoreUnit.code', 'CoreUnit.type', 'BudgetStatementWallet.budgetStatementId', 'BudgetStatementWallet.address', 'BudgetStatementFtes.ftes');
         if (result.length === 0) {
             const bStatement = await this.db('BudgetStatementWallet').where('BudgetStatementWallet.id', budgetStatementWalletId).select('budgetStatementId', 'address');
             return { code: 'Delegates', ownerType: 'Delegates', budgetStatementId: bStatement[0].budgetStatementId, wallet: bStatement[0].address };
@@ -101,7 +119,8 @@ export default class LineItemsScript {
                 code: result[0].code,
                 ownerType: result[0].type,
                 budgetStatementId: result[0].budgetStatementId,
-                wallet: result[0].address
+                wallet: result[0].address,
+                ftes: result[0].ftes
             }
 
         }
