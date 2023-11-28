@@ -36,7 +36,7 @@ export default class LineItemsScript {
     }
 
     private createSeries = async () => {
-        const lineItems = await this.getLineItems();
+        const lineItems = await this.getAllLineItems();
         const series: any = [];
 
         let addedFteMonths = new Set<string>();
@@ -44,6 +44,9 @@ export default class LineItemsScript {
             const lineItem = lineItems[i];
             const headCount = lineItem.headcountExpense ? 'headcount' : 'non-headcount';
             const { code, ownerType, budgetStatementId, wallet, ftes } = await this.getOwner(lineItem.budgetStatementWalletId) as any;
+
+            // UTCing the date to avoid timezone issues
+            lineItem.month = new Date(Date.UTC(lineItem.month.getFullYear(), lineItem.month.getMonth(), lineItem.month.getDate()));
             if (ftes && !addedFteMonths.has(lineItem.month.toISOString())) {
                 const fteSerie = {
                     start: new Date(lineItem.month),
@@ -64,7 +67,7 @@ export default class LineItemsScript {
                 end: null,
                 source: AnalyticsPath.fromString(`powerhouse/legacy-api/budget-statements/${budgetStatementId}`),
                 unit: lineItem.currency,
-                value: lineItem.actual,
+                value: lineItem.actual || 0,
                 metric: AnalyticsMetric.Actuals,
                 dimensions: {
                     budget: AnalyticsPath.fromString(`atlas/${this.getBudgetType(ownerType, code)}`),
@@ -92,16 +95,14 @@ export default class LineItemsScript {
     }
 
 
-    private getLineItems = async () => {
-        const baseQuery = this.db('BudgetStatementLineItem')
+    private getAllLineItems = async () => {
+        const query = this.db('BudgetStatementLineItem')
             .join('BudgetStatementWallet', 'BudgetStatementWallet.id', 'BudgetStatementLineItem.budgetStatementWalletId')
-            .where('BudgetStatementLineItem.actual', '>', 0)
             .select('BudgetStatementLineItem.*');
-
         if (this.budgetStatementId) {
-            baseQuery.where('BudgetStatementWallet.budgetStatementId', this.budgetStatementId);
+            query.where('BudgetStatementWallet.budgetStatementId', this.budgetStatementId);
         }
-        return await baseQuery;
+        return await query;
     }
 
     private getOwner = async (budgetStatementWalletId: string) => {
