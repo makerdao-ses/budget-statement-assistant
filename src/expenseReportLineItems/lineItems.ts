@@ -98,6 +98,10 @@ export default class LineItemsScript {
     private getAllLineItems = async () => {
         const query = this.db('BudgetStatementLineItem')
             .join('BudgetStatementWallet', 'BudgetStatementWallet.id', 'BudgetStatementLineItem.budgetStatementWalletId')
+            .join("BudgetStatement", {
+                "BudgetStatementWallet.budgetStatementId": "BudgetStatement.id",
+                "BudgetStatementLineItem.month": "BudgetStatement.month",
+            })
             .select('BudgetStatementLineItem.*');
         if (this.budgetStatementId) {
             query.where('BudgetStatementWallet.budgetStatementId', this.budgetStatementId);
