@@ -8,3 +8,4 @@ savedDocuments
 budgetCaps.json
 budgets.json
 /coverage
+.vscode
