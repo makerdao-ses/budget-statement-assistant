@@ -77,33 +77,28 @@ export default class LineItemsScript {
 
         // add forecasts
         const forcastLineItems = await this.getAllForecastsLineItems();
-        // const forecastSeries = [];
         for (let i = 0; i < forcastLineItems.length; i++) {
-            const lineItem = forcastLineItems[i];
-            const headCount = lineItem.headcountExpense ? 'headcount' : 'non-headcount';
-            const { code, ownerType, wallet } = (await this.getOwner(lineItem.budgetStatementWalletId)) as any;
-
-            // UTCing the date to avoid timezone issues
-            lineItem.month = new Date(Date.UTC(lineItem.BSLI_month.getFullYear(), lineItem.BSLI_month.getMonth(), lineItem.BSLI_month.getDate()));
-            const basePath = `powerhouse/legacy-api/budget-statements/${lineItem.address}/${lineItem.month.toISOString().substring(0, 10)}`;
+            const { BSLI_month, BS_month, address, group, canonicalBudgetCategory, currency, forecast, ownerType, ownerCode, headcountExpense } = forcastLineItems[i];
+            const headCount = headcountExpense ? 'headcount' : 'non-headcount';
+            const basePath = `powerhouse/legacy-api/budget-statements/${address}/${BSLI_month.toISOString().substring(0, 10)}`;
             const serie = {
-                start: new Date(lineItem.month),
-                bsMonth: new Date(lineItem.BS_month),
+                start: BSLI_month,
+                bsMonth: BS_month,
                 end: null,
-                source: AnalyticsPath.fromString(`${basePath}/${lineItem.group ? lineItem.group + '/' : ''}${lineItem.canonicalBudgetCategory ?? ''}`),
-                unit: lineItem.currency,
-                value: lineItem.forecast || 0,
+                source: AnalyticsPath.fromString(`${basePath}${group ? `/${group}` : '/'}${canonicalBudgetCategory ? `/${canonicalBudgetCategory}` : `/`}`),
+                unit: currency,
+                value: forecast || 0,
                 metric: AnalyticsMetric.Forecast,
                 dimensions: {
-                    budget: AnalyticsPath.fromString(`atlas/${this.getBudgetType(ownerType, code)}`),
-                    category: AnalyticsPath.fromString(`atlas/${headCount}/${lineItem.canonicalBudgetCategory}`),
-                    wallet: AnalyticsPath.fromString(`atlas/${wallet}`),
-                    project: AnalyticsPath.fromString(`${lineItem.group}`),
+                    budget: AnalyticsPath.fromString(`atlas/${this.getBudgetType(ownerType, ownerCode)}`),
+                    category: AnalyticsPath.fromString(`atlas/${headCount}/${canonicalBudgetCategory}`),
+                    wallet: AnalyticsPath.fromString(`atlas/${address}`),
+                    project: AnalyticsPath.fromString(`${group}`),
                 },
             };
 
             // skip if there is already a series with the same source and later reported forecasts
-            if (series.filter((s: any) => s.source.toString().indexOf(basePath) !== -1 && s.bsMonth > lineItem.BS_month).length > 0) {
+            if (series.filter((s: any) => s.source.toString().indexOf(basePath) !== -1 && s.bsMonth > serie.bsMonth).length > 0) {
                 continue;
             }
 
