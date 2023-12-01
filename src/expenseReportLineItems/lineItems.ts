@@ -85,10 +85,12 @@ export default class LineItemsScript {
 
             // UTCing the date to avoid timezone issues
             lineItem.month = new Date(Date.UTC(lineItem.BSLI_month.getFullYear(), lineItem.BSLI_month.getMonth(), lineItem.BSLI_month.getDate()));
+            const basePath = `powerhouse/legacy-api/budget-statements/${lineItem.address}/${lineItem.month.toISOString().substring(0, 10)}`;
             const serie = {
                 start: new Date(lineItem.month),
+                bsMonth: new Date(lineItem.BS_month),
                 end: null,
-                source: AnalyticsPath.fromString(`powerhouse/legacy-api/budget-statements/${lineItem.address}/${lineItem.month.toISOString().substring(0, 10)}/${lineItem.group ? lineItem.group + '/' : ''}${lineItem.canonicalBudgetCategory ?? ''}`),
+                source: AnalyticsPath.fromString(`${basePath}/${lineItem.group ? lineItem.group + '/' : ''}${lineItem.canonicalBudgetCategory ?? ''}`),
                 unit: lineItem.currency,
                 value: lineItem.forecast || 0,
                 metric: AnalyticsMetric.Forecast,
@@ -100,7 +102,8 @@ export default class LineItemsScript {
                 },
             };
 
-            if (series.filter((s: any) => s.source.toString() === serie.source.toString()).length > 0) {
+            // skip if there is already a series with the same source and later reported forecasts
+            if (series.filter((s: any) => s.source.toString().indexOf(basePath) !== -1 && s.bsMonth > lineItem.BS_month).length > 0) {
                 continue;
             }
 
