@@ -170,7 +170,7 @@ export default class BudgetScript {
     // Structures the budgets data in a hierarchical way
     private structureData(data: any) {
         let hierarchy: any = {};
-        let currentL0: string = "", currentL1: string = "", currentL2: string = "", currentL3: string = "", currentL4: string = "";
+        let currentL0: string = "", currentL1: string = "", currentL2: string = "", currentL3: string = "", currentL4: string = "", currentL5: string = "";
 
         // Filter out empty objects
         data = data.filter((item: any) => {
@@ -208,7 +208,6 @@ export default class BudgetScript {
                     hierarchy[currentL0][currentL1][currentL2][currentL3] = {};
                     counter = 0;
                 }
-                // count the duplicate L3s
                 hierarchy[currentL0][currentL1][currentL2][currentL3][item.L3 + counter++] = item;
 
             }
@@ -219,6 +218,16 @@ export default class BudgetScript {
                 if (!hierarchy[currentL0][currentL1][currentL2]) hierarchy[currentL0][currentL1][currentL2] = {};
                 if (!hierarchy[currentL0][currentL1][currentL2][currentL3]) hierarchy[currentL0][currentL1][currentL2][currentL3] = {};
                 hierarchy[currentL0][currentL1][currentL2][currentL3][currentL4] = item;
+            }
+
+            if(item.L5) {
+                currentL5 = item.L5;
+                if (!hierarchy[currentL0]) hierarchy[currentL0] = {};
+                if (!hierarchy[currentL0][currentL1]) hierarchy[currentL0][currentL1] = {};
+                if (!hierarchy[currentL0][currentL1][currentL2]) hierarchy[currentL0][currentL1][currentL2] = {};
+                if (!hierarchy[currentL0][currentL1][currentL2][currentL3]) hierarchy[currentL0][currentL1][currentL2][currentL3] = {};
+                if (!hierarchy[currentL0][currentL1][currentL2][currentL3][currentL4]) hierarchy[currentL0][currentL1][currentL2][currentL3][currentL4] = {};
+                hierarchy[currentL0][currentL1][currentL2][currentL3][currentL4][currentL5] = item;
             }
 
         });
