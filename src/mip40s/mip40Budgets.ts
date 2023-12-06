@@ -1,5 +1,4 @@
 import { AnalyticsPath } from "../utils/analytics/AnalyticsPath.js"
-import { AnalyticsMetric } from "../utils/analytics/AnalyticsQuery.js"
 import { AnalyticsStore } from "../utils/analytics/AnalyticsStore.js"
 import knex from 'knex';
 import { eachMonthOfInterval } from "date-fns";
@@ -31,8 +30,8 @@ export default class Mip40BudgetScript {
         await store.clearSeriesBySource(AnalyticsPath.fromString(path), true);
 
         // insert new data
-        const insertedSeries = await store.addSeriesValues(series);
-        console.log('Mip40 series added to DB: ', insertedSeries.length);
+        await store.addSeriesValues(series);
+        console.log('Mip40 series added to DB');
     }
 
     private createSeries = async () => {
@@ -63,7 +62,7 @@ export default class Mip40BudgetScript {
                             source,
                             unit: 'MKR',
                             value: 0,
-                            metric: AnalyticsMetric.Budget,
+                            metric: 'Budget',
                             dimensions: {
                                 budget: AnalyticsPath.fromString(`atlas/legacy/core-units/${cuCode}`),
                                 wallet: AnalyticsPath.fromString(`atlas/${wallet.name}`),
@@ -87,7 +86,7 @@ export default class Mip40BudgetScript {
                                 source,
                                 value: budgetPeriodStart !== null && budgetPeriodEnd !== null ? totalBudget : lineItem.budgetCap,
                                 unit: 'DAI',
-                                metric: AnalyticsMetric.Budget,
+                                metric: 'Budget',
                                 dimensions: {
                                     budget: AnalyticsPath.fromString(`atlas/legacy/core-units/${cuCode}`),
                                     category: AnalyticsPath.fromString(`atlas/${headCount}/mip40/${mip40Budget.mip40Spn}/${wallet.address}/${lineItem.budgetCategory}`),

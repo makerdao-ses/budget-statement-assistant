@@ -1,5 +1,4 @@
 import { AnalyticsPath } from '../utils/analytics/AnalyticsPath.js';
-import { AnalyticsMetric } from '../utils/analytics/AnalyticsQuery.js';
 import { AnalyticsStore } from '../utils/analytics/AnalyticsStore.js';
 import knex, { Knex } from 'knex';
 
@@ -28,8 +27,8 @@ export default class LineItemsScript {
         await store.clearSeriesBySource(AnalyticsPath.fromString(path), true);
 
         // insert new data
-        const insertedSeries = await store.addSeriesValues(series);
-        console.log('Succesfully inserted in DB', insertedSeries.length);
+        await store.addSeriesValues(series);
+        console.log('Succesfully inserted in DB');
     };
 
     private createSeries = async () => {
@@ -49,7 +48,7 @@ export default class LineItemsScript {
                     end: null,
                     source: AnalyticsPath.fromString(`powerhouse/legacy-api/budget-statements/${budgetStatementId}`),
                     value: ftes,
-                    metric: AnalyticsMetric.FTEs,
+                    metric: 'FTEs',
                     dimensions: {
                         budget: AnalyticsPath.fromString(`atlas/${this.getBudgetType(ownerType, code)}`),
                         category: AnalyticsPath.fromString(`atlas/${headCount}/${lineItem.canonicalBudgetCategory}`),
@@ -64,7 +63,7 @@ export default class LineItemsScript {
                 source: AnalyticsPath.fromString(`powerhouse/legacy-api/budget-statements/${budgetStatementId}`),
                 unit: lineItem.currency,
                 value: lineItem.actual || 0,
-                metric: AnalyticsMetric.Actuals,
+                metric: 'Actuals',
                 dimensions: {
                     budget: AnalyticsPath.fromString(`atlas/${this.getBudgetType(ownerType, code)}`),
                     category: AnalyticsPath.fromString(`atlas/${headCount}/${lineItem.canonicalBudgetCategory}`),
@@ -88,7 +87,7 @@ export default class LineItemsScript {
                 source: AnalyticsPath.fromString(`${basePath}${group ? `/${group}` : '/'}${canonicalBudgetCategory ? `/${canonicalBudgetCategory}` : `/`}`),
                 unit: currency,
                 value: forecast || 0,
-                metric: AnalyticsMetric.Forecast,
+                metric: 'Forecast',
                 dimensions: {
                     budget: AnalyticsPath.fromString(`atlas/${this.getBudgetType(ownerType, ownerCode)}`),
                     category: AnalyticsPath.fromString(`atlas/${headCount}/${canonicalBudgetCategory}`),

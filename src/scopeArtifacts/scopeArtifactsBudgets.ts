@@ -3,8 +3,6 @@ import fs from 'fs';
 import knex from 'knex';
 import { AnalyticsStore } from '../utils/analytics/AnalyticsStore.js';
 import { AnalyticsPath } from '../utils/analytics/AnalyticsPath.js';
-import { AnalyticsMetric } from '../utils/analytics/AnalyticsQuery.js';
-
 
 /* 
 This script is used to insert budgets and budget caps in the DB or to save them to a JSON file
@@ -44,8 +42,8 @@ export default class BudgetScript {
         console.log('Removed old Scope Artifacts Series from DB')
 
         // insert new data
-        const insertedSeries = await store.addSeriesValues(series);
-        console.log('Scope Artifacts Series added to DB: ', insertedSeries.length);
+        await store.addSeriesValues(series);
+        console.log('Scope Artifacts Series added to DB:');
     }
 
     private createSeries = (budgets: any, budgetCaps: any) => {
@@ -75,7 +73,7 @@ export default class BudgetScript {
                         source: budgetSource,
                         value: budgetCap.amount,
                         unit: budgetCap.currency,
-                        metric: AnalyticsMetric.Budget,
+                        metric: "Budget",
                         fn: fn,
                         dimensions: {
                             budget: AnalyticsPath.fromString(budget.codePath),

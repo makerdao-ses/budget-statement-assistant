@@ -1,5 +1,4 @@
 import { AnalyticsPath } from "../utils/analytics/AnalyticsPath.js";
-import { AnalyticsMetric } from "../utils/analytics/AnalyticsQuery.js";
 import { AnalyticsStore } from "../utils/analytics/AnalyticsStore.js";
 import knex from 'knex';
 
@@ -25,8 +24,8 @@ export default class SnapshotLineItemsScript {
         await store.clearSeriesBySource(AnalyticsPath.fromString('powerhouse/legacy-api/snapshot-reports'), true);
 
         // insert new data
-        const insertedSeries = await store.addSeriesValues(series);
-        console.log('Snapshot lineitems inserted series', insertedSeries.length);
+        await store.addSeriesValues(series);
+        console.log('Snapshot lineitems inserted series');
 
     }
 
@@ -45,7 +44,7 @@ export default class SnapshotLineItemsScript {
                 source: AnalyticsPath.fromString(`powerhouse/legacy-api/snapshot-reports/${snapshot.snapshotId}`),
                 unit: snapshot.token,
                 value: snapshot.amount,
-                metric: AnalyticsMetric.PaymentsOnChain,
+                metric: 'PaymentsOnChain',
                 fn: 'Single',
                 dimensions: {
                     wallet: AnalyticsPath.fromString(`atlas/${snapshot.accountAddress}`),
