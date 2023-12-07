@@ -150,18 +150,28 @@ export default class LineItemsScript {
     };
 
     private getOwner = async (budgetStatementWalletId: string) => {
-        const result = await this.db('BudgetStatementWallet').where('BudgetStatementWallet.id', budgetStatementWalletId).join('BudgetStatement', 'BudgetStatement.id', 'BudgetStatementWallet.budgetStatementId').join('CoreUnit', 'CoreUnit.id', 'BudgetStatement.ownerId').join('BudgetStatementFtes', 'BudgetStatementFtes.budgetStatementId', 'BudgetStatement.id').select('CoreUnit.code', 'CoreUnit.type', 'BudgetStatementWallet.budgetStatementId', 'BudgetStatementWallet.address', 'BudgetStatementFtes.ftes');
-        if (result.length === 0) {
-            const bStatement = await this.db('BudgetStatementWallet').where('BudgetStatementWallet.id', budgetStatementWalletId).select('budgetStatementId', 'address');
-            return { code: 'Delegates', ownerType: 'Delegates', budgetStatementId: bStatement[0].budgetStatementId, wallet: bStatement[0].address };
-        } else {
-            return {
-                code: result[0].code,
-                ownerType: result[0].type,
-                budgetStatementId: result[0].budgetStatementId,
-                wallet: result[0].address,
-                ftes: result[0].ftes,
-            };
-        }
+        const result = await this.db('BudgetStatementWallet')
+            .where('BudgetStatementWallet.id', budgetStatementWalletId)
+            .leftJoin('BudgetStatement', 'BudgetStatement.id', 'BudgetStatementWallet.budgetStatementId')
+            .leftJoin('BudgetStatementFtes', 'BudgetStatementFtes.budgetStatementId', 'BudgetStatement.id')
+            .leftJoin('CoreUnit', function (this: any) {
+                this.on('CoreUnit.id', '=', 'BudgetStatement.ownerId')
+            })
+            .select(
+                this.db.raw('CASE WHEN "BudgetStatement"."ownerId" IS NULL THEN ? ELSE "CoreUnit"."code" END as "code"', ['Delegates']),
+                this.db.raw('CASE WHEN "BudgetStatement"."ownerId" IS NULL THEN ? ELSE "CoreUnit"."type" END as "type"', ['Delegates']),
+                'BudgetStatementWallet.budgetStatementId',
+                'BudgetStatementWallet.address',
+                'BudgetStatementFtes.ftes'
+            );
+
+        return {
+            code: result[0].code,
+            ownerType: result[0].type,
+            budgetStatementId: result[0].budgetStatementId,
+            wallet: result[0].address,
+            ftes: result[0].ftes,
+        };
+
     };
 }
