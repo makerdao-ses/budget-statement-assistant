@@ -66,6 +66,7 @@ export default class BudgetScript {
             // });
             if (selectedBudgetCaps.length > 0) {
                 selectedBudgetCaps.forEach((budgetCap: any) => {
+                    const selectedBudget = budgets.find((b: any) => b.id === budgetCap.budgetId);
                     const fn = budgetCap.start !== null && budgetCap.end !== null ? 'DssVest' : 'Single';
                     let serie: any = {
                         start: budgetCap.start,
@@ -77,6 +78,11 @@ export default class BudgetScript {
                         fn: fn,
                         dimensions: {
                             budget: AnalyticsPath.fromString(budget.codePath),
+                        },
+                        dimensionMetadata: {
+                            path: AnalyticsPath.fromString(budget.codePath),
+                            icon: budget.image || null,
+                            description: budget.description || null
                         }
                     }
                     // needs to expand char varying length in db to add image and description
