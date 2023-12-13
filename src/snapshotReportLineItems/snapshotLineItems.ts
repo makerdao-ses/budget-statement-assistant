@@ -67,9 +67,8 @@ export default class SnapshotLineItemsScript {
             case 'Keepers': return 'legacy/keepers';
             case 'SpecialPurposeFund': return 'legacy/spfs';
             case 'AlignedDelegates': return 'immutable/ads';
-            case 'CoreUnitDraft': return `legacy/core-units/${cu[0].code}`;
             default: {
-                return 'snapshot/unknown';
+                return `snapshot/unknown/${ownerType}/${cu[0].code}]}`;
             }
         }
     }
