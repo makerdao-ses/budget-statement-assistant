@@ -68,7 +68,7 @@ export default class LineItemsScript {
                     budget: AnalyticsPath.fromString(`atlas/${this.getBudgetType(ownerType, code)}`),
                     category: AnalyticsPath.fromString(`atlas/${headCount}/${lineItem.canonicalBudgetCategory}`),
                     wallet: AnalyticsPath.fromString(`atlas/${wallet}`),
-                    project: AnalyticsPath.fromString(`${lineItem.group}`),
+                    project: AnalyticsPath.fromString(`atlas/${lineItem.group}`),
                 },
             };
             series.push(serie);
@@ -92,7 +92,7 @@ export default class LineItemsScript {
                     budget: AnalyticsPath.fromString(`atlas/${this.getBudgetType(ownerType, ownerCode)}`),
                     category: AnalyticsPath.fromString(`atlas/${headCount}/${canonicalBudgetCategory}`),
                     wallet: AnalyticsPath.fromString(`atlas/${address}`),
-                    project: AnalyticsPath.fromString(`${group}`),
+                    project: AnalyticsPath.fromString(`atlas/${group}`),
                 },
             };
 
