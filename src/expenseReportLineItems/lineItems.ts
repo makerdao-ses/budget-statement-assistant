@@ -39,7 +39,7 @@ export default class LineItemsScript {
         for (let i = 0; i < lineItems.length; i++) {
             const lineItem = lineItems[i];
             const headCount = lineItem.headcountExpense ? 'headcount' : 'non-headcount';
-            const { code, ownerType, budgetStatementId, wallet, ftes } = (await this.getOwner(lineItem.budgetStatementWalletId)) as any;
+            const { code, ownerType, budgetStatementId, wallet, ftes, ownerId } = (await this.getOwner(lineItem.budgetStatementWalletId)) as any;
             // UTCing the date to avoid timezone issues
             lineItem.month = new Date(Date.UTC(lineItem.month.getFullYear(), lineItem.month.getMonth(), lineItem.month.getDate()));
             if (ftes && !addedFteMonths.has(lineItem.month.toISOString())) {
@@ -52,6 +52,7 @@ export default class LineItemsScript {
                     dimensions: {
                         budget: AnalyticsPath.fromString(`atlas/${this.getBudgetType(ownerType, code)}`),
                         category: AnalyticsPath.fromString(`atlas/${headCount}/${lineItem.canonicalBudgetCategory}`),
+                        report: AnalyticsPath.fromString(`atlas/${ownerType}/${ownerId}/${this.getYearAndMonth(new Date(lineItem.month))}`)
                     },
                 };
                 series.push(fteSerie);
@@ -69,6 +70,7 @@ export default class LineItemsScript {
                     category: AnalyticsPath.fromString(`atlas/${headCount}/${lineItem.canonicalBudgetCategory}`),
                     wallet: AnalyticsPath.fromString(`atlas/${wallet}`),
                     project: AnalyticsPath.fromString(`atlas/${lineItem.group}`),
+                    report: AnalyticsPath.fromString(`atlas/${ownerType}/${ownerId}/${this.getYearAndMonth(new Date(lineItem.month))}`)
                 },
             };
             series.push(serie);
@@ -77,7 +79,7 @@ export default class LineItemsScript {
         // add forecasts
         const forcastLineItems = await this.getAllForecastsLineItems();
         for (let i = 0; i < forcastLineItems.length; i++) {
-            const { BSLI_month, BS_month, address, group, canonicalBudgetCategory, currency, forecast, ownerType, ownerCode, headcountExpense } = forcastLineItems[i];
+            const { BSLI_month, BS_month, address, group, canonicalBudgetCategory, currency, forecast, ownerType, ownerCode, headcountExpense, ownerId } = forcastLineItems[i];
             const headCount = headcountExpense ? 'headcount' : 'non-headcount';
             const basePath = `powerhouse/legacy-api/budget-statements/${address}/${BSLI_month.toISOString().substring(0, 10)}`;
             const serie = {
@@ -93,6 +95,7 @@ export default class LineItemsScript {
                     category: AnalyticsPath.fromString(`atlas/${headCount}/${canonicalBudgetCategory}`),
                     wallet: AnalyticsPath.fromString(`atlas/${address}`),
                     project: AnalyticsPath.fromString(`atlas/${group}`),
+                    report: AnalyticsPath.fromString(`atlas/${ownerType}/${ownerId}/${this.getYearAndMonth(new Date(BSLI_month))}`)
                 },
             };
 
@@ -141,7 +144,11 @@ export default class LineItemsScript {
     };
 
     private getAllForecastsLineItems = async () => {
-        const query = this.db('BudgetStatementLineItem').join('BudgetStatementWallet', 'BudgetStatementWallet.id', 'BudgetStatementLineItem.budgetStatementWalletId').join(this.db.raw('"BudgetStatement" ON "BudgetStatementWallet"."budgetStatementId" = "BudgetStatement"."id" AND "BudgetStatementLineItem"."month" > "BudgetStatement"."month"')).select(['*', 'BudgetStatementLineItem.month as BSLI_month', 'BudgetStatement.month as BS_month']).orderBy('BudgetStatement.month', 'desc');
+        const query = this.db('BudgetStatementLineItem')
+        .join('BudgetStatementWallet', 'BudgetStatementWallet.id', 'BudgetStatementLineItem.budgetStatementWalletId')
+        .join(this.db.raw('"BudgetStatement" ON "BudgetStatementWallet"."budgetStatementId" = "BudgetStatement"."id" AND "BudgetStatementLineItem"."month" > "BudgetStatement"."month"'))
+        .select(['*', 'BudgetStatementLineItem.month as BSLI_month', 'BudgetStatement.month as BS_month'])
+        .orderBy('BudgetStatement.month', 'desc');
         if (this.budgetStatementId) {
             query.where('BudgetStatementWallet.budgetStatementId', this.budgetStatementId);
         }
@@ -162,7 +169,8 @@ export default class LineItemsScript {
                 this.db.raw('CASE WHEN "BudgetStatement"."ownerId" IS NULL THEN ? ELSE "CoreUnit"."type" END as "type"', ['Delegates']),
                 'BudgetStatementWallet.budgetStatementId',
                 'BudgetStatementWallet.address',
-                'BudgetStatementFtes.ftes'
+                'BudgetStatementFtes.ftes',
+                "BudgetStatement.ownerId"
             );
 
         return {
@@ -171,7 +179,15 @@ export default class LineItemsScript {
             budgetStatementId: result[0].budgetStatementId,
             wallet: result[0].address,
             ftes: result[0].ftes,
+            ownerId: result[0].ownerId
         };
 
     };
+
+    private getYearAndMonth(dateString: Date) {
+        const date = new Date(dateString);
+        const year = date.getFullYear();
+        const month = String(date.getMonth() + 1).padStart(2, '0');
+        return `${year}/${month}`;
+    }
 }
