@@ -30,12 +30,15 @@ export default class SnapshotLineItemsScript {
     }
 
     private createSeries = async () => {
-        const snapshots = await this.getSnapshotLineItems();
+        const snapshotsOnChain = await this.getSnapshotLineItems();
+        const snapshotsOffChain = await this.getSnapshotLineItemsOffChain();
+        const snapshotsProtocolNetOutFlow = await this.getSnapshotLineItemsProtocolNetOutfLow();
 
         const series: any = [];
 
-        for (let i = 0; i < snapshots.length; i++) {
-            const snapshot = snapshots[i];
+        // adding on-chain snapshots
+        for (let i = 0; i < snapshotsOnChain.length; i++) {
+            const snapshot = snapshotsOnChain[i];
             const budgetType = await this.getBudgetType(snapshot.ownerType, snapshot.ownerId);
 
             const serie = {
@@ -50,10 +53,58 @@ export default class SnapshotLineItemsScript {
                     wallet: AnalyticsPath.fromString(`atlas/${snapshot.accountAddress}`),
                     transactionType: AnalyticsPath.fromString(`atlas/${snapshot.txLabel}`),
                     budget: AnalyticsPath.fromString(`atlas/${budgetType}`),
+                    report: AnalyticsPath.fromString(`atlas/${snapshot.ownerType}/${snapshot.ownerId}/${this.getYearAndMonth(snapshot.timestamp)}`),
                 }
             };
             series.push(serie);
         }
+
+        // adding off-chain snapshots
+        for (let i = 0; i < snapshotsOffChain.length; i++) {
+            const snapshot = snapshotsOffChain[i];
+            const budgetType = await this.getBudgetType(snapshot.ownerType, snapshot.ownerId);
+
+            const serie = {
+                start: snapshot.timestamp,
+                end: null,
+                source: AnalyticsPath.fromString(`powerhouse/legacy-api/snapshot-reports/${snapshot.snapshotId}`),
+                unit: snapshot.token,
+                value: snapshot.amount,
+                metric: 'PaymentsOffChainIncluded',
+                fn: 'Single',
+                dimensions: {
+                    wallet: AnalyticsPath.fromString(`atlas/${snapshot.accountAddress}`),
+                    transactionType: AnalyticsPath.fromString(`atlas/${snapshot.txLabel}`),
+                    budget: AnalyticsPath.fromString(`atlas/${budgetType}`),
+                    report: AnalyticsPath.fromString(`atlas/${snapshot.ownerType}/${snapshot.ownerId}/${this.getYearAndMonth(snapshot.timestamp)}`),
+                }
+            };
+            series.push(serie);
+        }
+
+        // adding protocol net outflow snapshots
+        for (let i = 0; i < snapshotsProtocolNetOutFlow.length; i++) {
+            const snapshot = snapshotsProtocolNetOutFlow[i];
+            const budgetType = await this.getBudgetType(snapshot.ownerType, snapshot.ownerId);
+
+            const serie = {
+                start: snapshot.timestamp,
+                end: null,
+                source: AnalyticsPath.fromString(`powerhouse/legacy-api/snapshot-reports/${snapshot.snapshotId}`),
+                unit: snapshot.token,
+                value: snapshot.amount,
+                metric: 'ProtocolNetOutflow',
+                fn: 'Single',
+                dimensions: {
+                    wallet: AnalyticsPath.fromString(`atlas/${snapshot.accountAddress}`),
+                    transactionType: AnalyticsPath.fromString(`atlas/${snapshot.txLabel}`),
+                    budget: AnalyticsPath.fromString(`atlas/${budgetType}`),
+                    report: AnalyticsPath.fromString(`atlas/${snapshot.ownerType}/${snapshot.ownerId}/${this.getYearAndMonth(snapshot.timestamp)}`),
+                }
+            };
+            series.push(serie);
+        }
+
         return series;
     }
 
@@ -73,12 +124,49 @@ export default class SnapshotLineItemsScript {
         }
     }
 
+    private getYearAndMonth(dateString: Date) {
+        const date = new Date(dateString);
+        const year = date.getFullYear();
+        const month = String(date.getMonth() + 1).padStart(2, '0'); // Months are 0-based in JavaScript
+        return `${year}/${month}`;
+    }
+
     private getSnapshotLineItems = async () => {
         const baseQuery = this.db('Snapshot')
+            .select('snapshotId', 'timestamp', 'amount', 'token', 'accountAddress', 'txLabel', 'ownerType', 'ownerId')
             .join('SnapshotAccount', 'SnapshotAccount.snapshotId', 'Snapshot.id')
             .join('SnapshotAccountTransaction', 'SnapshotAccountTransaction.snapshotAccountId', 'SnapshotAccount.id')
             .where('SnapshotAccount.accountType', 'singular')
             .where('SnapshotAccount.offChain', false);
+
+        if (this.snapshotId) {
+            baseQuery.where('Snapshot.id', this.snapshotId);
+        }
+
+        return await baseQuery;
+    }
+
+    private getSnapshotLineItemsOffChain = async () => {
+        const baseQuery = this.db('Snapshot')
+            .select('snapshotId', 'timestamp', 'amount', 'token', 'accountAddress', 'txLabel', 'ownerType', 'ownerId')
+            .join('SnapshotAccount', 'SnapshotAccount.snapshotId', 'Snapshot.id')
+            .join('SnapshotAccountTransaction', 'SnapshotAccountTransaction.snapshotAccountId', 'SnapshotAccount.id')
+            .where('SnapshotAccount.accountType', 'singular');
+
+        if (this.snapshotId) {
+            baseQuery.where('Snapshot.id', this.snapshotId);
+        }
+
+        return await baseQuery;
+    }
+
+    private getSnapshotLineItemsProtocolNetOutfLow = async () => {
+        const baseQuery = this.db('Snapshot')
+            .select('snapshotId', 'timestamp', 'amount', 'token', 'accountAddress', 'txLabel', 'ownerType', 'ownerId')
+            .join('SnapshotAccount', 'SnapshotAccount.snapshotId', 'Snapshot.id')
+            .join('SnapshotAccountTransaction', 'SnapshotAccountTransaction.snapshotAccountId', 'SnapshotAccount.id')
+            .where('SnapshotAccount.accountType', 'singular')
+            .where('SnapshotAccount.upstreamAccountId', null);
 
         if (this.snapshotId) {
             baseQuery.where('Snapshot.id', this.snapshotId);
