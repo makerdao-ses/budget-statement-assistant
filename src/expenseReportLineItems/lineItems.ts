@@ -48,6 +48,7 @@ export default class LineItemsScript {
                     end: null,
                     source: AnalyticsPath.fromString(`powerhouse/legacy-api/budget-statements/${budgetStatementId}`),
                     value: ftes,
+                    unit: lineItem.currency,
                     metric: 'FTEs',
                     dimensions: {
                         budget: AnalyticsPath.fromString(`atlas/${this.getBudgetType(ownerType, code)}`),
