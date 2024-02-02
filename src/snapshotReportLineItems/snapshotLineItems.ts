@@ -53,7 +53,7 @@ export default class SnapshotLineItemsScript {
                     wallet: AnalyticsPath.fromString(`atlas/${snapshot.accountAddress}`),
                     transactionType: AnalyticsPath.fromString(`atlas/${snapshot.txLabel}`),
                     budget: AnalyticsPath.fromString(`atlas/${budgetType}`),
-                    report: AnalyticsPath.fromString(`atlas/${snapshot.ownerType}/${snapshot.ownerId}/${this.getYearAndMonth(snapshot.timestamp)}`),
+                    report: AnalyticsPath.fromString(`atlas/${snapshot.ownerType}/${snapshot.ownerId}/${this.getYearAndMonth(snapshot.month)}`),
                 }
             };
             series.push(serie);
@@ -76,7 +76,7 @@ export default class SnapshotLineItemsScript {
                     wallet: AnalyticsPath.fromString(`atlas/${snapshot.accountAddress}`),
                     transactionType: AnalyticsPath.fromString(`atlas/${snapshot.txLabel}`),
                     budget: AnalyticsPath.fromString(`atlas/${budgetType}`),
-                    report: AnalyticsPath.fromString(`atlas/${snapshot.ownerType}/${snapshot.ownerId}/${this.getYearAndMonth(snapshot.timestamp)}`),
+                    report: AnalyticsPath.fromString(`atlas/${snapshot.ownerType}/${snapshot.ownerId}/${this.getYearAndMonth(snapshot.month)}`),
                 }
             };
             series.push(serie);
@@ -99,7 +99,7 @@ export default class SnapshotLineItemsScript {
                     wallet: AnalyticsPath.fromString(`atlas/${snapshot.accountAddress}`),
                     transactionType: AnalyticsPath.fromString(`atlas/${snapshot.txLabel}`),
                     budget: AnalyticsPath.fromString(`atlas/${budgetType}`),
-                    report: AnalyticsPath.fromString(`atlas/${snapshot.ownerType}/${snapshot.ownerId}/${this.getYearAndMonth(snapshot.timestamp)}`),
+                    report: AnalyticsPath.fromString(`atlas/${snapshot.ownerType}/${snapshot.ownerId}/${this.getYearAndMonth(snapshot.month)}`),
                 }
             };
             series.push(serie);
@@ -133,7 +133,7 @@ export default class SnapshotLineItemsScript {
 
     private getSnapshotLineItems = async () => {
         const baseQuery = this.db('Snapshot')
-            .select('snapshotId', 'timestamp', 'amount', 'token', 'accountAddress', 'txLabel', 'ownerType', 'ownerId')
+            .select('snapshotId', 'timestamp', 'amount', 'token', 'accountAddress', 'txLabel', 'ownerType', 'ownerId', 'month')
             .join('SnapshotAccount', 'SnapshotAccount.snapshotId', 'Snapshot.id')
             .join('SnapshotAccountTransaction', 'SnapshotAccountTransaction.snapshotAccountId', 'SnapshotAccount.id')
             .where('SnapshotAccount.accountType', 'singular')
@@ -148,7 +148,7 @@ export default class SnapshotLineItemsScript {
 
     private getSnapshotLineItemsOffChain = async () => {
         const baseQuery = this.db('Snapshot')
-            .select('snapshotId', 'timestamp', 'amount', 'token', 'accountAddress', 'txLabel', 'ownerType', 'ownerId')
+            .select('snapshotId', 'timestamp', 'amount', 'token', 'accountAddress', 'txLabel', 'ownerType', 'ownerId', 'month')
             .join('SnapshotAccount', 'SnapshotAccount.snapshotId', 'Snapshot.id')
             .join('SnapshotAccountTransaction', 'SnapshotAccountTransaction.snapshotAccountId', 'SnapshotAccount.id')
             .where('SnapshotAccount.accountType', 'singular');
@@ -162,7 +162,7 @@ export default class SnapshotLineItemsScript {
 
     private getSnapshotLineItemsProtocolNetOutfLow = async () => {
         const baseQuery = this.db('Snapshot')
-            .select('snapshotId', 'timestamp', 'amount', 'token', 'accountAddress', 'txLabel', 'ownerType', 'ownerId')
+            .select('snapshotId', 'timestamp', 'amount', 'token', 'accountAddress', 'txLabel', 'ownerType', 'ownerId', 'month')
             .join('SnapshotAccount', 'SnapshotAccount.snapshotId', 'Snapshot.id')
             .join('SnapshotAccountTransaction', 'SnapshotAccountTransaction.snapshotAccountId', 'SnapshotAccount.id')
             .where('SnapshotAccount.accountType', 'singular')
