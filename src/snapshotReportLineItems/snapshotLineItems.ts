@@ -119,7 +119,7 @@ export default class SnapshotLineItemsScript {
             case 'SpecialPurposeFund': return 'legacy/spfs';
             case 'AlignedDelegates': return 'immutable/ads';
             default: {
-                return `snapshot/unknown/${ownerType}/${cu[0].code}]}`;
+                return `snapshot/unknown/${ownerType}/${cu[0]?.code}]}`;
             }
         }
     }
