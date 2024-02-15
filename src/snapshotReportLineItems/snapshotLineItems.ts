@@ -46,7 +46,7 @@ export default class SnapshotLineItemsScript {
                 end: null,
                 source: AnalyticsPath.fromString(`powerhouse/legacy-api/snapshot-reports/${snapshot.snapshotId}`),
                 unit: snapshot.token,
-                value: snapshot.amount,
+                value: snapshot.amount * -1,
                 metric: 'PaymentsOnChain',
                 fn: 'Single',
                 dimensions: {
@@ -69,7 +69,7 @@ export default class SnapshotLineItemsScript {
                 end: null,
                 source: AnalyticsPath.fromString(`powerhouse/legacy-api/snapshot-reports/${snapshot.snapshotId}`),
                 unit: snapshot.token,
-                value: snapshot.amount,
+                value: snapshot.amount * -1,
                 metric: 'PaymentsOffChainIncluded',
                 fn: 'Single',
                 dimensions: {
@@ -92,7 +92,7 @@ export default class SnapshotLineItemsScript {
                 end: null,
                 source: AnalyticsPath.fromString(`powerhouse/legacy-api/snapshot-reports/${snapshot.snapshotId}`),
                 unit: snapshot.token,
-                value: snapshot.amount,
+                value: snapshot.amount * -1,
                 metric: 'ProtocolNetOutflow',
                 fn: 'Single',
                 dimensions: {
