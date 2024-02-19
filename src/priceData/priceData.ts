@@ -15,7 +15,7 @@ export default class PriceDataScript {
 
   public insertInAnalyticsStore = async () => {
     const series = await this.createSeries();
-    console.log('MKR.USD Price Data series created', series.length);
+    console.log('Price Data series created', series.length);
     const store = new AnalyticsStore(this.db);
 
     // clean old lineItem series
@@ -28,11 +28,11 @@ export default class PriceDataScript {
   }
 
   private createSeries = async () => {
-
-    const days = await this.determineStartDate();
-    const mkrPriceData = await this.getMkrPriceData(days);
-    const filteredMkrPriceData = await this.filterMkrPriceData(mkrPriceData);
     const series: any = [];
+
+    const mkrDays = await this.determineStartDate('DailyMkrPriceChange');
+    const mkrPriceData = await this.getDailyPriceData('maker', mkrDays);
+    const filteredMkrPriceData = await this.filterPriceData(mkrPriceData, 'DailyMkrPriceChange');
 
     // adding mkr.usd price data
     for (let i = 0; i < filteredMkrPriceData.length; i++) {
@@ -56,37 +56,37 @@ export default class PriceDataScript {
     return series;
   }
 
-  private calculatePriceChange(mkrPriceData: any): Array<any> {
+  private calculatePriceChange(priceData: any): Array<any> {
     const priceChange = [];
-    for (let i = 0; i < mkrPriceData.length; i++) {
+    for (let i = 0; i < priceData.length; i++) {
       if (i === 0) {
         priceChange.push({
-          start: mkrPriceData[i].start,
-          price: parseFloat(mkrPriceData[i].price.toFixed(2)),
-          priceChange: parseFloat(mkrPriceData[i].price.toFixed(2)),
+          start: priceData[i].start,
+          price: parseFloat(priceData[i].price.toFixed(2)),
+          priceChange: parseFloat(priceData[i].price.toFixed(2)),
         });
       } else {
         priceChange.push({
-          start: mkrPriceData[i].start,
-          price: parseFloat(mkrPriceData[i].price.toFixed(2)),
-          priceChange: parseFloat((mkrPriceData[i].price - mkrPriceData[i - 1].price).toFixed(2)),
+          start: priceData[i].start,
+          price: parseFloat(priceData[i].price.toFixed(2)),
+          priceChange: parseFloat((priceData[i].price - priceData[i - 1].price).toFixed(2)),
         });
       }
     }
     return priceChange;
   }
 
-  private async filterMkrPriceData(mkrPriceData: any) {
-    const [dbDate] = await this.getLatestMkrPriceDatafromDB();
+  private async filterPriceData(priceData: any, currencyMetric: string) {
+    const [dbDate] = await this.getLatestPriceDatafromDB(currencyMetric);
 
     if (!dbDate) {
-      const noDBEntries = mkrPriceData.filter((data: any) => {
+      const noDBEntries = priceData.filter((data: any) => {
         return data.start.getHours() === 0 && data.start.getMinutes() === 0 && data.start.getSeconds() === 0
       })
       return this.calculatePriceChange(noDBEntries);
     }
 
-    const withDBEntries = mkrPriceData.filter((data: any) => {
+    const withDBEntries = priceData.filter((data: any) => {
       const dataDate = data.start;
       return (
         dataDate.getDate() !== dbDate.start.getDate() ||
@@ -96,7 +96,7 @@ export default class PriceDataScript {
     });
 
     // compare dates and return the matching date: dbDate.start === data.start
-    const previousDay = mkrPriceData.filter((data: any) => {
+    const previousDay = priceData.filter((data: any) => {
       const dataDate = data.start;
       return (
         dataDate.getDate() === dbDate.start.getDate() &&
@@ -118,8 +118,8 @@ export default class PriceDataScript {
     return newDate;
   }
 
-  private async getMkrPriceData(days: number) {
-    const url = `https://api.coingecko.com/api/v3/coins/maker/market_chart?vs_currency=usd&days=${days}&interval=daily`;
+  private async getDailyPriceData(currency: string, days: number) {
+    const url = `https://api.coingecko.com/api/v3/coins/${currency}/market_chart?vs_currency=usd&days=${days}&interval=daily`;
     const response = await fetch(url);
     const data = await response.json();
     return data.prices.map(([start, price]: any) => ({
@@ -128,8 +128,8 @@ export default class PriceDataScript {
     }));
   }
 
-  private async determineStartDate() {
-    const [dbDate] = await this.getLatestMkrPriceDatafromDB();
+  private async determineStartDate(currencyMetric: string) {
+    const [dbDate] = await this.getLatestPriceDatafromDB(currencyMetric);
     if (dbDate) {
       return this.calculateDays(new Date(dbDate.start), new Date());
     } else {
@@ -137,11 +137,11 @@ export default class PriceDataScript {
     }
   }
 
-  private async getLatestMkrPriceDatafromDB() {
+  private async getLatestPriceDatafromDB(currencyMetric: string) {
     return await this.db
       .select("start")
       .from("AnalyticsSeries")
-      .where("metric", "DailyMkrPriceChange")
+      .where("metric", currencyMetric)
       .orderBy("id", "desc")
       .limit(1);
   }
