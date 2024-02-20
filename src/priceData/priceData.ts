@@ -23,16 +23,37 @@ export default class PriceDataScript {
 
     // insert new data
     await store.addSeriesValues(series);
-    console.log('MKR.USD Price Data inserted series');
+    console.log('Price Data inserted series');
 
   }
 
   private createSeries = async () => {
     const series: any = [];
 
+    // MKR Price Data
     const mkrDays = await this.determineStartDate('DailyMkrPriceChange');
     const mkrPriceData = await this.getDailyPriceData('maker', mkrDays);
     const filteredMkrPriceData = await this.filterPriceData(mkrPriceData, 'DailyMkrPriceChange');
+
+    // Dai Price Data
+    const daiDays = await this.determineStartDate('DailyDaiPriceChange');
+    const daiPriceData = await this.getDailyPriceData('dai', daiDays);
+    const filteredDaiPriceData = await this.filterPriceData(daiPriceData, 'DailyDaiPriceChange');
+
+    // USDC Price Data
+    const usdcDays = await this.determineStartDate('DailyUsdcPriceChange');
+    const usdcPriceData = await this.getDailyPriceData('usd-coin', usdcDays);
+    const filteredUsdcPriceData = await this.filterPriceData(usdcPriceData, 'DailyUsdcPriceChange');
+
+    // USDP Price Data
+    const usdpDays = await this.determineStartDate('DailyUsdpPriceChange');
+    const usdpPriceData = await this.getDailyPriceData('paxos-standard', usdpDays);
+    const filteredUsdpPriceData = await this.filterPriceData(usdpPriceData, 'DailyUsdpPriceChange');
+
+    // ETH Price Data
+    const ethDays = await this.determineStartDate('DailyEthPriceChange');
+    const ethPriceData = await this.getDailyPriceData('ethereum', ethDays);
+    const filteredEthPriceData = await this.filterPriceData(ethPriceData, 'DailyEthPriceChange');
 
     // adding mkr.usd price data
     for (let i = 0; i < filteredMkrPriceData.length; i++) {
@@ -48,6 +69,82 @@ export default class PriceDataScript {
         fn: 'Single',
         dimensions: {
           priceData: AnalyticsPath.fromString(`atlas/price-data/mkr-usd/day-average`),
+        }
+      };
+      series.push(serie);
+    }
+
+    // adding dai.usd price data
+    for (let i = 0; i < filteredDaiPriceData.length; i++) {
+      const data = filteredDaiPriceData[i];
+
+      const serie = {
+        start: data.start,
+        end: this.addOneDay(data.start),
+        source: AnalyticsPath.fromString(`powerhouse/price-data/dai-usd/day-average/${data.start}`),
+        unit: 'DAI',
+        value: data.priceChange,
+        metric: 'DailyDaiPriceChange ',
+        fn: 'Single',
+        dimensions: {
+          priceData: AnalyticsPath.fromString(`atlas/price-data/dai-usd/day-average`),
+        }
+      };
+      series.push(serie);
+    }
+
+    // adding usdc.usd price data
+    for (let i = 0; i < filteredUsdcPriceData.length; i++) {
+      const data = filteredUsdcPriceData[i];
+
+      const serie = {
+        start: data.start,
+        end: this.addOneDay(data.start),
+        source: AnalyticsPath.fromString(`powerhouse/price-data/usdc-usd/day-average/${data.start}`),
+        unit: 'DAI',
+        value: data.priceChange,
+        metric: 'DailyUsdcPriceChange ',
+        fn: 'Single',
+        dimensions: {
+          priceData: AnalyticsPath.fromString(`atlas/price-data/usdc-usd/day-average`),
+        }
+      };
+      series.push(serie);
+    }
+
+    // adding usdp.usd price data
+    for (let i = 0; i < filteredUsdpPriceData.length; i++) {
+      const data = filteredUsdpPriceData[i];
+
+      const serie = {
+        start: data.start,
+        end: this.addOneDay(data.start),
+        source: AnalyticsPath.fromString(`powerhouse/price-data/usdp-usd/day-average/${data.start}`),
+        unit: 'DAI',
+        value: data.priceChange,
+        metric: 'DailyUsdpPriceChange ',
+        fn: 'Single',
+        dimensions: {
+          priceData: AnalyticsPath.fromString(`atlas/price-data/usdp-usd/day-average`),
+        }
+      };
+      series.push(serie);
+    }
+
+    // adding eth.usd price data
+    for (let i = 0; i < filteredEthPriceData.length; i++) {
+      const data = filteredEthPriceData[i];
+
+      const serie = {
+        start: data.start,
+        end: this.addOneDay(data.start),
+        source: AnalyticsPath.fromString(`powerhouse/price-data/eth-usd/day-average/${data.start}`),
+        unit: 'DAI',
+        value: data.priceChange,
+        metric: 'DailyEthPriceChange ',
+        fn: 'Single',
+        dimensions: {
+          priceData: AnalyticsPath.fromString(`atlas/price-data/eth-usd/day-average`),
         }
       };
       series.push(serie);
@@ -119,13 +216,17 @@ export default class PriceDataScript {
   }
 
   private async getDailyPriceData(currency: string, days: number) {
-    const url = `https://api.coingecko.com/api/v3/coins/${currency}/market_chart?vs_currency=usd&days=${days}&interval=daily`;
-    const response = await fetch(url);
-    const data = await response.json();
-    return data.prices.map(([start, price]: any) => ({
-      start: new Date(start),
-      price,
-    }));
+    try {
+      const url = `https://api.coingecko.com/api/v3/coins/${currency}/market_chart?vs_currency=usd&days=${days}&interval=daily`;
+      const response = await fetch(url);
+      const data = await response.json();
+      return data.prices.map(([start, price]: any) => ({
+        start: new Date(start),
+        price,
+      }));
+    } catch (error) {
+      console.error('Error fetching price data', error);
+    }
   }
 
   private async determineStartDate(currencyMetric: string) {
