@@ -57,6 +57,7 @@ export default class PriceDataScript {
 
     // adding mkr.usd price data
     for (let i = 0; i < filteredMkrPriceData.length; i++) {
+      console.log(`Adding ${filteredMkrPriceData.length} MKR price data to series`)
       const data = filteredMkrPriceData[i];
 
       const serie = {
@@ -76,6 +77,7 @@ export default class PriceDataScript {
 
     // adding dai.usd price data
     for (let i = 0; i < filteredDaiPriceData.length; i++) {
+      console.log(`Adding ${filteredDaiPriceData.length} DAI price data to series`)
       const data = filteredDaiPriceData[i];
 
       const serie = {
@@ -95,6 +97,7 @@ export default class PriceDataScript {
 
     // adding usdc.usd price data
     for (let i = 0; i < filteredUsdcPriceData.length; i++) {
+      console.log(`Adding ${filteredUsdcPriceData.length} USDC price data to series`)
       const data = filteredUsdcPriceData[i];
 
       const serie = {
@@ -114,6 +117,7 @@ export default class PriceDataScript {
 
     // adding usdp.usd price data
     for (let i = 0; i < filteredUsdpPriceData.length; i++) {
+      console.log(`Adding ${filteredUsdpPriceData.length} USDP price data to series`)
       const data = filteredUsdpPriceData[i];
 
       const serie = {
@@ -133,6 +137,7 @@ export default class PriceDataScript {
 
     // adding eth.usd price data
     for (let i = 0; i < filteredEthPriceData.length; i++) {
+      console.log(`Adding ${filteredEthPriceData.length} ETH price data to series`)
       const data = filteredEthPriceData[i];
 
       const serie = {
@@ -220,6 +225,10 @@ export default class PriceDataScript {
       const url = `https://api.coingecko.com/api/v3/coins/${currency}/market_chart?vs_currency=usd&days=${days}&interval=daily`;
       const response = await fetch(url);
       const data = await response.json();
+      if(data.prices.length === 0) {
+        console.log('No price data found for', currency);
+        return [];
+      }
       return data.prices.map(([start, price]: any) => ({
         start: new Date(start),
         price,
