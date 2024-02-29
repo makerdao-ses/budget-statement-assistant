@@ -39,7 +39,7 @@ export default class SnapshotLineItemsScript {
         // adding on-chain snapshots
         for (let i = 0; i < snapshotsOnChain.length; i++) {
             const snapshot = snapshotsOnChain[i];
-            const budgetType = await this.getBudgetType(snapshot.ownerType, snapshot.ownerId);
+            const budgetType = await this.getBudgetType(snapshot.ownerType, snapshot.ownerId, snapshot.accountLabel);
 
             const serie = {
                 start: snapshot.timestamp,
@@ -62,7 +62,7 @@ export default class SnapshotLineItemsScript {
         // adding off-chain snapshots
         for (let i = 0; i < snapshotsOffChain.length; i++) {
             const snapshot = snapshotsOffChain[i];
-            const budgetType = await this.getBudgetType(snapshot.ownerType, snapshot.ownerId);
+            const budgetType = await this.getBudgetType(snapshot.ownerType, snapshot.ownerId, snapshot.accountLabel);
 
             const serie = {
                 start: snapshot.timestamp,
@@ -85,7 +85,7 @@ export default class SnapshotLineItemsScript {
         // adding protocol net outflow snapshots
         for (let i = 0; i < snapshotsProtocolNetOutFlow.length; i++) {
             const snapshot = snapshotsProtocolNetOutFlow[i];
-            const budgetType = await this.getBudgetType(snapshot.ownerType, snapshot.ownerId);
+            const budgetType = await this.getBudgetType(snapshot.ownerType, snapshot.ownerId, snapshot.accountLabel);
 
             const serie = {
                 start: snapshot.timestamp,
@@ -108,7 +108,7 @@ export default class SnapshotLineItemsScript {
         return series;
     }
 
-    private getBudgetType = async (ownerType: string, ownerId: number) => {
+    private getBudgetType = async (ownerType: string, ownerId: number, accountLabel: string) => {
         const cu = await this.db('CoreUnit').where('id', ownerId).select('code');
 
         switch (ownerType) {
@@ -118,10 +118,18 @@ export default class SnapshotLineItemsScript {
             case 'Keepers': return 'legacy/keepers';
             case 'SpecialPurposeFund': return 'legacy/spfs';
             case 'AlignedDelegates': return 'immutable/ads';
+            case 'Scopes': {
+                return `legacy/scopes/${cu[0].code}/${this.parseAccountLabel(accountLabel)}`;
+            }
             default: {
                 return `snapshot/unknown/${ownerType}/${cu[0]?.code}]}`;
             }
         }
+    }
+
+    private parseAccountLabel = (accountLabel: string) => {
+        // if it has spacing, replace it with a dash and lower case it
+        return accountLabel.replace(/\s/g, '-').toLowerCase();
     }
 
     private getYearAndMonth(dateString: Date) {
@@ -133,7 +141,7 @@ export default class SnapshotLineItemsScript {
 
     private getSnapshotLineItems = async () => {
         const baseQuery = this.db('Snapshot')
-            .select('snapshotId', 'timestamp', 'amount', 'token', 'accountAddress', 'txLabel', 'ownerType', 'ownerId', 'month')
+            .select('snapshotId', 'timestamp', 'amount', 'token', 'accountAddress', 'txLabel', 'ownerType', 'ownerId', 'month', 'accountLabel')
             .join('SnapshotAccount', 'SnapshotAccount.snapshotId', 'Snapshot.id')
             .join('SnapshotAccountTransaction', 'SnapshotAccountTransaction.snapshotAccountId', 'SnapshotAccount.id')
             .where('SnapshotAccount.accountType', 'singular')
@@ -148,7 +156,7 @@ export default class SnapshotLineItemsScript {
 
     private getSnapshotLineItemsOffChain = async () => {
         const baseQuery = this.db('Snapshot')
-            .select('snapshotId', 'timestamp', 'amount', 'token', 'accountAddress', 'txLabel', 'ownerType', 'ownerId', 'month')
+            .select('snapshotId', 'timestamp', 'amount', 'token', 'accountAddress', 'txLabel', 'ownerType', 'ownerId', 'month', 'accountLabel')
             .join('SnapshotAccount', 'SnapshotAccount.snapshotId', 'Snapshot.id')
             .join('SnapshotAccountTransaction', 'SnapshotAccountTransaction.snapshotAccountId', 'SnapshotAccount.id')
             .where('SnapshotAccount.accountType', 'singular');
@@ -162,7 +170,7 @@ export default class SnapshotLineItemsScript {
 
     private getSnapshotLineItemsProtocolNetOutfLow = async () => {
         const baseQuery = this.db('Snapshot')
-            .select('snapshotId', 'timestamp', 'amount', 'token', 'accountAddress', 'txLabel', 'ownerType', 'ownerId', 'month')
+            .select('snapshotId', 'timestamp', 'amount', 'token', 'accountAddress', 'txLabel', 'ownerType', 'ownerId', 'month', 'accountLabel')
             .join('SnapshotAccount', 'SnapshotAccount.snapshotId', 'Snapshot.id')
             .join('SnapshotAccountTransaction', 'SnapshotAccountTransaction.snapshotAccountId', 'SnapshotAccount.id')
             .where('SnapshotAccount.accountType', 'singular')
