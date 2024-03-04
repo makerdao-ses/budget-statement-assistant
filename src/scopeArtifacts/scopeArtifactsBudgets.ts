@@ -17,6 +17,7 @@ type Budget = {
     budgetCode?: string,
     image: string | null,
     description: string | null,
+    subtitle: string | null,
 }
 
 export default class BudgetScript {
@@ -287,7 +288,8 @@ export default class BudgetScript {
                     name: name,
                     code: code,
                     description: obj[key]['Budget Description'],
-                    image: obj[key]['Image']
+                    image: obj[key]['Image'],
+                    subtitle: obj[key]['Budget subtitle ']
                 }
 
 
