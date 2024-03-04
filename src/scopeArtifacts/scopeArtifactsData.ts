@@ -63,7 +63,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/endgame_atlas_budgets.svg"
+    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/endgame_atlas_budgets.svg",
+    "Budget subtitle ": "Endgame Atlas Immutable Budgets"
   },
   {
     "L0": "",
@@ -129,7 +130,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": "Emmisions and Distribution"
   },
   {
     "L0": "",
@@ -195,7 +197,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/immutable/sds/alld/ntenc",
-    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/subDAOs.svg"
+    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/subDAOs.svg",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -261,7 +264,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -327,7 +331,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -393,7 +398,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -459,7 +465,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -525,7 +532,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -591,7 +599,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -657,7 +666,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/immutable/fds/Govalpha",
-    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/subDAOs.svg"
+    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/subDAOs.svg",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -723,7 +733,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/immutable/fdsGrowth",
-    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/subDAOs.svg"
+    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/subDAOs.svg",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -789,7 +800,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -855,7 +867,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -921,7 +934,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -987,7 +1001,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -1053,7 +1068,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -1119,7 +1135,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -1185,7 +1202,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -1251,7 +1269,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -1317,7 +1336,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -1383,7 +1403,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -1449,7 +1470,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -1515,7 +1537,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -1581,7 +1604,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -1647,7 +1671,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -1713,7 +1738,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -1779,7 +1805,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -1845,7 +1872,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -1911,7 +1939,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -1977,7 +2006,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -2043,7 +2073,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -2109,7 +2140,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -2175,7 +2207,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -2241,7 +2274,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -2307,7 +2341,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -2373,7 +2408,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -2439,7 +2475,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -2505,7 +2542,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -2571,7 +2609,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -2637,7 +2676,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -2703,7 +2743,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -2769,7 +2810,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -2835,7 +2877,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -2901,7 +2944,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -2967,7 +3011,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -3033,7 +3078,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -3099,7 +3145,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -3165,7 +3212,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": "Genesis Emissions, Distribution and Farming rate"
   },
   {
     "L0": "",
@@ -3231,7 +3279,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -3297,7 +3346,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -3363,7 +3413,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -3429,7 +3480,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -3495,7 +3547,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -3561,7 +3614,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -3627,7 +3681,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -3693,7 +3748,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": "Genesis Emissions, Distribution and Farming rate"
   },
   {
     "L0": "",
@@ -3759,7 +3815,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -3825,7 +3882,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -3891,7 +3949,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -3957,7 +4016,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -4023,7 +4083,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -4089,7 +4150,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -4155,7 +4217,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -4221,7 +4284,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -4287,7 +4351,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": "Genesis Emissions"
   },
   {
     "L0": "",
@@ -4353,7 +4418,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -4419,7 +4485,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -4485,7 +4552,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -4551,7 +4619,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -4617,7 +4686,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -4683,7 +4753,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -4749,7 +4820,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -4815,7 +4887,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "atlas/scopes) End-game Alignment Scope Budgets",
@@ -4881,7 +4954,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/endgame_scope_budgets.svg"
+    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/endgame_scope_budgets.svg",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -4947,7 +5021,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/Scopes/SUP",
-    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/support_scope(SUP).svg"
+    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/support_scope(SUP).svg",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -5013,7 +5088,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/Scopes/SUP/AC/PB",
-    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/support_scope(SUP).svg"
+    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/support_scope(SUP).svg",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -5079,7 +5155,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/Scopes/SUP/Gov/PB",
-    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/support_scope(SUP).svg"
+    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/support_scope(SUP).svg",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -5145,7 +5222,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/Scopes/SUP/CAIT/BB",
-    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/support_scope(SUP).svg"
+    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/support_scope(SUP).svg",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -5211,7 +5289,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/Scopes/SUP/CAIT/HMB",
-    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/support_scope(SUP).svg"
+    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/support_scope(SUP).svg",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -5277,7 +5356,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/Scopes/SUP/Tokidev",
-    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/support_scope(SUP).svg"
+    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/support_scope(SUP).svg",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -5343,7 +5423,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/Scopes/SUP/Coms",
-    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/support_scope(SUP).svg"
+    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/support_scope(SUP).svg",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -5409,7 +5490,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/Scopes/SUP/EAE",
-    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/support_scope(SUP).svg"
+    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/support_scope(SUP).svg",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -5475,7 +5557,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/Scopes/SUP/RF",
-    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/support_scope(SUP).svg"
+    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/support_scope(SUP).svg",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -5541,7 +5624,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -5607,7 +5691,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/Scopes/SUP/Research/PB",
-    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/support_scope(SUP).svg"
+    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/support_scope(SUP).svg",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -5673,7 +5758,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -5739,7 +5825,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/Scopes/SUP/PF",
-    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/support_scope(SUP).svg"
+    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/support_scope(SUP).svg",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -5805,7 +5892,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/Scopes/SUP/iob",
-    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/support_scope(SUP).svg"
+    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/support_scope(SUP).svg",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -5871,7 +5959,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/Scopes/SUP/ib",
-    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/support_scope(SUP).svg"
+    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/support_scope(SUP).svg",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -5937,7 +6026,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/ecosystem-actors/PhoenixLabs-001/2023001",
-    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/support_scope(SUP).svg"
+    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/support_scope(SUP).svg",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -6003,7 +6093,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/ecosystem-actors/PhoenixLabs-001/2023002",
-    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/support_scope(SUP).svg"
+    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/support_scope(SUP).svg",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -6069,7 +6160,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/ecosystem-actors/PhoenixLabs-001/2023003",
-    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/support_scope(SUP).svg"
+    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/support_scope(SUP).svg",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -6135,7 +6227,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/ecosystem-actors/Viridian-001/2023001",
-    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/support_scope(SUP).svg"
+    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/support_scope(SUP).svg",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -6201,7 +6294,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/ecosystem-actors/Viridian-001/2023002",
-    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/support_scope(SUP).svg"
+    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/support_scope(SUP).svg",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -6267,7 +6361,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/ecosystem-actors/dewiz-001/2023001",
-    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/support_scope(SUP).svg"
+    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/support_scope(SUP).svg",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -6333,7 +6428,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/ecosystem-actors/Sidestream-001/2023001",
-    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/support_scope(SUP).svg"
+    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/support_scope(SUP).svg",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -6399,7 +6495,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/ecosystem-actors/Pull-Up-Labs-001/2023001",
-    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/support_scope(SUP).svg"
+    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/support_scope(SUP).svg",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -6465,7 +6562,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/ecosystem-actors/Pull-Up-Labs-001/2023001",
-    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/support_scope(SUP).svg"
+    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/support_scope(SUP).svg",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -6531,7 +6629,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/ecosystem-actors/TECH-001/2022001",
-    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/governance_scope(GOV).svg"
+    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/governance_scope(GOV).svg",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -6597,7 +6696,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/Scopes/SUP/Tokidev/PH",
-    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/support_scope(SUP).svg"
+    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/support_scope(SUP).svg",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -6663,7 +6763,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -6729,7 +6830,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -6795,7 +6897,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -6861,7 +6964,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/Scopes/STA/",
-    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/stability_scope(STA).svg"
+    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/stability_scope(STA).svg",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -6927,7 +7031,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/Scopes/STA/ACC/PB",
-    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/stability_scope(STA).svg"
+    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/stability_scope(STA).svg",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -6993,7 +7098,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/Scopes/STA/ACC/PB/Ecosystem-Actors/BA-LABS-001/2023001",
-    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/stability_scope(STA).svg"
+    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/stability_scope(STA).svg",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -7059,7 +7165,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/Scopes/STA/ACC/PB/Ecosystem-Actors/BA-LABS-001/2023002",
-    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/stability_scope(STA).svg"
+    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/stability_scope(STA).svg",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -7125,7 +7232,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/Scopes/STA/ACC/PB/Ecosystem-Actors/BA-LABS-001/2023003",
-    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/stability_scope(STA).svg"
+    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/stability_scope(STA).svg",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -7191,7 +7299,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/Scopes/STA/LRAB/2023001 ",
-    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/stability_scope(STA).svg"
+    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/stability_scope(STA).svg",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -7257,7 +7366,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/ecosystem-actors/Steakhouse-001/2022001",
-    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/governance_scope(GOV).svg"
+    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/governance_scope(GOV).svg",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -7323,7 +7433,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -7389,7 +7500,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -7455,7 +7567,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -7521,7 +7634,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/Scopes/GOV",
-    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/governance_scope(GOV).svg"
+    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/governance_scope(GOV).svg",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -7587,7 +7701,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/governance_scope(GOV).svg"
+    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/governance_scope(GOV).svg",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -7653,7 +7768,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -7719,7 +7835,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/Scopes/GOV/GovFacilitator",
-    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/governance_scope(GOV).svg"
+    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/governance_scope(GOV).svg",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -7785,7 +7902,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/Scopes/GOV/GovFacilitator",
-    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/governance_scope(GOV).svg"
+    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/governance_scope(GOV).svg",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -7851,7 +7969,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -7917,7 +8036,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/Scopes/GOV/GovAlpha",
-    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/governance_scope(GOV).svg"
+    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/governance_scope(GOV).svg",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -7983,7 +8103,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -8049,7 +8170,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -8115,7 +8237,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/Scopes/PRO",
-    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/protocol_scope(PRO).svg"
+    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/protocol_scope(PRO).svg",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -8181,7 +8304,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/Scopes/PRO/AC/PB",
-    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/protocol_scope(PRO).svg"
+    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/protocol_scope(PRO).svg",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -8247,7 +8371,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/Scopes/PRO/Maker Chain bootstrapping",
-    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/protocol_scope(PRO).svg"
+    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/protocol_scope(PRO).svg",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -8313,7 +8438,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/Scopes/PRO/Multichain",
-    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/protocol_scope(PRO).svghttps://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/protocol_scope(PRO).svg"
+    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/protocol_scope(PRO).svghttps://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/protocol_scope(PRO).svg",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -8379,7 +8505,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/Scopes/PRO/Multichain/ChainSecurity",
-    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/protocol_scope(PRO).svg"
+    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/protocol_scope(PRO).svg",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -8445,7 +8572,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -8511,7 +8639,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -8577,7 +8706,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -8643,7 +8773,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -8709,7 +8840,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -8775,7 +8907,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -8841,7 +8974,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -8907,7 +9041,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -8973,7 +9108,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/Scopes/ACC",
-    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/accessibility_scope_(ACC).svg"
+    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/accessibility_scope_(ACC).svg",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -9039,7 +9175,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/Scopes/ACC/AC/PB",
-    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/accessibility_scope_(ACC).svg"
+    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/accessibility_scope_(ACC).svg",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -9105,7 +9242,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/Scopes/ACC/RB",
-    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/accessibility_scope_(ACC).svg"
+    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/accessibility_scope_(ACC).svg",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -9171,7 +9309,8 @@ export default [
     "Conditional New Stable ": "0.15% per year\n0.45% early bird ",
     "Commited budget (New Stable)": 5000000,
     "Archived": "MakerDAO/Scopes/ACC/AR",
-    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/accessibility_scope_(ACC).svg"
+    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/accessibility_scope_(ACC).svg",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -9237,7 +9376,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/Scopes/ACC/Coms",
-    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/accessibility_scope_(ACC).svg"
+    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/accessibility_scope_(ACC).svg",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -9303,7 +9443,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/Scopes/ACC/LP",
-    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/accessibility_scope_(ACC).svg"
+    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/accessibility_scope_(ACC).svg",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -9369,7 +9510,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/Scopes/ACC/LP/Ecosystem-Actors/Jetstream/2023001",
-    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/accessibility_scope_(ACC).svg"
+    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/accessibility_scope_(ACC).svg",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -9435,7 +9577,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/Scopes/ACC/LP/Ecosystem-Actors/Jetstream/2023002",
-    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/accessibility_scope_(ACC).svg"
+    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/accessibility_scope_(ACC).svg",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -9501,7 +9644,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/Scopes/ACC/LP/Ecosystem-Actors/Growth/2023001",
-    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/accessibility_scope_(ACC).svg"
+    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/accessibility_scope_(ACC).svg",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -9567,7 +9711,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/accessibility_scope_(ACC).svg"
+    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/accessibility_scope_(ACC).svg",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -9633,7 +9778,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/makerDAO_legacy_budgets.svg"
+    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/makerDAO_legacy_budgets.svg",
+    "Budget subtitle ": ""
   },
   {
     "L0": "atlas/legacy) MakerDAO Legacy Budgets",
@@ -9699,7 +9845,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -9765,7 +9912,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -9831,7 +9979,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -9897,7 +10046,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -9963,7 +10113,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -10029,7 +10180,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -10095,7 +10247,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -10161,7 +10314,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -10227,7 +10381,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -10293,7 +10448,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -10359,7 +10515,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -10425,7 +10582,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -10491,7 +10649,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -10557,7 +10716,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -10623,7 +10783,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -10689,7 +10850,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -10755,7 +10917,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -10821,7 +10984,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -10887,7 +11051,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -10953,7 +11118,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -11019,7 +11185,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -11085,7 +11252,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -11151,7 +11319,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -11217,7 +11386,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -11283,7 +11453,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -11349,7 +11520,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -11415,7 +11587,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -11481,7 +11654,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -11547,7 +11721,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -11613,7 +11788,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -11679,7 +11855,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -11745,7 +11922,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -11811,7 +11989,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -11877,7 +12056,8 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   },
   {
     "L0": "",
@@ -11943,6 +12123,7 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "",
-    "Image": ""
+    "Image": "",
+    "Budget subtitle ": ""
   }
 ]
