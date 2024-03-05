@@ -4955,7 +4955,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/endgame_scope_budgets.svg",
-    "Budget subtitle ": ""
+    "Budget subtitle ": "Ecosystem Support Management"
   },
   {
     "L0": "",
@@ -6965,7 +6965,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/Scopes/STA/",
     "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/stability_scope(STA).svg",
-    "Budget subtitle ": ""
+    "Budget subtitle ": "Financial Stability Management "
   },
   {
     "L0": "",
@@ -7635,7 +7635,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/Scopes/GOV",
     "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/governance_scope(GOV).svg",
-    "Budget subtitle ": ""
+    "Budget subtitle ": "Ecosystem Governance Management"
   },
   {
     "L0": "",
@@ -8238,7 +8238,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/Scopes/PRO",
     "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/protocol_scope(PRO).svg",
-    "Budget subtitle ": ""
+    "Budget subtitle ": "Core Protocol Management"
   },
   {
     "L0": "",
@@ -9109,7 +9109,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/Scopes/ACC",
     "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/accessibility_scope_(ACC).svg",
-    "Budget subtitle ": ""
+    "Budget subtitle ": "Ecosystem Accessibility Management"
   },
   {
     "L0": "",
@@ -9846,7 +9846,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Budget subtitle ": "Historical Records"
   },
   {
     "L0": "",
@@ -9913,7 +9913,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Budget subtitle ": "Ensured Effective Oversight"
   },
   {
     "L0": "",
@@ -11387,7 +11387,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Budget subtitle ": "Escrowed Dai"
   },
   {
     "L0": "",
@@ -12124,6 +12124,6 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Budget subtitle ": "Miscellaneous"
   }
 ]
