@@ -225,7 +225,7 @@ export default class BudgetScript {
                 hierarchy[currentL0][currentL1][currentL2][currentL3][currentL4] = item;
             }
 
-            if(item.L5) {
+            if (item.L5) {
                 currentL5 = item.L5;
                 if (!hierarchy[currentL0]) hierarchy[currentL0] = {};
                 if (!hierarchy[currentL0][currentL1]) hierarchy[currentL0][currentL1] = {};

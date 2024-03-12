@@ -9850,7 +9850,7 @@ export default [
   },
   {
     "L0": "",
-    "L1": "core-units) core-units",
+    "L1": "core-units) Core Units",
     "L2": "",
     "L3": "",
     "L4": "",
@@ -11324,7 +11324,7 @@ export default [
   },
   {
     "L0": "",
-    "L1": "SPFs) SPFs",
+    "L1": "spfs) SPFs",
     "L2": "",
     "L3": "",
     "L4": "",
@@ -12061,7 +12061,7 @@ export default [
   },
   {
     "L0": "",
-    "L1": "KPS ) Keepers",
+    "L1": "keepers) Keepers",
     "L2": "",
     "L3": "",
     "L4": "",
@@ -12128,7 +12128,7 @@ export default [
   },
   {
     "L0": "",
-    "L1": "RDEL ) Recognized Delegates",
+    "L1": "recognized-delegates) Recognized Delegates",
     "L2": "",
     "L3": "",
     "L4": "",
@@ -12195,7 +12195,7 @@ export default [
   },
   {
     "L0": "",
-    "L1": "Other) Other",
+    "L1": "other) Other",
     "L2": "",
     "L3": "",
     "L4": "",
