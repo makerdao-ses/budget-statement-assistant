@@ -1,12 +1,12 @@
 export default [
   {
-    "L0": "atlas/immutable) End-game Atlas Immutable ",
+    "L0": "atlas/immutable) Atlas Immutable Budget",
     "L1": "",
     "L2": "",
     "L3": "",
     "L4": "",
     "L5": "",
-    "Budget Description": "",
+    "Budget Description": "Endgame Atlas Immutable Budgets",
     "": "",
     "Scope Framework Responsible Facilitator ": "",
     "Payment Implementation": "",
@@ -64,16 +64,16 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/endgame_atlas_budgets.svg",
-    "Budget subtitle ": "Endgame Atlas Immutable Budgets"
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": "MIP102c2-SP7, MIP101: Maker Atlas Immutable Alignment Artifact"
   },
   {
     "L0": "",
-    "L1": "ngte) NewGovToken Emissions and Distribution ",
+    "L1": "NGT) NewGovToken ",
     "L2": "",
     "L3": "",
     "L4": "",
     "L5": "",
-    "Budget Description": "The Neural Tokenomics emits up to 1 billion NewGovTokens (NGT) per year to power all the tokenomics of the MakerDAO System [ATL.4.3.11]",
+    "Budget Description": "Emmisions and Distribution: the Neural Tokenomics emits up to 1 billion NewGovTokens (NGT) per year to power all the tokenomics of the MakerDAO System [ATL.4.3.11]",
     "": "",
     "Scope Framework Responsible Facilitator ": "",
     "Payment Implementation": "",
@@ -131,16 +131,16 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": "Emmisions and Distribution"
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": "MIP107: 10.1.1.2"
   },
   {
     "L0": "",
     "L1": "",
-    "L2": "ntenc) Neural tokenomics emissions on the new chain",
+    "L2": "NTE) Neural tokenomics ",
     "L3": "",
     "L4": "",
     "L5": "",
-    "Budget Description": "900 million NGT per year are recaptured by driving users or income to the protocol [ATL.4.3.11.1]",
+    "Budget Description": "Emissions on the New Chain: 900 million NGT per year are recaptured by driving users or income to the protocol [ATL.4.3.11.1]",
     "": "",
     "Scope Framework Responsible Facilitator ": "",
     "Payment Implementation": "",
@@ -198,7 +198,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/immutable/sds/alld/ntenc",
     "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/subDAOs.svg",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": "MIP107: 3"
   },
   {
     "L0": "",
@@ -265,7 +265,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -332,7 +332,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -399,7 +399,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -466,7 +466,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -533,7 +533,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -600,7 +600,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -667,7 +667,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/immutable/fds/Govalpha",
     "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/subDAOs.svg",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -734,7 +734,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/immutable/fdsGrowth",
     "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/subDAOs.svg",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -801,7 +801,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -868,7 +868,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -935,7 +935,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -1002,7 +1002,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -1069,7 +1069,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -1136,7 +1136,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -1203,7 +1203,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -1270,7 +1270,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -1337,7 +1337,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -1404,7 +1404,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -1471,7 +1471,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -1538,7 +1538,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -1605,7 +1605,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -1672,7 +1672,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -1739,7 +1739,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -1806,7 +1806,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -1873,7 +1873,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -1940,7 +1940,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -2007,7 +2007,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -2074,7 +2074,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -2141,7 +2141,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -2208,7 +2208,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -2275,7 +2275,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -2342,7 +2342,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -2409,7 +2409,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -2476,7 +2476,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -2543,7 +2543,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -2610,7 +2610,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -2677,7 +2677,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -2744,7 +2744,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -2811,7 +2811,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -2878,7 +2878,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -2945,7 +2945,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -3012,7 +3012,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -3079,7 +3079,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -3146,16 +3146,16 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
-    "L1": "AGE)AllocatorDAO Genesis Emissions, Distribution and Farming rate",
+    "L1": "ALD)AllocatorDAO ",
     "L2": "",
     "L3": "",
     "L4": "",
     "L5": "",
-    "Budget Description": "2.3 billion tokens are emitted for farming, 70% for Dai Farming and for 30% Sagittarius Engine [ATL.4.3.12.2]",
+    "Budget Description": "Genesis Emissions, Distribution and Farming rate: 2.3 billion tokens are emitted for farming, 70% for Dai Farming and for 30% Sagittarius Engine [ATL.4.3.12.2]",
     "": "",
     "Scope Framework Responsible Facilitator ": "",
     "Payment Implementation": "",
@@ -3213,12 +3213,12 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": "Genesis Emissions, Distribution and Farming rate"
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
     "L1": "",
-    "L2": "ATGF) Allocator tokens for Genesis Farming ",
+    "L2": "ALT) Allocator tokens ",
     "L3": "",
     "L4": "",
     "L5": "",
@@ -3280,7 +3280,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -3347,7 +3347,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -3414,7 +3414,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -3481,7 +3481,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -3548,7 +3548,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -3615,7 +3615,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -3682,16 +3682,16 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
-    "L1": "FDSGE) FacilitatorDAO Genesis Emissions, Distribution and Farming rate",
+    "L1": "FLD) FacilitatorDAO ",
     "L2": "",
     "L3": "",
     "L4": "",
     "L5": "",
-    "Budget Description": "2.3 billion FacilitatorDAO tokens are emitted for farming, 70% for Dai Farming and for 30% Sagittarius Engine [ATL.4.3.12.2]",
+    "Budget Description": "Genesis Emissions, Distribution and Farming rate: 2.3 billion FacilitatorDAO tokens are emitted for farming, 70% for Dai Farming and for 30% Sagittarius Engine [ATL.4.3.12.2]",
     "": "",
     "Scope Framework Responsible Facilitator ": "",
     "Payment Implementation": "",
@@ -3749,12 +3749,12 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": "Genesis Emissions, Distribution and Farming rate"
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
     "L1": "",
-    "L2": "Farming) FacilitatorDAO tokens for Genesis Farming ",
+    "L2": "FLT) FacilitatorDAO tokens ",
     "L3": "",
     "L4": "",
     "L5": "",
@@ -3816,7 +3816,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -3883,7 +3883,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -3950,7 +3950,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -4017,7 +4017,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -4084,7 +4084,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -4151,7 +4151,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -4218,7 +4218,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -4285,16 +4285,16 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
-    "L1": "MGE) MiniDAO Genesis Emissions ",
+    "L1": "MND) MiniDAO ",
     "L2": "",
     "L3": "",
     "L4": "",
     "L5": "",
-    "Budget Description": "920 million MiniDAO tokens emitted for farming over 10 years. 15% of all MiniDAO tokens are for DAI Farming, 35% of all MiniDAO tokens are for regular farmers of the parent AllocatorDAO token and 50% of all MiniDAO tokens emmited are for parent AllocatorDAO lockstage Engine users. ",
+    "Budget Description": "Genesis Emissions, Distribution and Farming rate: 920 million MiniDAO tokens emitted for farming over 10 years. 15% of all MiniDAO tokens are for DAI Farming, 35% of all MiniDAO tokens are for regular farmers of the parent AllocatorDAO token and 50% of all MiniDAO tokens emmited are for parent AllocatorDAO lockstage Engine users. ",
     "": "",
     "Scope Framework Responsible Facilitator ": "",
     "Payment Implementation": "",
@@ -4352,12 +4352,12 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": "Genesis Emissions"
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
     "L1": "",
-    "L2": "Farming) MiniDAO tokens are for Genesis farming ",
+    "L2": "MNT) MiniDAO tokens  ",
     "L3": "",
     "L4": "",
     "L5": "",
@@ -4419,7 +4419,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -4486,7 +4486,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -4553,7 +4553,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -4620,7 +4620,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -4687,7 +4687,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -4754,7 +4754,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -4821,7 +4821,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -4888,16 +4888,16 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
-    "L0": "atlas/scopes) End-game Alignment Scope Budgets",
+    "L0": "atlas/scopes) Scope Framework Budget",
     "L1": "",
     "L2": "",
     "L3": "",
     "L4": "",
     "L5": "",
-    "Budget Description": "",
+    "Budget Description": "Ecosystem Support Management",
     "": "",
     "Scope Framework Responsible Facilitator ": "",
     "Payment Implementation": "",
@@ -4955,7 +4955,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/endgame_scope_budgets.svg",
-    "Budget subtitle ": "Ecosystem Support Management"
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -5022,7 +5022,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/Scopes/SUP",
     "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/support_scope(SUP).svg",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -5089,12 +5089,12 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/Scopes/SUP/AC/PB",
     "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/support_scope(SUP).svg",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
     "L1": "",
-    "L2": "GOV) Governance Process Support budget",
+    "L2": "GPS) Governance Process Support budget",
     "L3": "",
     "L4": "",
     "L5": "",
@@ -5156,12 +5156,12 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/Scopes/SUP/Gov/PB",
     "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/support_scope(SUP).svg",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
     "L1": "",
-    "L2": "GAIT) GAIT bootstrapping budget ",
+    "L2": "GAIT-B) GAIT bootstrapping budget ",
     "L3": "",
     "L4": "",
     "L5": "",
@@ -5223,12 +5223,12 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/Scopes/SUP/CAIT/BB",
     "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/support_scope(SUP).svg",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
     "L1": "",
-    "L2": "GAIT) GAIT Hardware and maintenance budget",
+    "L2": "GAIT-H) GAIT Hardware and maintenance budget",
     "L3": "",
     "L4": "",
     "L5": "",
@@ -5290,12 +5290,12 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/Scopes/SUP/CAIT/HMB",
     "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/support_scope(SUP).svg",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
     "L1": "",
-    "L2": "DAOTOOLKIT) DAO Toolkit Core Development",
+    "L2": "DTK) DAO Toolkit Core Development",
     "L3": "",
     "L4": "",
     "L5": "",
@@ -5357,12 +5357,12 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/Scopes/SUP/Tokidev",
     "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/support_scope(SUP).svg",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
     "L1": "",
-    "L2": "COMS-INFRA) Communications infrastructure budget",
+    "L2": "C-INF) Communications infrastructure budget",
     "L3": "",
     "L4": "",
     "L5": "",
@@ -5424,7 +5424,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/Scopes/SUP/Coms",
     "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/support_scope(SUP).svg",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -5491,7 +5491,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/Scopes/SUP/EAE",
     "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/support_scope(SUP).svg",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -5558,7 +5558,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/Scopes/SUP/RF",
     "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/support_scope(SUP).svg",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -5625,12 +5625,12 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
     "L1": "",
-    "L2": "RRP) The Resilience Research and Preparedness Budget ",
+    "L2": "RRP-F) The Resilience Research and Preparedness Budget ",
     "L3": "",
     "L4": "",
     "L5": "",
@@ -5692,7 +5692,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/Scopes/SUP/Research/PB",
     "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/support_scope(SUP).svg",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -5759,12 +5759,12 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
     "L1": "",
-    "L2": "PURPOSE) Purpose fund",
+    "L2": "PR-F) Purpose fund",
     "L3": "",
     "L4": "",
     "L5": "",
@@ -5826,7 +5826,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/Scopes/SUP/PF",
     "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/support_scope(SUP).svg",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -5893,7 +5893,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/Scopes/SUP/iob",
     "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/support_scope(SUP).svg",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -5960,7 +5960,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/Scopes/SUP/ib",
     "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/support_scope(SUP).svg",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -6027,7 +6027,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/ecosystem-actors/PhoenixLabs-001/2023001",
     "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/support_scope(SUP).svg",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -6094,7 +6094,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/ecosystem-actors/PhoenixLabs-001/2023002",
     "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/support_scope(SUP).svg",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -6161,7 +6161,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/ecosystem-actors/PhoenixLabs-001/2023003",
     "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/support_scope(SUP).svg",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -6228,7 +6228,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/ecosystem-actors/Viridian-001/2023001",
     "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/support_scope(SUP).svg",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -6295,7 +6295,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/ecosystem-actors/Viridian-001/2023002",
     "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/support_scope(SUP).svg",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -6362,7 +6362,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/ecosystem-actors/dewiz-001/2023001",
     "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/support_scope(SUP).svg",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -6429,7 +6429,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/ecosystem-actors/Sidestream-001/2023001",
     "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/support_scope(SUP).svg",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -6496,7 +6496,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/ecosystem-actors/Pull-Up-Labs-001/2023001",
     "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/support_scope(SUP).svg",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -6563,7 +6563,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/ecosystem-actors/Pull-Up-Labs-001/2023001",
     "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/support_scope(SUP).svg",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -6630,7 +6630,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/ecosystem-actors/TECH-001/2022001",
     "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/governance_scope(GOV).svg",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -6697,7 +6697,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/Scopes/SUP/Tokidev/PH",
     "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/support_scope(SUP).svg",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -6764,7 +6764,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -6831,7 +6831,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -6898,7 +6898,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -6907,7 +6907,7 @@ export default [
     "L3": "",
     "L4": "",
     "L5": "",
-    "Budget Description": "",
+    "Budget Description": "Financial Stability Management ",
     "": "",
     "Scope Framework Responsible Facilitator ": "",
     "Payment Implementation": "",
@@ -6965,12 +6965,12 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/Scopes/STA/",
     "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/stability_scope(STA).svg",
-    "Budget subtitle ": "Financial Stability Management "
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
     "L1": "",
-    "L2": "ACPF) The Stability Advisory Council Projects and Funding",
+    "L2": "STAC) The Stability Advisory Council Projects and Funding",
     "L3": "",
     "L4": "",
     "L5": "",
@@ -7032,7 +7032,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/Scopes/STA/ACC/PB",
     "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/stability_scope(STA).svg",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -7099,7 +7099,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/Scopes/STA/ACC/PB/Ecosystem-Actors/BA-LABS-001/2023001",
     "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/stability_scope(STA).svg",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -7166,7 +7166,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/Scopes/STA/ACC/PB/Ecosystem-Actors/BA-LABS-001/2023002",
     "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/stability_scope(STA).svg",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -7233,7 +7233,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/Scopes/STA/ACC/PB/Ecosystem-Actors/BA-LABS-001/2023003",
     "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/stability_scope(STA).svg",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -7300,12 +7300,12 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/Scopes/STA/LRAB/2023001 ",
     "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/stability_scope(STA).svg",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
     "L1": "",
-    "L2": "STEAKHOUSE) Steakhouse/Strategic Finance ",
+    "L2": "STKH) Steakhouse/Strategic Finance ",
     "L3": "",
     "L4": "",
     "L5": "",
@@ -7367,7 +7367,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/ecosystem-actors/Steakhouse-001/2022001",
     "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/governance_scope(GOV).svg",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -7434,7 +7434,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -7501,7 +7501,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -7568,7 +7568,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -7577,7 +7577,7 @@ export default [
     "L3": "",
     "L4": "",
     "L5": "",
-    "Budget Description": "",
+    "Budget Description": "Ecosystem Governance Management",
     "": "",
     "Scope Framework Responsible Facilitator ": "",
     "Payment Implementation": "",
@@ -7635,12 +7635,12 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/Scopes/GOV",
     "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/governance_scope(GOV).svg",
-    "Budget subtitle ": "Ecosystem Governance Management"
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
     "L1": "",
-    "L2": "AC) Advisory council project budget ",
+    "L2": "GAC) Advisory council project budget ",
     "L3": "",
     "L4": "",
     "L5": "",
@@ -7702,7 +7702,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/governance_scope(GOV).svg",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -7769,7 +7769,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -7836,7 +7836,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/Scopes/GOV/GovFacilitator",
     "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/governance_scope(GOV).svg",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -7903,7 +7903,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/Scopes/GOV/GovFacilitator",
     "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/governance_scope(GOV).svg",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -7970,7 +7970,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -8037,7 +8037,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/Scopes/GOV/GovAlpha",
     "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/governance_scope(GOV).svg",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -8104,7 +8104,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -8171,7 +8171,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -8180,7 +8180,7 @@ export default [
     "L3": "",
     "L4": "",
     "L5": "",
-    "Budget Description": "",
+    "Budget Description": "Core Protocol Management",
     "": "",
     "Scope Framework Responsible Facilitator ": "",
     "Payment Implementation": "",
@@ -8238,7 +8238,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/Scopes/PRO",
     "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/protocol_scope(PRO).svg",
-    "Budget subtitle ": "Core Protocol Management"
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -8305,12 +8305,12 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/Scopes/PRO/AC/PB",
     "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/protocol_scope(PRO).svg",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
     "L1": "",
-    "L2": "NEWCHAIN) Maker NewChain bootstrapping/NewChain ",
+    "L2": "NEW-C) Maker NewChain bootstrapping/NewChain ",
     "L3": "",
     "L4": "",
     "L5": "",
@@ -8372,12 +8372,12 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/Scopes/PRO/Maker Chain bootstrapping",
     "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/protocol_scope(PRO).svg",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
     "L1": "",
-    "L2": "MULTICHAIN) Multichain engineering",
+    "L2": "MULTI-C) Multichain engineering",
     "L3": "",
     "L4": "",
     "L5": "",
@@ -8439,12 +8439,12 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/Scopes/PRO/Multichain",
     "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/protocol_scope(PRO).svghttps://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/protocol_scope(PRO).svg",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
     "L1": "",
-    "L2": "GOVSECURITY) Governance Security engineering",
+    "L2": "GSE) Governance Security engineering",
     "L3": "",
     "L4": "",
     "L5": "",
@@ -8506,12 +8506,12 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/Scopes/PRO/Multichain/ChainSecurity",
     "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/protocol_scope(PRO).svg",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
     "L1": "",
-    "L2": "Keepers) Keepers",
+    "L2": "KPRS) Keepers",
     "L3": "",
     "L4": "",
     "L5": "",
@@ -8573,7 +8573,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -8640,7 +8640,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -8707,7 +8707,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -8774,7 +8774,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -8841,7 +8841,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -8908,7 +8908,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -8975,7 +8975,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -9042,7 +9042,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -9051,7 +9051,7 @@ export default [
     "L3": "",
     "L4": "",
     "L5": "",
-    "Budget Description": "-",
+    "Budget Description": "Ecosystem Accessibility Management",
     "": "",
     "Scope Framework Responsible Facilitator ": "",
     "Payment Implementation": "",
@@ -9109,12 +9109,12 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/Scopes/ACC",
     "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/accessibility_scope_(ACC).svg",
-    "Budget subtitle ": "Ecosystem Accessibility Management"
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
     "L1": "",
-    "L2": "ADVISORY-COUNCIL) The Advisory Council project budget ",
+    "L2": "AAC) The Advisory Council project budget ",
     "L3": "",
     "L4": "",
     "L5": "",
@@ -9176,12 +9176,12 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/Scopes/ACC/AC/PB",
     "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/accessibility_scope_(ACC).svg",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
     "L1": "",
-    "L2": "REBRAND) Rebrand Budget",
+    "L2": "RBRD) Rebrand Budget",
     "L3": "",
     "L4": "",
     "L5": "",
@@ -9243,7 +9243,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/Scopes/ACC/RB",
     "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/accessibility_scope_(ACC).svg",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -9310,7 +9310,7 @@ export default [
     "Commited budget (New Stable)": 5000000,
     "Archived": "MakerDAO/Scopes/ACC/AR",
     "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/accessibility_scope_(ACC).svg",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -9377,7 +9377,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/Scopes/ACC/Coms",
     "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/accessibility_scope_(ACC).svg",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -9444,7 +9444,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/Scopes/ACC/LP",
     "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/accessibility_scope_(ACC).svg",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -9511,7 +9511,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/Scopes/ACC/LP/Ecosystem-Actors/Jetstream/2023001",
     "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/accessibility_scope_(ACC).svg",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -9578,7 +9578,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/Scopes/ACC/LP/Ecosystem-Actors/Jetstream/2023002",
     "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/accessibility_scope_(ACC).svg",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -9645,7 +9645,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/Scopes/ACC/LP/Ecosystem-Actors/Growth/2023001",
     "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/accessibility_scope_(ACC).svg",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -9712,7 +9712,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/accessibility_scope_(ACC).svg",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -9779,16 +9779,16 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/makerDAO_legacy_budgets.svg",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
-    "L0": "atlas/legacy) MakerDAO Legacy Budgets",
+    "L0": "atlas/legacy) MakerDAO Legacy Budget",
     "L1": "",
     "L2": "",
     "L3": "",
     "L4": "",
     "L5": "",
-    "Budget Description": "",
+    "Budget Description": "Historical Records",
     "": "",
     "Scope Framework Responsible Facilitator ": "",
     "Payment Implementation": "",
@@ -9846,7 +9846,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": "Historical Records"
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -9855,7 +9855,7 @@ export default [
     "L3": "",
     "L4": "",
     "L5": "",
-    "Budget Description": "",
+    "Budget Description": "Operational Effective Oversight",
     "": "",
     "Scope Framework Responsible Facilitator ": "",
     "Payment Implementation": "",
@@ -9913,7 +9913,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": "Ensured Effective Oversight"
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -9980,7 +9980,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -10047,7 +10047,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -10114,7 +10114,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -10181,7 +10181,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -10248,7 +10248,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -10315,7 +10315,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -10382,7 +10382,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -10449,7 +10449,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -10516,7 +10516,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -10583,7 +10583,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -10650,7 +10650,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -10717,7 +10717,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -10784,7 +10784,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -10851,7 +10851,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -10918,7 +10918,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -10985,7 +10985,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -11052,7 +11052,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -11119,7 +11119,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -11186,7 +11186,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -11253,7 +11253,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -11320,7 +11320,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -11329,7 +11329,7 @@ export default [
     "L3": "",
     "L4": "",
     "L5": "",
-    "Budget Description": "",
+    "Budget Description": "Escrowed Dai",
     "": "",
     "Scope Framework Responsible Facilitator ": "",
     "Payment Implementation": "",
@@ -11387,7 +11387,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": "Escrowed Dai"
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -11454,7 +11454,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -11521,7 +11521,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -11588,7 +11588,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -11655,7 +11655,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -11722,7 +11722,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -11789,7 +11789,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -11856,7 +11856,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -11923,7 +11923,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -11990,7 +11990,7 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -12057,7 +12057,141 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": ""
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
+  },
+  {
+    "L0": "",
+    "L1": "KPS ) Keepers",
+    "L2": "",
+    "L3": "",
+    "L4": "",
+    "L5": "",
+    "Budget Description": "Miscellaneous",
+    "": "",
+    "Scope Framework Responsible Facilitator ": "",
+    "Payment Implementation": "",
+    "Approved by Executive vote/Source of Truth": "",
+    "Is the budget implemented? This means  Active or Inactive": "",
+    "Explanatory Document": "",
+    "NGT Distribution  Year": "",
+    "NGT Quarter": "",
+    "NGT Month ": "",
+    "Farming Rate": "",
+    "MKR value of NGT Year": "",
+    "Multisig Wallet": "",
+    "DAI Vest ID ": "",
+    "Already Transferred (DAI)": "",
+    "Immediate Budget (DAI)": "",
+    "Committed Budget (DAI) New ": "",
+    "Approved # of months": "",
+    "Monthly Budget  (DAI)": "",
+    "Qly Budget (DAI) ": "",
+    "Reserves": "",
+    "Committed Budget Grand Total  (DAI) including legacy budgets ": "",
+    "Budget Query https://studio.apollographql.com/graph/Performance-Dashboard-Dev/variant/current/explorer 2023-11-16": "",
+    "Analytics Query Check 2023-12-05 https://studio.apollographql.com/graph/Performance-Dashboard-Dev/variant/current/explorer": "",
+    "Path": "",
+    "Conditional (DAI)": "",
+    "DAI Budget Start": "",
+    "DAI Budget End": "",
+    "Makerburn DAI  Start": "",
+    "Makerburn DAI End": "",
+    "Termination Date": "",
+    "Operational wallet": "",
+    "MKR Approved by Excutive vote ": "",
+    "MKR Explanatory  documentation": "",
+    "MKR Vest ID": "",
+    "Already Transferred (MKR)": "",
+    "Immediate Budget (MKR)": "",
+    "MKR per Quarter ": "",
+    "MKR  per month": "",
+    "Allocated Budget (MKR)": "",
+    "Committed Budget Grand Total  (MKR) ": "",
+    "Budget query 2023-11-16": "",
+    "Analytics query 2023-12-06": "",
+    "Approved # Months ": "",
+    "Conditional (MKR)": "",
+    "Termination   Total claimed": "",
+    "MKR Start": "",
+    "MKR End": "",
+    "MKR Cliff Date": "",
+    "MakerBurn Start date": "",
+    "MakerBurn End date": "",
+    "Wallet": "",
+    "MKR contract ": "",
+    "MKR Manager Wallet": "",
+    "Conditional New Stable ": "",
+    "Commited budget (New Stable)": "",
+    "Archived": "",
+    "Image": "",
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
+  },
+  {
+    "L0": "",
+    "L1": "RDEL ) Recognized Delegates",
+    "L2": "",
+    "L3": "",
+    "L4": "",
+    "L5": "",
+    "Budget Description": "",
+    "": "",
+    "Scope Framework Responsible Facilitator ": "",
+    "Payment Implementation": "",
+    "Approved by Executive vote/Source of Truth": "",
+    "Is the budget implemented? This means  Active or Inactive": "",
+    "Explanatory Document": "",
+    "NGT Distribution  Year": "",
+    "NGT Quarter": "",
+    "NGT Month ": "",
+    "Farming Rate": "",
+    "MKR value of NGT Year": "",
+    "Multisig Wallet": "",
+    "DAI Vest ID ": "",
+    "Already Transferred (DAI)": "",
+    "Immediate Budget (DAI)": "",
+    "Committed Budget (DAI) New ": "",
+    "Approved # of months": "",
+    "Monthly Budget  (DAI)": "",
+    "Qly Budget (DAI) ": "",
+    "Reserves": "",
+    "Committed Budget Grand Total  (DAI) including legacy budgets ": "",
+    "Budget Query https://studio.apollographql.com/graph/Performance-Dashboard-Dev/variant/current/explorer 2023-11-16": "",
+    "Analytics Query Check 2023-12-05 https://studio.apollographql.com/graph/Performance-Dashboard-Dev/variant/current/explorer": "",
+    "Path": "",
+    "Conditional (DAI)": "",
+    "DAI Budget Start": "",
+    "DAI Budget End": "",
+    "Makerburn DAI  Start": "",
+    "Makerburn DAI End": "",
+    "Termination Date": "",
+    "Operational wallet": "",
+    "MKR Approved by Excutive vote ": "",
+    "MKR Explanatory  documentation": "",
+    "MKR Vest ID": "",
+    "Already Transferred (MKR)": "",
+    "Immediate Budget (MKR)": "",
+    "MKR per Quarter ": "",
+    "MKR  per month": "",
+    "Allocated Budget (MKR)": "",
+    "Committed Budget Grand Total  (MKR) ": "",
+    "Budget query 2023-11-16": "",
+    "Analytics query 2023-12-06": "",
+    "Approved # Months ": "",
+    "Conditional (MKR)": "",
+    "Termination   Total claimed": "",
+    "MKR Start": "",
+    "MKR End": "",
+    "MKR Cliff Date": "",
+    "MakerBurn Start date": "",
+    "MakerBurn End date": "",
+    "Wallet": "",
+    "MKR contract ": "",
+    "MKR Manager Wallet": "",
+    "Conditional New Stable ": "",
+    "Commited budget (New Stable)": "",
+    "Archived": "",
+    "Image": "",
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
     "L0": "",
@@ -12124,6 +12258,6 @@ export default [
     "Commited budget (New Stable)": "",
     "Archived": "",
     "Image": "",
-    "Budget subtitle ": "Miscellaneous"
+    "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   }
 ]
