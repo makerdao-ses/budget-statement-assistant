@@ -1,6 +1,7 @@
 import { AnalyticsPath } from "../utils/analytics/AnalyticsPath.js";
 import { AnalyticsStore } from "../utils/analytics/AnalyticsStore.js";
 import knex from 'knex';
+import accounts from "./accounts.js"
 
 export default class SnapshotLineItemsScript {
 
@@ -39,7 +40,7 @@ export default class SnapshotLineItemsScript {
         // adding on-chain snapshots
         for (let i = 0; i < snapshotsOnChain.length; i++) {
             const snapshot = snapshotsOnChain[i];
-            const budgetType = await this.getBudgetType(snapshot.ownerType, snapshot.ownerId, snapshot.accountLabel);
+            const budgetType = await this.getBudgetType(snapshot.ownerType, snapshot.ownerId, snapshot.accountLabel, snapshot.accountAddress);
 
             const serie = {
                 start: snapshot.timestamp,
@@ -62,7 +63,7 @@ export default class SnapshotLineItemsScript {
         // adding off-chain snapshots
         for (let i = 0; i < snapshotsOffChain.length; i++) {
             const snapshot = snapshotsOffChain[i];
-            const budgetType = await this.getBudgetType(snapshot.ownerType, snapshot.ownerId, snapshot.accountLabel);
+            const budgetType = await this.getBudgetType(snapshot.ownerType, snapshot.ownerId, snapshot.accountLabel, snapshot.accountAddress);
 
             const serie = {
                 start: snapshot.timestamp,
@@ -85,7 +86,7 @@ export default class SnapshotLineItemsScript {
         // adding protocol net outflow snapshots
         for (let i = 0; i < snapshotsProtocolNetOutFlow.length; i++) {
             const snapshot = snapshotsProtocolNetOutFlow[i];
-            const budgetType = await this.getBudgetType(snapshot.ownerType, snapshot.ownerId, snapshot.accountLabel);
+            const budgetType = await this.getBudgetType(snapshot.ownerType, snapshot.ownerId, snapshot.accountLabel, snapshot.accountAddress);
 
             const serie = {
                 start: snapshot.timestamp,
@@ -108,21 +109,31 @@ export default class SnapshotLineItemsScript {
         return series;
     }
 
-    private getBudgetType = async (ownerType: string, ownerId: number, accountLabel: string) => {
+    private getBudgetType = async (
+        ownerType: string,
+        ownerId: number,
+        accountLabel: string,
+        accountAddress: string
+    ) => {
         const cu = await this.db('CoreUnit').where('id', ownerId).select('code');
-
-        switch (ownerType) {
-            case 'CoreUnit': return `legacy/core-units/${cu[0].code}`;
-            case 'Delegates': return 'legacy/recognized-delegates';
-            case 'EcosystemActor': return `scopes/SUP/incubation/${cu[0].code}`;
-            case 'Keepers': return 'legacy/keepers';
-            case 'SpecialPurposeFund': return 'legacy/spfs';
-            case 'AlignedDelegates': return 'immutable/ads';
-            case 'Scopes': {
-                return `legacy/scopes/${cu[0].code}/${this.parseAccountLabel(accountLabel)}`;
-            }
-            default: {
-                return `snapshot/unknown/${ownerType}/${cu[0]?.code}]}`;
+        const account = accounts.find(acc => acc.Address === accountAddress);
+        if (account) {
+            return `legacy/${account["budget path 2"]}/${account["budget path 3"]}`;
+        }
+        else {
+            switch (ownerType) {
+                case 'CoreUnit': return `legacy/core-units/${cu[0].code}`;
+                case 'Delegates': return 'legacy/recognized-delegates';
+                case 'EcosystemActor': return `scopes/SUP/incubation/${cu[0].code}`;
+                case 'Keepers': return 'legacy/keepers';
+                case 'SpecialPurposeFund': return 'legacy/spfs';
+                case 'AlignedDelegates': return 'immutable/ads';
+                case 'Scopes': {
+                    return `legacy/scopes/${cu[0].code}/${this.parseAccountLabel(accountLabel)}`;
+                }
+                default: {
+                    return `snapshot/unknown/${ownerType}/${cu[0]?.code}]}`;
+                }
             }
         }
     }
