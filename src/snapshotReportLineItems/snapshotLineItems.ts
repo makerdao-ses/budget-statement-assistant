@@ -116,24 +116,23 @@ export default class SnapshotLineItemsScript {
         accountAddress: string
     ) => {
         const cu = await this.db('CoreUnit').where('id', ownerId).select('code');
-        const account = accounts.find(acc => acc.Address === accountAddress);
-        if (account) {
-            return `legacy/${account["budget path 2"]}/${account["budget path 3"]}`;
-        }
-        else {
-            switch (ownerType) {
-                case 'CoreUnit': return `legacy/core-units/${cu[0].code}`;
-                case 'Delegates': return 'legacy/recognized-delegates';
-                case 'EcosystemActor': return `scopes/SUP/incubation/${cu[0].code}`;
-                case 'Keepers': return 'legacy/keepers';
-                case 'SpecialPurposeFund': return 'legacy/spfs';
-                case 'AlignedDelegates': return 'immutable/ads';
-                case 'Scopes': {
-                    return `legacy/scopes/${cu[0].code}/${this.parseAccountLabel(accountLabel)}`;
+
+        switch (ownerType) {
+            case 'CoreUnit': return `legacy/core-units/${cu[0].code}`;
+            case 'Delegates': return 'legacy/recognized-delegates';
+            case 'EcosystemActor': return `scopes/SUP/incubation/${cu[0].code}`;
+            case 'Keepers': return 'legacy/keepers';
+            case 'SpecialPurposeFund': return 'legacy/spfs';
+            case 'AlignedDelegates': return 'immutable/ads';
+            case 'Scopes': {
+                const account = accounts.find(acc => acc.Address === accountAddress);
+                if (account) {
+                    return `legacy/${account["budget path 2"]}/${account["budget path 3"]}`;
                 }
-                default: {
-                    return `snapshot/unknown/${ownerType}/${cu[0]?.code}]}`;
-                }
+                return `legacy/scopes/${cu[0].code}/${this.parseAccountLabel(accountLabel)}`;
+            }
+            default: {
+                return `snapshot/unknown/${ownerType}/${cu[0]?.code}]}`;
             }
         }
     }
