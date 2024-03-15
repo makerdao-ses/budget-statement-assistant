@@ -123,7 +123,9 @@ export default class SnapshotLineItemsScript {
             case 'EcosystemActor': return `scopes/SUP/incubation/${cu[0].code}`;
             case 'Keepers': return 'legacy/keepers';
             case 'SpecialPurposeFund': return 'legacy/spfs';
-            case 'AlignedDelegates': return 'immutable/ads';
+            case 'AlignedDelegates': {
+                return 'aligned-delegates';
+            }
             case 'Scopes': {
                 if (accountLabel === 'Maker Protocol Wallet') {
                     return `legacy/scopes/${cu[0].code}`;
