@@ -287,7 +287,7 @@ export default class BudgetScript {
                     parentId: parentId,
                     name: name,
                     code: code,
-                    description: obj[key]['Budget Description'],
+                    description: obj[key]['Atlas Reference/ Budget description'],
                     image: obj[key]['Image'],
                     subtitle: obj[key]['Budget subtitle ']
                 }
