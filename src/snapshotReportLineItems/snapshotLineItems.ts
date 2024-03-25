@@ -1,6 +1,6 @@
 import { AnalyticsPath } from "../utils/analytics/AnalyticsPath.js";
 import { AnalyticsStore } from "../utils/analytics/AnalyticsStore.js";
-import knex from 'knex';
+import knex, { Knex } from 'knex';
 import accounts from "./accounts.js"
 
 export default class SnapshotLineItemsScript {
@@ -224,11 +224,22 @@ export default class SnapshotLineItemsScript {
             .filter(acc => acc.Type === 'Auditor')
             .map(acc => acc.Address);
 
+        const protocols = accounts
+            .filter(acc => acc.Type === 'Protocol')
+            .map(acc => acc.Address);
+
         const baseQuery = this.db('Snapshot')
             .select('snapshotId', 'timestamp', 'amount', 'token', 'accountAddress', 'txLabel', 'ownerType', 'ownerId', 'month', 'accountLabel')
             .join('SnapshotAccount', 'SnapshotAccount.snapshotId', 'Snapshot.id')
             .join('SnapshotAccountTransaction', 'SnapshotAccountTransaction.snapshotAccountId', 'SnapshotAccount.id')
-            .whereIn('SnapshotAccount.accountAddress', auditors);
+            .where(function (this: Knex.QueryBuilder) {
+                this.whereIn('SnapshotAccount.accountAddress', auditors)
+                    .andWhereNot('SnapshotAccountTransaction.counterParty', protocols)
+                    .orWhere(function (this: Knex.QueryBuilder) {
+                        this.whereIn('SnapshotAccount.accountAddress', protocols)
+                            .andWhereNot('SnapshotAccountTransaction.counterParty', auditors)
+                    });
+            });
 
         if (this.snapshotId) {
             baseQuery.where('Snapshot.id', this.snapshotId);
