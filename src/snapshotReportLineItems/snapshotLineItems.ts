@@ -34,6 +34,7 @@ export default class SnapshotLineItemsScript {
         const snapshotsOnChain = await this.getSnapshotLineItems();
         const snapshotsOffChain = await this.getSnapshotLineItemsOffChain();
         const snapshotsProtocolNetOutFlow = await this.getSnapshotLineItemsProtocolNetOutfLow();
+        const auditorSnapshots = await this.getAuditorSnapshots();
 
         const series: any = [];
 
@@ -106,6 +107,30 @@ export default class SnapshotLineItemsScript {
             series.push(serie);
         }
 
+        // adding AuditorNetOutflow
+        for (let i = 0; i < auditorSnapshots.length; i++) {
+            const snapshot = auditorSnapshots[i];
+            const budgetType = await this.getBudgetType(snapshot.ownerType, snapshot.ownerId, snapshot.accountLabel, snapshot.accountAddress);
+
+            const serie = {
+                start: snapshot.timestamp,
+                end: null,
+                source: AnalyticsPath.fromString(`powerhouse/legacy-api/snapshot-reports/${snapshot.snapshotId}`),
+                unit: snapshot.token,
+                value: snapshot.amount * -1,
+                metric: 'AuditorNetOutflow',
+                fn: 'Single',
+                dimensions: {
+                    wallet: AnalyticsPath.fromString(`atlas/${snapshot.accountAddress}`),
+                    transactionType: AnalyticsPath.fromString(`atlas/${snapshot.txLabel}`),
+                    budget: AnalyticsPath.fromString(`atlas/${budgetType}`),
+                    report: AnalyticsPath.fromString(`atlas/${snapshot.ownerType}/${snapshot.ownerId}/${this.getYearAndMonth(snapshot.month)}`),
+                }
+            };
+            series.push(serie);
+        }
+
+
         return series;
     }
 
@@ -141,11 +166,6 @@ export default class SnapshotLineItemsScript {
                 return `snapshot/unknown/${ownerType}/${cu[0]?.code}]}`;
             }
         }
-    }
-
-    private parseAccountLabel = (accountLabel: string) => {
-        // if it has spacing, replace it with a dash and lower case it
-        return accountLabel.replace(/\s/g, '-').toLowerCase();
     }
 
     private getYearAndMonth(dateString: Date) {
@@ -191,6 +211,24 @@ export default class SnapshotLineItemsScript {
             .join('SnapshotAccountTransaction', 'SnapshotAccountTransaction.snapshotAccountId', 'SnapshotAccount.id')
             .where('SnapshotAccount.accountType', 'singular')
             .where('SnapshotAccount.upstreamAccountId', null);
+
+        if (this.snapshotId) {
+            baseQuery.where('Snapshot.id', this.snapshotId);
+        }
+
+        return await baseQuery;
+    }
+
+    private getAuditorSnapshots = async () => {
+        const auditors = accounts
+            .filter(acc => acc.Type === 'Auditor')
+            .map(acc => acc.Address);
+
+        const baseQuery = this.db('Snapshot')
+            .select('snapshotId', 'timestamp', 'amount', 'token', 'accountAddress', 'txLabel', 'ownerType', 'ownerId', 'month', 'accountLabel')
+            .join('SnapshotAccount', 'SnapshotAccount.snapshotId', 'Snapshot.id')
+            .join('SnapshotAccountTransaction', 'SnapshotAccountTransaction.snapshotAccountId', 'SnapshotAccount.id')
+            .whereIn('SnapshotAccount.accountAddress', auditors);
 
         if (this.snapshotId) {
             baseQuery.where('Snapshot.id', this.snapshotId);
