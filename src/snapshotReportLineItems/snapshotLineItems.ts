@@ -149,7 +149,7 @@ export default class SnapshotLineItemsScript {
             case 'Keepers': return 'legacy/keepers';
             case 'SpecialPurposeFund': return 'legacy/spfs';
             case 'AlignedDelegates': {
-                return 'aligned-delegates';
+                return 'immutable/aligned-delegates';
             }
             case 'Scopes': {
                 if (accountLabel === 'Maker Protocol Wallet') {

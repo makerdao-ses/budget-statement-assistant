@@ -124,7 +124,7 @@ export default class LineItemsScript {
             case 'SpecialPurposeFund':
                 return 'legacy/spfs';
             case 'AlignedDelegates':
-                return '/immutable/ads';
+                return 'immutable/aligned-delegates';
             default:
                 return 'core-units';
         }
