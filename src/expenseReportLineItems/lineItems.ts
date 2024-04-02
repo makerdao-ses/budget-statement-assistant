@@ -120,7 +120,7 @@ export default class LineItemsScript {
             case 'EcosystemActor':
                 return `scopes/SUP/incubation/${code}`;
             case 'Keepers':
-                return 'legacy/keespers';
+                return 'legacy/keepers';
             case 'SpecialPurposeFund':
                 return 'legacy/spfs';
             case 'AlignedDelegates':
