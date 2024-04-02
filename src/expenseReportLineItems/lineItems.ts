@@ -118,7 +118,7 @@ export default class LineItemsScript {
             case 'Delegates':
                 return 'legacy/recognized-delegates';
             case 'EcosystemActor':
-                return `scopes/SUP/incubation/${code}`;
+                return `scopes/SUP/inc/${code}`;
             case 'Keepers':
                 return 'legacy/keepers';
             case 'SpecialPurposeFund':
