@@ -41,7 +41,13 @@ export default class SnapshotLineItemsScript {
         // adding on-chain snapshots
         for (let i = 0; i < snapshotsOnChain.length; i++) {
             const snapshot = snapshotsOnChain[i];
-            const budgetType = await this.getBudgetType(snapshot.ownerType, snapshot.ownerId, snapshot.accountLabel, snapshot.accountAddress);
+            const budgetType = await this.getBudgetType(
+                snapshot.ownerType,
+                snapshot.ownerId,
+                snapshot.accountLabel,
+                snapshot.accountAddress,
+                snapshot.timestamp
+            );
 
             const serie = {
                 start: snapshot.timestamp,
@@ -64,7 +70,13 @@ export default class SnapshotLineItemsScript {
         // adding off-chain snapshots
         for (let i = 0; i < snapshotsOffChain.length; i++) {
             const snapshot = snapshotsOffChain[i];
-            const budgetType = await this.getBudgetType(snapshot.ownerType, snapshot.ownerId, snapshot.accountLabel, snapshot.accountAddress);
+            const budgetType = await this.getBudgetType(
+                snapshot.ownerType,
+                snapshot.ownerId,
+                snapshot.accountLabel,
+                snapshot.accountAddress,
+                snapshot.timestamp
+            );
 
             const serie = {
                 start: snapshot.timestamp,
@@ -87,7 +99,13 @@ export default class SnapshotLineItemsScript {
         // adding protocol net outflow snapshots
         for (let i = 0; i < snapshotsProtocolNetOutFlow.length; i++) {
             const snapshot = snapshotsProtocolNetOutFlow[i];
-            const budgetType = await this.getBudgetType(snapshot.ownerType, snapshot.ownerId, snapshot.accountLabel, snapshot.accountAddress);
+            const budgetType = await this.getBudgetType(
+                snapshot.ownerType,
+                snapshot.ownerId,
+                snapshot.accountLabel,
+                snapshot.accountAddress,
+                snapshot.timestamp
+            );
 
             const serie = {
                 start: snapshot.timestamp,
@@ -110,7 +128,13 @@ export default class SnapshotLineItemsScript {
         // adding AuditorNetOutflow
         for (let i = 0; i < auditorSnapshots.length; i++) {
             const snapshot = auditorSnapshots[i];
-            const budgetType = await this.getBudgetType(snapshot.ownerType, snapshot.ownerId, snapshot.accountLabel, snapshot.accountAddress);
+            const budgetType = await this.getBudgetType(
+                snapshot.ownerType,
+                snapshot.ownerId,
+                snapshot.accountLabel,
+                snapshot.accountAddress,
+                snapshot.timestamp
+            );
 
             const serie = {
                 start: snapshot.timestamp,
@@ -138,15 +162,21 @@ export default class SnapshotLineItemsScript {
         ownerType: string,
         ownerId: number,
         accountLabel: string,
-        accountAddress: string
+        accountAddress: string,
+        timestamp: Date
     ) => {
         const cu = await this.db('CoreUnit').where('id', ownerId).select('code');
+
+        // Date when keepers change under new budget path
+        const isOldKeeperPath = timestamp < new Date('2023-05-24');
 
         switch (ownerType) {
             case 'CoreUnit': return `legacy/core-units/${cu[0].code}`;
             case 'Delegates': return 'legacy/recognized-delegates';
             case 'EcosystemActor': return `scopes/SUP/incubation/${cu[0].code}`;
-            case 'Keepers': return 'legacy/keepers';
+            case 'Keepers': {
+                return isOldKeeperPath ? 'legacy/keepers' : 'scopes/PRO/KPRS';
+            }
             case 'SpecialPurposeFund': return 'legacy/spfs';
             case 'AlignedDelegates': {
                 return 'immutable/aligned-delegates';
