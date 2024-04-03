@@ -51,7 +51,7 @@ export default class LineItemsScript {
                     unit: 'FTE',
                     metric: 'Contributors',
                     dimensions: {
-                        budget: AnalyticsPath.fromString(`atlas/${this.getBudgetType(ownerType, code)}`),
+                        budget: AnalyticsPath.fromString(`atlas/${this.getBudgetType(ownerType, code, new Date(lineItem.month))}`),
                         category: AnalyticsPath.fromString(`atlas/${headCount}/${lineItem.canonicalBudgetCategory}`),
                         report: AnalyticsPath.fromString(`atlas/${ownerType}/${ownerId}/${this.getYearAndMonth(new Date(lineItem.month))}`)
                     },
@@ -67,7 +67,7 @@ export default class LineItemsScript {
                 value: lineItem.actual || 0,
                 metric: 'Actuals',
                 dimensions: {
-                    budget: AnalyticsPath.fromString(`atlas/${this.getBudgetType(ownerType, code)}`),
+                    budget: AnalyticsPath.fromString(`atlas/${this.getBudgetType(ownerType, code, new Date(lineItem.month))}`),
                     category: AnalyticsPath.fromString(`atlas/${headCount}/${lineItem.canonicalBudgetCategory}`),
                     wallet: AnalyticsPath.fromString(`atlas/${wallet}`),
                     project: AnalyticsPath.fromString(`atlas/${lineItem.group}`),
@@ -92,7 +92,7 @@ export default class LineItemsScript {
                 value: forecast || 0,
                 metric: 'Forecast',
                 dimensions: {
-                    budget: AnalyticsPath.fromString(`atlas/${this.getBudgetType(ownerType, ownerCode)}`),
+                    budget: AnalyticsPath.fromString(`atlas/${this.getBudgetType(ownerType, ownerCode, new Date(BSLI_month))}`),
                     category: AnalyticsPath.fromString(`atlas/${headCount}/${canonicalBudgetCategory}`),
                     wallet: AnalyticsPath.fromString(`atlas/${address}`),
                     project: AnalyticsPath.fromString(`atlas/${group}`),
@@ -111,7 +111,13 @@ export default class LineItemsScript {
         return series;
     };
 
-    private getBudgetType = (ownerType: string, code: string) => {
+    private getBudgetType = (
+        ownerType: string,
+        code: string,
+        date: Date
+    ) => {
+        // Date when keepers change under new budget path
+        const isOldKeeperPath = date < new Date('2023-05-24');
         switch (ownerType) {
             case 'CoreUnit':
                 return `legacy/core-units/${code}`;
@@ -119,8 +125,9 @@ export default class LineItemsScript {
                 return 'legacy/recognized-delegates';
             case 'EcosystemActor':
                 return `scopes/SUP/inc/${code}`;
-            case 'Keepers':
-                return 'legacy/keepers';
+            case 'Keepers': {
+                return isOldKeeperPath ? 'legacy/keepers' : 'scopes/PRO/KPRS';
+            }
             case 'SpecialPurposeFund':
                 return 'legacy/spfs';
             case 'AlignedDelegates':
@@ -146,10 +153,10 @@ export default class LineItemsScript {
 
     private getAllForecastsLineItems = async () => {
         const query = this.db('BudgetStatementLineItem')
-        .join('BudgetStatementWallet', 'BudgetStatementWallet.id', 'BudgetStatementLineItem.budgetStatementWalletId')
-        .join(this.db.raw('"BudgetStatement" ON "BudgetStatementWallet"."budgetStatementId" = "BudgetStatement"."id" AND "BudgetStatementLineItem"."month" > "BudgetStatement"."month"'))
-        .select(['*', 'BudgetStatementLineItem.month as BSLI_month', 'BudgetStatement.month as BS_month'])
-        .orderBy('BudgetStatement.month', 'desc');
+            .join('BudgetStatementWallet', 'BudgetStatementWallet.id', 'BudgetStatementLineItem.budgetStatementWalletId')
+            .join(this.db.raw('"BudgetStatement" ON "BudgetStatementWallet"."budgetStatementId" = "BudgetStatement"."id" AND "BudgetStatementLineItem"."month" > "BudgetStatement"."month"'))
+            .select(['*', 'BudgetStatementLineItem.month as BSLI_month', 'BudgetStatement.month as BS_month'])
+            .orderBy('BudgetStatement.month', 'desc');
         if (this.budgetStatementId) {
             query.where('BudgetStatementWallet.budgetStatementId', this.budgetStatementId);
         }
