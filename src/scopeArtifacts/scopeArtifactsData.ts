@@ -3218,7 +3218,7 @@ export default [
   {
     "L0": "",
     "L1": "",
-    "L2": "ALT) Allocator tokens ",
+    "L2": "ALT) AllocatorDAO tokens ",
     "L3": "",
     "L4": "",
     "L5": "",
@@ -5898,7 +5898,7 @@ export default [
   {
     "L0": "",
     "L1": "",
-    "L2": "I) Incubation budget",
+    "L2": "INC) Incubation budget",
     "L3": "",
     "L4": "",
     "L5": "",
@@ -8438,7 +8438,7 @@ export default [
     "Conditional New Stable ": "",
     "Commited budget (New Stable)": "",
     "Archived": "MakerDAO/Scopes/PRO/Multichain",
-    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/protocol_scope(PRO).svghttps://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/16f73df6917a57915cd07e79f7a42e55293b8225/ecosystem-dashboard/budgets/protocol_scope(PRO).svg",
+    "Image": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/89def08f5e56fba5aef97cca6c011ad067a1ab80/ecosystem-dashboard/budgets/protocol_scope(PRO).svg",
     "Atlas (MIP) Reference [just collecting data, not for API consumption yet, this will be a part of the budget's description]": ""
   },
   {
