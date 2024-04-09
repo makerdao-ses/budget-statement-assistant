@@ -173,7 +173,7 @@ export default class SnapshotLineItemsScript {
         switch (ownerType) {
             case 'CoreUnit': return `legacy/core-units/${cu[0].code}`;
             case 'Delegates': return 'legacy/recognized-delegates';
-            case 'EcosystemActor': return `scopes/SUP/incubation/${cu[0].code}`;
+            case 'EcosystemActor': return `scopes/SUP/INC/${cu[0].code}`;
             case 'Keepers': {
                 return isOldKeeperPath ? 'legacy/keepers' : 'scopes/PRO/KPRS';
             }
