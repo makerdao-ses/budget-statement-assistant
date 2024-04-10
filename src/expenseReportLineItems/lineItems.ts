@@ -124,7 +124,7 @@ export default class LineItemsScript {
             case 'Delegates':
                 return 'legacy/recognized-delegates';
             case 'EcosystemActor':
-                return `scopes/SUP/inc/${code}`;
+                return `scopes/SUP/INC/${code}`;
             case 'Keepers': {
                 return isOldKeeperPath ? 'legacy/keepers' : 'scopes/PRO/KPRS';
             }
