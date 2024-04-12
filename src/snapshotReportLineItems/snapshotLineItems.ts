@@ -28,6 +28,9 @@ export default class SnapshotLineItemsScript {
         await store.addSeriesValues(series);
         console.log('Snapshot lineitems inserted series');
 
+        // Update materialized view with latest changes in the series
+        await this.db.raw('REFRESH MATERIALIZED VIEW "BudgetPathMap"')
+        console.log('Refreshed Materialized View BudgetPathMap');
     }
 
     private createSeries = async () => {

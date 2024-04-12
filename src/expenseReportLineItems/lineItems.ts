@@ -29,6 +29,10 @@ export default class LineItemsScript {
         // insert new data
         await store.addSeriesValues(series);
         console.log('Succesfully inserted in DB');
+
+        // Update materialized view with latest changes in the series
+        await this.db.raw('REFRESH MATERIALIZED VIEW "BudgetPathMap"')
+        console.log('Refreshed Materialized View BudgetPathMap');
     };
 
     private createSeries = async () => {
