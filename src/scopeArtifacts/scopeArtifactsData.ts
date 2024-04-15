@@ -9918,7 +9918,7 @@ export default [
   {
     "L0": "",
     "L1": "",
-    "L2": "DECO-001) DECO-001",
+    "L2": "DECO-001) Deco Protocol ",
     "L3": "",
     "L4": "",
     "L5": "",
@@ -9985,7 +9985,7 @@ export default [
   {
     "L0": "",
     "L1": "",
-    "L2": "ORA-001) ORA-001",
+    "L2": "ORA-001) Oracles",
     "L3": "",
     "L4": "",
     "L5": "",
@@ -10052,7 +10052,7 @@ export default [
   {
     "L0": "",
     "L1": "",
-    "L2": "SES-001) SES-001",
+    "L2": "SES-001) Sustainable Ecosystem Scaling",
     "L3": "",
     "L4": "",
     "L5": "",
@@ -10119,7 +10119,7 @@ export default [
   {
     "L0": "",
     "L1": "",
-    "L2": "TECH-001) TECH-001",
+    "L2": "TECH-001) TechOps",
     "L3": "",
     "L4": "",
     "L5": "",
@@ -10186,7 +10186,7 @@ export default [
   {
     "L0": "",
     "L1": "",
-    "L2": "SAS-001) SAS-001",
+    "L2": "SAS-001) Sidestream Auction Services",
     "L3": "",
     "L4": "",
     "L5": "",
@@ -10253,7 +10253,7 @@ export default [
   {
     "L0": "",
     "L1": "",
-    "L2": "IS-001) IS-001",
+    "L2": "IS-001) Immunefi Security",
     "L3": "",
     "L4": "",
     "L5": "",
@@ -10320,7 +10320,7 @@ export default [
   {
     "L0": "",
     "L1": "",
-    "L2": "DUX-001) DUX-001",
+    "L2": "DUX-001) Development & UX",
     "L3": "",
     "L4": "",
     "L5": "",
@@ -10387,7 +10387,7 @@ export default [
   {
     "L0": "",
     "L1": "",
-    "L2": "SNE-001) SNE-001",
+    "L2": "SNE-001) Starknet Engineering",
     "L3": "",
     "L4": "",
     "L5": "",
@@ -10454,7 +10454,7 @@ export default [
   {
     "L0": "",
     "L1": "",
-    "L2": "CES-001) CES-001",
+    "L2": "CES-001) Collateral Engineering Services",
     "L3": "",
     "L4": "",
     "L5": "",
@@ -10521,7 +10521,7 @@ export default [
   {
     "L0": "",
     "L1": "",
-    "L2": "SH-001) SH-001",
+    "L2": "SH-001) Strategic Happiness",
     "L3": "",
     "L4": "",
     "L5": "",
@@ -10588,7 +10588,7 @@ export default [
   {
     "L0": "",
     "L1": "",
-    "L2": "DIN-001) DIN-001",
+    "L2": "DIN-001) Data Insights",
     "L3": "",
     "L4": "",
     "L5": "",
@@ -10655,7 +10655,7 @@ export default [
   {
     "L0": "",
     "L1": "",
-    "L2": "DAIF-001) DAIF-001",
+    "L2": "DAIF-001) Dai Foundation",
     "L3": "",
     "L4": "",
     "L5": "",
@@ -10722,7 +10722,7 @@ export default [
   {
     "L0": "",
     "L1": "",
-    "L2": "COM-001) COM-001",
+    "L2": "COM-001) Governance Communications",
     "L3": "",
     "L4": "",
     "L5": "",
@@ -10789,7 +10789,7 @@ export default [
   {
     "L0": "",
     "L1": "",
-    "L2": "RWF-001) RWF-001",
+    "L2": "RWF-001) Real-World Finance",
     "L3": "",
     "L4": "",
     "L5": "",
@@ -10856,7 +10856,7 @@ export default [
   {
     "L0": "",
     "L1": "",
-    "L2": "GRO-001) GRO-001",
+    "L2": "GRO-001) Growth",
     "L3": "",
     "L4": "",
     "L5": "",
@@ -10923,7 +10923,7 @@ export default [
   {
     "L0": "",
     "L1": "",
-    "L2": "PE-001) PE-001",
+    "L2": "PE-001) Protocol Engineering",
     "L3": "",
     "L4": "",
     "L5": "",
@@ -10990,7 +10990,7 @@ export default [
   {
     "L0": "",
     "L1": "",
-    "L2": "RISK-001) RISK-001",
+    "L2": "RISK-001) Risk",
     "L3": "",
     "L4": "",
     "L5": "",
@@ -11057,7 +11057,7 @@ export default [
   {
     "L0": "",
     "L1": "",
-    "L2": "EVENTS-001) EVENTS-001",
+    "L2": "EVENTS-001) Events",
     "L3": "",
     "L4": "",
     "L5": "",
@@ -11124,7 +11124,7 @@ export default [
   {
     "L0": "",
     "L1": "",
-    "L2": "GOV-001) GOV-001",
+    "L2": "GOV-001) Governance Alpha",
     "L3": "",
     "L4": "",
     "L5": "",
@@ -11191,7 +11191,7 @@ export default [
   {
     "L0": "",
     "L1": "",
-    "L2": "MKT-001) MKT-001",
+    "L2": "MKT-001) Content Production",
     "L3": "",
     "L4": "",
     "L5": "",
@@ -11258,7 +11258,7 @@ export default [
   {
     "L0": "",
     "L1": "",
-    "L2": "SF-001) SF-001",
+    "L2": "SF-001) Strategic Finance",
     "L3": "",
     "L4": "",
     "L5": "",
