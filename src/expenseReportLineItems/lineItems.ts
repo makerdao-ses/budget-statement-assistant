@@ -112,6 +112,25 @@ export default class LineItemsScript {
             series.push(serie);
         }
 
+        // add budget statements with empty fields to link them later with snapshots
+        const budgetStatements = await this.getAllBudgetStatements();
+        for (let i = 0; i < budgetStatements.length; i++) {
+            const { id, month, ownerType, ownerCode } = budgetStatements[i];
+            const utcedMonth = new Date(Date.UTC(month.getFullYear(), month.getMonth(), month.getDate()));
+            const serie = {
+                start: new Date(utcedMonth),
+                end: null,
+                source: AnalyticsPath.fromString(`powerhouse/legacy-api/budget-statements/${id}`),
+                unit: 'DAI',
+                value: 0,
+                metric: 'Actuals',
+                dimensions: {
+                    budget: AnalyticsPath.fromString(`atlas/${this.getBudgetType(ownerType, ownerCode, utcedMonth)}`),
+                },
+            };
+            series.push(serie);
+        }
+
         return series;
     };
 
@@ -137,7 +156,7 @@ export default class LineItemsScript {
             case 'AlignedDelegates':
                 return 'immutable/aligned-delegates';
             default:
-                return 'core-units';
+                return 'legacy/core-units';
         }
     };
 
@@ -167,6 +186,11 @@ export default class LineItemsScript {
 
         return await query;
     };
+
+    private getAllBudgetStatements = async () => {
+        return await this.db('BudgetStatement')
+            .select('*');
+    }
 
     private getOwner = async (budgetStatementWalletId: string) => {
         const result = await this.db('BudgetStatementWallet')
