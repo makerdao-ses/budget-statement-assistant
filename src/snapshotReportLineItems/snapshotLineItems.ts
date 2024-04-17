@@ -186,13 +186,13 @@ export default class SnapshotLineItemsScript {
             }
             case 'Scopes': {
                 if (accountLabel === 'Maker Protocol Wallet') {
-                    return `legacy/scopes/${cu[0].code}`;
+                    return `scopes/${cu[0].code}`;
                 }
                 const account = accounts.find(acc => acc.Address === accountAddress);
                 if (account) {
-                    return `legacy/${account["budget path 2"]}/${account["budget path 3"]}`;
+                    return `scopes/${cu[0].code}/${account["budget path 3"]}`;
                 } else {
-                    return `legacy/scopes/${cu[0].code}`;
+                    return `scopes/${cu[0].code}`;
                 }
             }
             default: {
