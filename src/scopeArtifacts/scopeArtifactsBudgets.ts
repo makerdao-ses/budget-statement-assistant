@@ -299,7 +299,7 @@ export default class BudgetScript {
 
                 // Adding immediate DAI budget caps
                 const immediateAmount = obj[key]['Immediate Budget (DAI)'];
-                const startDate = this.formatToTimeZone(obj[key]['Approved by Excutive vote/Source of Truth']);
+                const startDate = this.formatToTimeZone(obj[key]['Approved by Executive vote/Source of Truth']);
                 if (immediateAmount !== 0 && immediateAmount !== '' && immediateAmount !== undefined && startDate !== null) {
                     budgetCaps.push({
                         budgetId: id,
