@@ -172,6 +172,7 @@ export default class SnapshotLineItemsScript {
 
         // Date when keepers change under new budget path
         const isOldKeeperPath = timestamp < new Date('2023-05-24');
+        
 
         switch (ownerType) {
             case 'CoreUnit': return `legacy/core-units/${cu[0].code}`;
@@ -185,15 +186,7 @@ export default class SnapshotLineItemsScript {
                 return 'immutable/aligned-delegates';
             }
             case 'Scopes': {
-                if (accountLabel === 'Maker Protocol Wallet') {
-                    return `scopes/${cu[0].code}`;
-                }
-                const account = accounts.find(acc => acc.Address === accountAddress);
-                if (account) {
-                    return `scopes/${cu[0].code}/${account["budget path 3"]}`;
-                } else {
-                    return `scopes/${cu[0].code}`;
-                }
+                return `scopes/${cu[0].code}`;
             }
             default: {
                 return `snapshot/unknown/${ownerType}/${cu[0]?.code}]}`;
