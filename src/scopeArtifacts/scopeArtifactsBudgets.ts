@@ -248,7 +248,8 @@ export default class BudgetScript {
             inputDate == 'Pending' ||
             inputDate == 'Pending ' ||
             inputDate == 'Ongoing bugbounty' ||
-            inputDate == '?'
+            inputDate == '?' ||
+            inputDate == '-'
         ) {
             return null;
         } else {
