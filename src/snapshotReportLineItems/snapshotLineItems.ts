@@ -173,6 +173,11 @@ export default class SnapshotLineItemsScript {
         // Date when keepers change under new budget path
         const isOldKeeperPath = timestamp < new Date('2023-05-24');
 
+        const teamCode = await this.getTeamInfo(ownerId);
+        const account = accounts.find(account => account['budget path 3'] === teamCode);
+        if (account?.BudgetPath) {
+            return account.BudgetPath;
+        }
 
         switch (ownerType) {
             case 'CoreUnit': return `legacy/core-units/${cu[0].code}`;
@@ -186,11 +191,6 @@ export default class SnapshotLineItemsScript {
                 return 'immutable/aligned-delegates';
             }
             case 'Scopes': {
-                const teamCode = await this.getTeamInfo(ownerId);
-                const account = accounts.find(account => account['budget path 3'] === teamCode);
-                if (account?.BudgetPath) {
-                    console.log(teamCode, account)
-                }
                 return `scopes/${cu[0].code}`;
             }
             default: {

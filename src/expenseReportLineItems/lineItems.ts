@@ -1,6 +1,7 @@
 import { AnalyticsPath } from '../utils/analytics/AnalyticsPath.js';
 import { AnalyticsStore } from '../utils/analytics/AnalyticsStore.js';
 import knex, { Knex } from 'knex';
+import accounts from '../snapshotReportLineItems/accounts.js'
 
 export default class LineItemsScript {
     db: any;
@@ -134,13 +135,20 @@ export default class LineItemsScript {
         return series;
     };
 
-    private getBudgetType = (
+    private getBudgetType = async (
         ownerType: string,
         code: string,
         date: Date
     ) => {
         // Date when keepers change under new budget path
         const isOldKeeperPath = date < new Date('2023-05-24');
+
+        // Pushing custom budget paths from accounts.js
+        const account = accounts.find(account => account['budget path 3'] === code);
+        if (account?.BudgetPath) {
+            return account.BudgetPath;
+        }
+
         switch (ownerType) {
             case 'CoreUnit':
                 return `legacy/core-units/${code}`;
