@@ -63,7 +63,7 @@ export default class SnapshotLineItemsScript {
                 dimensions: {
                     wallet: AnalyticsPath.fromString(`atlas/${snapshot.accountAddress}`),
                     transactionType: AnalyticsPath.fromString(`atlas/${snapshot.txLabel}`),
-                    budget: AnalyticsPath.fromString(`atlas/${budgetType}`),
+                    budget: AnalyticsPath.fromString(`${budgetType}`),
                     report: AnalyticsPath.fromString(`atlas/${snapshot.ownerType}/${snapshot.ownerId}/${this.getYearAndMonth(snapshot.month)}`),
                 }
             };
@@ -92,7 +92,7 @@ export default class SnapshotLineItemsScript {
                 dimensions: {
                     wallet: AnalyticsPath.fromString(`atlas/${snapshot.accountAddress}`),
                     transactionType: AnalyticsPath.fromString(`atlas/${snapshot.txLabel}`),
-                    budget: AnalyticsPath.fromString(`atlas/${budgetType}`),
+                    budget: AnalyticsPath.fromString(`${budgetType}`),
                     report: AnalyticsPath.fromString(`atlas/${snapshot.ownerType}/${snapshot.ownerId}/${this.getYearAndMonth(snapshot.month)}`),
                 }
             };
@@ -121,7 +121,7 @@ export default class SnapshotLineItemsScript {
                 dimensions: {
                     wallet: AnalyticsPath.fromString(`atlas/${snapshot.accountAddress}`),
                     transactionType: AnalyticsPath.fromString(`atlas/${snapshot.txLabel}`),
-                    budget: AnalyticsPath.fromString(`atlas/${budgetType}`),
+                    budget: AnalyticsPath.fromString(`${budgetType}`),
                     report: AnalyticsPath.fromString(`atlas/${snapshot.ownerType}/${snapshot.ownerId}/${this.getYearAndMonth(snapshot.month)}`),
                 }
             };
@@ -150,7 +150,7 @@ export default class SnapshotLineItemsScript {
                 dimensions: {
                     wallet: AnalyticsPath.fromString(`atlas/${snapshot.accountAddress}`),
                     transactionType: AnalyticsPath.fromString(`atlas/${snapshot.txLabel}`),
-                    budget: AnalyticsPath.fromString(`atlas/${budgetType}`),
+                    budget: AnalyticsPath.fromString(`${budgetType}`),
                     report: AnalyticsPath.fromString(`atlas/${snapshot.ownerType}/${snapshot.ownerId}/${this.getYearAndMonth(snapshot.month)}`),
                 }
             };
@@ -176,25 +176,25 @@ export default class SnapshotLineItemsScript {
         const teamCode = await this.getTeamInfo(ownerId);
         const account = accounts.find(account => account['budget path 3'] === teamCode);
         if (account?.BudgetPath) {
-            return account.BudgetPath;
+            return `${account.BudgetPath}`;
         }
 
         switch (ownerType) {
-            case 'CoreUnit': return `legacy/core-units/${cu[0].code}`;
-            case 'Delegates': return 'legacy/recognized-delegates';
-            case 'EcosystemActor': return `scopes/SUP/INC/${cu[0].code}`;
+            case 'CoreUnit': return `atlas/legacy/core-units/${cu[0].code}`;
+            case 'Delegates': return 'atlas/legacy/recognized-delegates';
+            case 'EcosystemActor': return `atlas/scopes/SUP/INC/${cu[0].code}`;
             case 'Keepers': {
-                return isOldKeeperPath ? 'legacy/keepers' : 'scopes/PRO/KPRS';
+                return isOldKeeperPath ? 'atlas/legacy/keepers' : 'atlas/scopes/PRO/KPRS';
             }
-            case 'SpecialPurposeFund': return 'legacy/spfs';
+            case 'SpecialPurposeFund': return 'atlas/legacy/spfs';
             case 'AlignedDelegates': {
-                return 'immutable/aligned-delegates';
+                return 'atlas/immutable/aligned-delegates';
             }
             case 'Scopes': {
-                return `scopes/${cu[0].code}`;
+                return `atlas/scopes/${cu[0].code}`;
             }
             default: {
-                return `snapshot/unknown/${ownerType}/${cu[0]?.code}]}`;
+                return `atlas/snapshot/unknown/${ownerType}/${cu[0]?.code}]}`;
             }
         }
     }

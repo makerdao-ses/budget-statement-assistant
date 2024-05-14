@@ -2,6 +2,7 @@ import { AnalyticsPath } from '../utils/analytics/AnalyticsPath.js';
 import { AnalyticsStore } from '../utils/analytics/AnalyticsStore.js';
 import knex, { Knex } from 'knex';
 import accounts from '../snapshotReportLineItems/accounts.js'
+import fs from 'fs';
 
 export default class LineItemsScript {
     db: any;
@@ -47,6 +48,9 @@ export default class LineItemsScript {
             const { code, ownerType, budgetStatementId, wallet, ftes, ownerId } = (await this.getOwner(lineItem.budgetStatementWalletId)) as any;
             // UTCing the date to avoid timezone issues
             lineItem.month = new Date(Date.UTC(lineItem.month.getFullYear(), lineItem.month.getMonth(), lineItem.month.getDate()));
+
+            const contributorBudgetPath = await this.getBudgetType(ownerType, code, new Date(lineItem.month));
+
             if (ftes && !addedFteMonths.has(lineItem.month.toISOString())) {
                 const fteSerie = {
                     start: new Date(lineItem.month),
@@ -56,7 +60,7 @@ export default class LineItemsScript {
                     unit: 'FTE',
                     metric: 'Contributors',
                     dimensions: {
-                        budget: AnalyticsPath.fromString(`atlas/${this.getBudgetType(ownerType, code, new Date(lineItem.month))}`),
+                        budget: AnalyticsPath.fromString(`${contributorBudgetPath}`),
                         category: AnalyticsPath.fromString(`atlas/${headCount}/${lineItem.canonicalBudgetCategory}`),
                         report: AnalyticsPath.fromString(`atlas/${ownerType}/${ownerId}/${this.getYearAndMonth(new Date(lineItem.month))}`)
                     },
@@ -64,6 +68,9 @@ export default class LineItemsScript {
                 series.push(fteSerie);
                 addedFteMonths.add(lineItem.month.toISOString());
             }
+
+            const actualsBudgetType = await this.getBudgetType(ownerType, code, new Date(lineItem.month));
+
             const serie = {
                 start: new Date(lineItem.month),
                 end: null,
@@ -72,7 +79,7 @@ export default class LineItemsScript {
                 value: lineItem.actual || 0,
                 metric: 'Actuals',
                 dimensions: {
-                    budget: AnalyticsPath.fromString(`atlas/${this.getBudgetType(ownerType, code, new Date(lineItem.month))}`),
+                    budget: AnalyticsPath.fromString(`${actualsBudgetType}`),
                     category: AnalyticsPath.fromString(`atlas/${headCount}/${lineItem.canonicalBudgetCategory}`),
                     wallet: AnalyticsPath.fromString(`atlas/${wallet}`),
                     project: AnalyticsPath.fromString(`atlas/${lineItem.group}`),
@@ -81,13 +88,15 @@ export default class LineItemsScript {
             };
             series.push(serie);
         }
-
+        
         // add forecasts
         const forcastLineItems = await this.getAllForecastsLineItems();
+        
         for (let i = 0; i < forcastLineItems.length; i++) {
             const { BSLI_month, BS_month, address, group, canonicalBudgetCategory, currency, forecast, ownerType, ownerCode, headcountExpense, ownerId } = forcastLineItems[i];
             const headCount = headcountExpense ? 'headcount' : 'non-headcount';
             const basePath = `powerhouse/legacy-api/budget-statements/${address}/${BSLI_month.toISOString().substring(0, 10)}`;
+            const forecastBudgetType = await this.getBudgetType(ownerType, ownerCode, new Date(BSLI_month));
             const serie = {
                 start: BSLI_month,
                 bsMonth: BS_month,
@@ -97,7 +106,7 @@ export default class LineItemsScript {
                 value: forecast || 0,
                 metric: 'Forecast',
                 dimensions: {
-                    budget: AnalyticsPath.fromString(`atlas/${this.getBudgetType(ownerType, ownerCode, new Date(BSLI_month))}`),
+                    budget: AnalyticsPath.fromString(`${forecastBudgetType}`),
                     category: AnalyticsPath.fromString(`atlas/${headCount}/${canonicalBudgetCategory}`),
                     wallet: AnalyticsPath.fromString(`atlas/${address}`),
                     project: AnalyticsPath.fromString(`atlas/${group}`),
@@ -118,6 +127,8 @@ export default class LineItemsScript {
         for (let i = 0; i < budgetStatements.length; i++) {
             const { id, month, ownerType, ownerCode } = budgetStatements[i];
             const utcedMonth = new Date(Date.UTC(month.getFullYear(), month.getMonth(), month.getDate()));
+
+            const actualsBudgetType = await this.getBudgetType(ownerType, ownerCode, utcedMonth);
             const serie = {
                 start: new Date(utcedMonth),
                 end: null,
@@ -126,7 +137,7 @@ export default class LineItemsScript {
                 value: 0,
                 metric: 'Actuals',
                 dimensions: {
-                    budget: AnalyticsPath.fromString(`atlas/${this.getBudgetType(ownerType, ownerCode, utcedMonth)}`),
+                    budget: AnalyticsPath.fromString(`${actualsBudgetType}`),
                 },
             };
             series.push(serie);
@@ -146,25 +157,25 @@ export default class LineItemsScript {
         // Pushing custom budget paths from accounts.js
         const account = accounts.find(account => account['budget path 3'] === code);
         if (account?.BudgetPath) {
-            return account.BudgetPath;
+            return `${account.BudgetPath}`;
         }
 
         switch (ownerType) {
             case 'CoreUnit':
-                return `legacy/core-units/${code}`;
+                return `atlas/legacy/core-units/${code}`;
             case 'Delegates':
-                return 'legacy/recognized-delegates';
+                return 'atlas/legacy/recognized-delegates';
             case 'EcosystemActor':
-                return `scopes/SUP/INC/${code}`;
+                return `atlas/scopes/SUP/INC/${code}`;
             case 'Keepers': {
-                return isOldKeeperPath ? 'legacy/keepers' : 'scopes/PRO/KPRS';
+                return isOldKeeperPath ? 'atlas/legacy/keepers' : 'atlas/scopes/PRO/KPRS';
             }
             case 'SpecialPurposeFund':
-                return 'legacy/spfs';
+                return 'atlas/legacy/spfs';
             case 'AlignedDelegates':
-                return 'immutable/aligned-delegates';
+                return 'atlas/immutable/aligned-delegates';
             default:
-                return 'legacy/core-units';
+                return 'atlas/legacy/core-units';
         }
     };
 
