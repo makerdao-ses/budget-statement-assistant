@@ -59,12 +59,11 @@ export class AnalyticsStore {
     // Add dimension filter(s)
     for (const [dimension, paths] of Object.entries(query.select)) {
       baseQuery.leftJoin(`AnalyticsDimension as ${dimension}`, (q) => {
-        q.on(`${dimension}.path`, `dim_budget`);
+        q.on(`${dimension}.path`, `dim_${dimension}`);
       });
       baseQuery.select(`${dimension}.icon as dim_icon`);
       baseQuery.select(`${dimension}.description as dim_description`);
       baseQuery.select(`${dimension}.label as dim_label`);
-      // baseQuery.select(`${dimension}.icon as icon_${dimension}`)
       if (paths.length == 1) {
         baseQuery.andWhereLike(`dim_${dimension}`, paths[0].toString("/%"));
       } else if (paths.length > 1) {
@@ -76,16 +75,9 @@ export class AnalyticsStore {
         });
       }
     }
-    if (query.start) {
-      baseQuery.where((q) => {
-        q.where("start", ">=", query.start).andWhere("fn", "Single");
-        q.orWhere("end", ">", query.start).andWhere("fn", "DssVest");
-
-        return q;
-      });
-    }
     baseQuery.orderBy("start");
-    return this._formatQueryRecords(await baseQuery, Object.keys(query.select));
+    const results = await baseQuery;
+    return this._formatQueryRecords(results, Object.keys(query.select));
   }
 
   public async addSeriesValue(input: AnalyticsSeriesInput) {
@@ -138,7 +130,6 @@ export class AnalyticsStore {
       }
       await this.addDimensionMetadata(metaDimension.path, metaDimension.icon, metaDimension.label, metaDimension.description)
     }
-
   }
 
   private _formatQueryRecords(
@@ -161,9 +152,9 @@ export class AnalyticsStore {
 
       dimensions.forEach((d) => (result.dimensions[d] = {
         path: AnalyticsPath.fromString(r[`dim_${d}`] ? r[`dim_${d}`].slice(0, -1) : "?"),
-        icon: AnalyticsPath.fromString(r[`dim_icon`] ? r[`dim_icon`] : ""),
-        label: AnalyticsPath.fromString(r[`dim_label`] ? r[`dim_label`] : ""),
-        description: AnalyticsPath.fromString(r[`dim_description`] ? r[`dim_description`] : ""),
+        icon: r[`dim_icon`] ? r[`dim_icon`] : "",
+        label: r[`dim_label`] ? r[`dim_label`] : "",
+        description: r[`dim_description`] ? r[`dim_description`] : "",
       }),
       );
       return result;
@@ -185,7 +176,7 @@ export class AnalyticsStore {
       baseQuery.select(this._buildDimensionQuery(dimension));
     }
 
-    if (units) {
+    if (units && units[0] !== '') {
       baseQuery.whereIn("unit", units);
     }
 
@@ -241,7 +232,7 @@ export class AnalyticsStore {
     return result[0].id;
   }
 
-  public async addDimensionMetadata(
+  private async addDimensionMetadata(
     path: string,
     icon: string | null | undefined,
     label: string | null | undefined,
@@ -262,6 +253,58 @@ export class AnalyticsStore {
     } catch (error) {
       console.error('Error updating AnalyticsDimension:', error);
     }
+  }
+
+  public async getDimensions() {
+    // Fetch all rows from the database
+    const rows = await this._knex
+      .select('dimension', 'path', 'icon', 'label', 'description')
+      .from('AnalyticsDimension')
+      .whereNotNull('path')
+      .whereNot('path', '')
+      .whereNot('path', '/');
+
+    // Process the rows to group them by dimension and format them
+    const grouped = rows.reduce((acc, row) => {
+      // If the dimension is not yet in the accumulator, add it
+      if (!acc[row.dimension]) {
+        acc[row.dimension] = {
+          name: row.dimension,
+          values: [],
+        };
+      }
+
+      // Add the path, icon, label, and description to the dimension's values
+      acc[row.dimension].values.push({
+        path: row.path,
+        icon: row.icon,
+        label: row.label,
+        description: row.description,
+      });
+
+      return acc;
+    }, {});
+
+    // Convert the grouped object to an array
+    const dimensionPaths: any = Object.values(grouped);
+    return dimensionPaths;
+  }
+
+  public async getMetrics() {
+    const list = await this._knex("AnalyticsSeries").select('metric').distinct().whereNotNull('metric');
+    const filtered = list.map((l) => l.metric);
+    const metrics = ['Budget', 'Forecast', 'Actuals', 'PaymentsOnChain', 'PaymentsOffChainIncluded'];
+    metrics.forEach(metric => {
+      if (!filtered.includes(metric)) {
+        filtered.push(metric);
+      }
+    });
+    return filtered;
+  }
+
+  public async getCurrencies() {
+    const currencies = await this._knex("AnalyticsSeries").select('unit').distinct().whereNotNull('unit');
+    return currencies.map((c) => c.unit);
   }
 }
 
