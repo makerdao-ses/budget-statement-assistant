@@ -67,6 +67,32 @@ export class AnalyticsQueryEngine {
     return this._resolveCurrencyConversions(discretizedResult);
   }
 
+  public async test(): Promise<GroupedPeriodResults> {
+    const query: AnalyticsQuery = {
+      start: new Date("2023-10-01"),
+      end: new Date("2024-01-01"),
+      granularity: AnalyticsGranularity.Monthly,
+      metrics: ['Budget'],
+      currency: AnalyticsPath.fromString('DAI'),
+      select: {
+        budget: [AnalyticsPath.fromString('atlas')],
+      },
+      lod: {
+        budget: 2,
+      },
+    }
+    const conversions = {
+      targetCurrency: AnalyticsPath.fromString("DAI"),
+      conversions: [
+        {
+          metric: "DailyMkrPriceChange",
+          currency: AnalyticsPath.fromString("MKR")
+        }
+      ]
+    };
+    return this.executeMultiCurrency(query, conversions)
+  }
+
   public async executeMultiCurrency(query: AnalyticsQuery, mcc: MultiCurrencyConversion): Promise<GroupedPeriodResults> {
     const baseQuery: AnalyticsQuery = { ...query, currency: mcc.targetCurrency };
     let result = await this.execute(baseQuery);
