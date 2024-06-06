@@ -18,7 +18,6 @@ export default class BudgetStatementCacheValues {
 
         const rowsToInsert = await this.getAnalyticsBySnapshot();
         if (rowsToInsert.length < 1) return;
-        console.log('rowsToInsert', rowsToInsert.length)
         const result = await this.insertRows(rowsToInsert);
         console.log('Inserted', result.length, 'rows into BudgetStatementCacheValues');
         process.exit(0);
@@ -27,18 +26,12 @@ export default class BudgetStatementCacheValues {
     private async getSnapshots() {
 
         const result = await this.db('Snapshot')
-            .select('id', 'month', 'end', 'ownerType', 'ownerId');
+            .select('*');
 
         const snapshots = result.map((snapshot: any) => {
             return {
                 ...snapshot,
                 month: snapshot.month.toISOString().slice(0, 7).split('-').join('/'),
-            }
-        });
-        console.log(snapshots.length)
-        snapshots.forEach((snapshot: any) => {
-            if(snapshot.month == null) {
-                console.log('found null month', snapshot.id, snapshot.ownerType, snapshot.ownerId)
             }
         });
         return snapshots;
@@ -48,52 +41,29 @@ export default class BudgetStatementCacheValues {
 
     private async getAnalyticsBySnapshot() {
 
-        /*
-
-        snapshotId
-        month
-        currency
-        reportedActuals
-        onChainOnlyAmount
-        onChainOnlyDifference
-        offChainIncludedAmount
-        offChainIncludedDifference
-        
-        */
-
         // Get snapshots
         const snapshotResult = await this.getSnapshots();
-        const analytics = await this.getAnalytics(snapshotResult[0].month, snapshotResult[0].ownerType, snapshotResult[0].ownerId);
 
-        if (analytics.length < 1) return [];
+        const rowsToInsert: any[] = [];
 
-        const rowsToinsert = snapshotResult.map((snapshot: any) => {
-            const comparissonValues = analytics.find((row: any) => {
-                return row.period === snapshot.month;
-            })
-
-            if (!comparissonValues) return null;
-
-            return {
+        for (const snapshot of snapshotResult) {
+            const analytics = await this.getAnalytics(snapshot.month, snapshot.ownerType, snapshot.ownerId);
+            const comparisonValues = analytics.find((a: any) => a.period === snapshot.month);
+            
+            rowsToInsert.push({
                 snapshotId: snapshot.id,
                 month: snapshot.month,
                 currency: 'DAI',
-                reportedActuals: comparissonValues.actuals ?? 0,
-                onChainOnlyAmount: comparissonValues.paymentsOnChain ?? 0,
-                onChainOnlyDifference: this.calcDifference(comparissonValues.paymentsOnChain ?? 0, comparissonValues.actuals ?? 0),
-                offChainIncludedAmount: comparissonValues.paymentsOffChain ?? 0,
-                offChainIncludedDifference: this.calcDifference(comparissonValues.paymentsOffChain ?? 0, comparissonValues.actuals ?? 0),
+                reportedActuals: parseFloat((comparisonValues?.actuals ?? 0).toFixed(4)),
+                onChainOnlyAmount: parseFloat(comparisonValues?.paymentsOnChain ?? 0).toFixed(4),
+                onChainOnlyDifference: this.calcDifference(comparisonValues?.paymentsOnChain ?? 0, comparisonValues?.actuals ?? 0),
+                offChainIncludedAmount: parseFloat(comparisonValues?.paymentsOffChain ?? 0),
+                offChainIncludedDifference: this.calcDifference(comparisonValues?.paymentsOffChain ?? 0, comparisonValues?.actuals ?? 0),
                 ownerId: snapshot.ownerId,
-            }
-        })
-        .map((item: any) => {
-            return {
-                ...item,
-                month: new Date(item.month.split('/').join('-') + '-01').toISOString().split('T')[0],
-            }
-        });
+            });
+        }
 
-        return rowsToinsert;
+        return rowsToInsert;
 
     };
 
@@ -102,8 +72,8 @@ export default class BudgetStatementCacheValues {
         // if end is null then set it to the start month + 2
         let end = null;
         const endDate = new Date(start);
-        endDate.setMonth(endDate.getMonth() + 2);
-        end = endDate.toISOString().slice(0, 7).split('-').join('/');
+        endDate.setMonth(endDate.getMonth() + 4);
+        end = endDate.toISOString().slice(0, 7);
 
         const filter = {
             start,
@@ -131,9 +101,9 @@ export default class BudgetStatementCacheValues {
                     paymentsOffChain: null,
                 };
             }
-            if (r.metric == 'Actuals') acc[period].actuals = r.value;
-            if (r.metric == 'PaymentsOnChain') acc[period].paymentsOnChain = r.value;
-            if (r.metric == 'PaymentsOffChainIncluded') acc[period].paymentsOffChain = r.value;
+            if (r.metric == 'Actuals') acc[period].actuals = r.sum;
+            if (r.metric == 'PaymentsOnChain') acc[period].paymentsOnChain = r.sum;
+            if (r.metric == 'PaymentsOffChainIncluded') acc[period].paymentsOffChain = r.sum;
             return acc;
         }, {});
 
@@ -149,7 +119,6 @@ export default class BudgetStatementCacheValues {
     }
 
     private async insertRows(rows: any) {
-        console.log('rows', rows[0])
         return await this.db('BudgetStatementCacheValues').insert(rows).returning('id');
     }
 
@@ -157,18 +126,6 @@ export default class BudgetStatementCacheValues {
 }
 
 const cacheValues = new BudgetStatementCacheValues();
-cacheValues.insertCacheValues();
+await cacheValues.insertCacheValues();
 
-/*
-
-snapshotId
-month
-currency
-reportedActuals
-onChainOnlyAmount
-onChainOnlyDifference
-offChainIncludedAmount
-offChainIncludedDifference
-
-*/
 
