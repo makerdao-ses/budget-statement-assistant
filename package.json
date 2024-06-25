@@ -10,6 +10,7 @@
     "dev": "tsc-watch --onSuccess \"node build/budgetStatement/main.js\"",
     "generate-analytics": "node build/utils/generateAnalytics.js",
     "cache-values": "node build/budgetStatementCacheValues/cacheValues.js",
+    "team-roadmaps": "tsc && node build/powerhouseTeamRoadmap/teamRoadmap.js",
     "build": "tsc",
     "test": "jest -c ./jest.config.js --watchAll"
   },
