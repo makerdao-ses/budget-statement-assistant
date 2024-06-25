@@ -1,0 +1,68 @@
+[
+  {
+    "id": "ustpb52jla",
+    "sequenceCode": "PH01",
+    "code": "POC",
+    "title": "Decentralized Operations Platform - POC",
+    "description": "Roadmap milestone: Decentralized Operations Platform - Proof of Concept. Milestone 1, set for March 1, marks the initial phase of Powerhouse Decentralized Operations Platform. Deliverables include: Technical integration demo showcasing for the first time the RWA Portfolio Editor in Connect and the data synchronization with Switchboard; Switchboard API endpoints for integration partners with document model update events and document state queries; and Switchboard API endpoints for integration partners with document model update events and document state queries.",
+    "targetDate": "2024-01-02T23:00:00.000Z",
+    "deliverables": "First technical integration of RWA Portfolio (Connect & Switchboard)\n\nIntegration (API endpoints and Queries)\n\nExpense dashboard increments (on-chain data, budget breakdowns)",
+    "coordinators": "Prometheus, Teep, meraki",
+    "contributors": "Powerhouse"
+  },
+  {
+    "id": "e7c86wa1g0",
+    "sequenceCode": "PH02",
+    "code": "MVP",
+    "title": "Decentralized Operations Platform - MVP",
+    "description": "Roadmap milestone: Decentralized Operations Platform - Proof of Concept. Milestone 2, set for July 2, marks the continuation phase of Powerhouse Decentralized Operations Platform. Deliverables include: MVP Release with MakerDAO transparency reporting information that can be shared publicly; Delivery of integrated platform consisting of Powerhouse core products (Fusion, Switchboard, Connect, and the first release of Renown).",
+    "targetDate": "2024-03-06T23:00:00.000Z",
+    "deliverables": "MVP release of the MakerDAO transparency reporting information.\n\nIntegrated Powerhouse Platform delivery including Renown",
+    "coordinators": "Prometheus, Teep, meraki",
+    "contributors": "Powerhouse"
+  },
+  {
+    "id": "luc6t7m18q",
+    "sequenceCode": "PH03",
+    "code": "PROD",
+    "title": "Decentralized Operations Platform - Production",
+    "description": "Roadmap milestone: Decentralized Operations Platform - Production release.\r\nMilestone 3, set for Q4, marks the production grade development phase of Powerhouse Decentralized Operations Platform.\r\nDeliverables include: (scope not final) Production grade release of the MakerDAO transparency reporting information; integrated Powerhouse platform.",
+    "targetDate": "2024-01-10T23:00:00.000Z",
+    "deliverables": "Production grade release of the MakerDAO transparency reporting information.\n\nProduction grade deployment of integrated Powerhouse platform.",
+    "coordinators": "Prometheus, Teep, meraki",
+    "contributors": "Powerhouse"
+  },
+  {
+    "id": "r3bzzgbyk2",
+    "sequenceCode": "PH04",
+    "code": "ATLA",
+    "title": "Atlas Viewer v1",
+    "description": "Roadmap milestone: Atlas viewer v1. \nMilestone 4, set for Q4, marks the first version of an Atlas document model and viewer in Connect for the Atlas Rulebook.\nDeliverables include: (scope not final) Notion Atlas integration analysis; Atlas document model creation; Atlas viewer USPs exploration.",
+    "targetDate": "31/12/2024",
+    "deliverables": "Notion Atlas integration analysis\n\nAtlas document model creation   \n\nAtlas viewer USPs exploration",
+    "coordinators": "Prometheus, Teep, meraki",
+    "contributors": "Powerhouse"
+  },
+  {
+    "id": "fn7f9sea7u",
+    "sequenceCode": "PH05",
+    "code": "SPIN",
+    "title": "Powerhouse Spin-off",
+    "description": "Roadmap milestone: Powerhouse spin-off creation. \nMilestone 5, set for Q4, marks the research, modelling and the creation of  Powerhouse Spin-off. Deliverables include: legal entity setup; business modeling; OCF structuring & contributor; Powerhouse software integration; token modelling; new customers; public comms.",
+    "targetDate": "31/12/2024",
+    "deliverables": "Legal entity setup\n\nBusiness model templates\n\nOCF + compensation\n\nNew customer\n\nsocial media presence\n\nPowherhouse DAO tokenomics\n\nSpin-off agreement with MakerDAO",
+    "coordinators": "Prometheus, Teep, meraki, Layer0x",
+    "contributors": "Powerhouse"
+  },
+  {
+    "id": "jeu5fu3ncc",
+    "sequenceCode": "PH06",
+    "code": "PMC",
+    "title": "MakerDAO PM Consultancy",
+    "description": "Roadmap milestone: MakerDAO Project Management Consultancy. \nMilestone 6, set for Q4, marks the PM advisory and consultancy work for MakerDAO. Deliverables include: Endgame advisory & Operations coordination; Management & delivery of Pointable AI SOW1; related OCF work & management.",
+    "targetDate": "31/12/2024",
+    "deliverables": "Endgame advisory & coordination\n\nManagement and Delivery of Pointable AI SOW1\n\n\n\n",
+    "coordinators": "Prometheus",
+    "contributors": "Powerhouse"
+  }
+]

@@ -1,0 +1,208 @@
+[
+  {
+    "parentIdRef": "oy69oibt04",
+    "title": "KR01 - RWA Conceptual Wireframes",
+    "link": "https://drive.google.com/file/d/1NZXm_Q43sKH5pqwHTwN0DYvSW1uewMlY/view"
+  },
+  {
+    "parentIdRef": "oy69oibt04",
+    "title": "KR02 - First demo of RWA Portfolio - Feb 21",
+    "link": "https://drive.google.com/file/d/1CMwePiR046IJqQGLypi7Fzu_B7aLYNco/view"
+  },
+  {
+    "parentIdRef": "oy69oibt03",
+    "title": "KR03 - Source code on Powerhouse Github repo",
+    "link": "https://github.com/powerhouse-inc"
+  },
+  {
+    "parentIdRef": "oy69oibt03",
+    "title": "KR04 - Source code on SES Github repo",
+    "link": "https://github.com/makerdao-ses"
+  },
+  {
+    "parentIdRef": "oy69oibt02",
+    "title": "KR05 - Expenses dashboard on-going work available",
+    "link": "https://expenses-staging.makerdao.network"
+  },
+  {
+    "parentIdRef": "oy69oibt02",
+    "title": "KR06 - Expense Dashboard deployment v0.33.0",
+    "link": "https://github.com/makerdao-ses/ecosystem-dashboard/releases/tag/v0.33.0"
+  },
+  {
+    "parentIdRef": "xnatzcr1mn",
+    "title": "KR01 - Integration Demo of RWA portfolio - Apr 10",
+    "link": "https://drive.google.com/file/d/1Q1zYh1_qosF8JG1z3gbKszrp60HlnYyV/view"
+  },
+  {
+    "parentIdRef": "xnatzcr1mn",
+    "title": "KR02 - Switchboard data / API endpoint ",
+    "link": "https://makerdao-ses.notion.site/RWA-API-Query-Key-Result-889eab4be0144d799650620794694916"
+  },
+  {
+    "parentIdRef": "xnatzcr1mn",
+    "title": "KR03 - MakerDAO platform demo recording - Jul 3rd",
+    "link": "“provide link to recording when available”."
+  },
+  {
+    "parentIdRef": "xnatzcr1mn",
+    "title": "KR04 - Custom MakerDAO domain name configured ",
+    "link": "“link TBD”."
+  },
+  {
+    "parentIdRef": "xnatzcr2mn",
+    "title": "KR05 - Connect deployment",
+    "link": "https://apps.powerhouse.io/makerdao/connect"
+  },
+  {
+    "parentIdRef": "xnatzcr2mn",
+    "title": "KR06 - Fusion deployment",
+    "link": "https://apps.powerhouse.io/makerdao/fusion"
+  },
+  {
+    "parentIdRef": "xnatzcr2mn",
+    "title": "KR07 - Switchboard deployment ",
+    "link": "https://apps.powerhouse.io/makerdao/switchboard"
+  },
+  {
+    "parentIdRef": "xnatzcr2mn",
+    "title": "KR08- Renown deployment ",
+    "link": "https://renown.id/makerdao"
+  },
+  {
+    "parentIdRef": "xnatzcr2mn",
+    "title": "KR09 - All source code is licensed as open-source and available on Powerhouse inc Github repo",
+    "link": "https://github.com/powerhouse-inc"
+  },
+  {
+    "parentIdRef": "xnatzcr2mn",
+    "title": "KR10 - All source code is licensed as open-source and available on MakerDAO SES Github repo",
+    "link": "https://github.com/makerdao-ses"
+  },
+  {
+    "parentIdRef": "t4wjsoym8u",
+    "title": "KR01 - Fusion Reskin example designs",
+    "link": "\"link to a resource referencing a couple of before & after reskin designs/page screenshots\" "
+  },
+  {
+    "parentIdRef": "t4wjsoym8u",
+    "title": "KR02 - MakerDAO Finances page",
+    "link": "\"url to finances page on fusion\""
+  },
+  {
+    "parentIdRef": "t4wjsoym8u",
+    "title": "KR03 - Fusion prod demo recording",
+    "link": "\"link to demo recording mid Sep\""
+  },
+  { "parentIdRef": "t4wjsoym9u", "title": "KR01 - TBD", "link": "" },
+  { "parentIdRef": "t4wjsoym9u", "title": "KR02 - TBD", "link": "" },
+  { "parentIdRef": "t4wjsoym9u", "title": "KR03 - TBD", "link": "" },
+  {
+    "parentIdRef": "kjjxdnrl1n",
+    "title": "KR01 - Atlas integration analysis",
+    "link": "\"link to public Notion Atlas integration analysis\""
+  },
+  { "parentIdRef": "kjjxdnrl1n", "title": "KR02 - TBD", "link": "" },
+  { "parentIdRef": "kjjxdnrl1n", "title": "KR03 - TBD", "link": "" },
+  {
+    "parentIdRef": "kjjxdnrl2n",
+    "title": "KR01 - Atlas document model",
+    "link": "\"link to public Atlas document model deployment\""
+  },
+  {
+    "parentIdRef": "kjjxdnrl2n",
+    "title": "KR02 - Atlas viewer wireframes",
+    "link": "\"link to public Atlas viewer wireframes\""
+  },
+  { "parentIdRef": "kjjxdnrl2n", "title": "KR03 - TBD", "link": "" },
+  {
+    "parentIdRef": "kjjxdnrl3n",
+    "title": "KR01 - Business analysis",
+    "link": ""
+  },
+  {
+    "parentIdRef": "kjjxdnrl3n",
+    "title": "KR02 - Conceptual wireframes with USP candidates",
+    "link": ""
+  },
+  {
+    "parentIdRef": "kjjxdnrl3n",
+    "title": "KR03 - Demo of Atlas flow",
+    "link": "\"link to Atlas demo recording\""
+  },
+  {
+    "parentIdRef": "dn2z901pbv",
+    "title": "KR01 - Layer0x on PH legal research - Power Brunch",
+    "link": "https://www.youtube.com/watch?v=5GnRqdoXt8o&t=160s"
+  },
+  { "parentIdRef": "dn2z901pbv", "title": "KR02 - TBD", "link": "" },
+  { "parentIdRef": "dn2z901pbv", "title": "KR03 - TBD", "link": "" },
+  {
+    "parentIdRef": "dn2z902pbv",
+    "title": "KR01 - T on PH tech stack - Power Brunch",
+    "link": "https://www.youtube.com/watch?v=5GnRqdoXt8o&t=1490s"
+  },
+  {
+    "parentIdRef": "dn2z902pbv",
+    "title": "KR02 - Prometheus on PH business model - Power Brunch",
+    "link": "https://www.youtube.com/watch?v=tH0yb-lMsZ4"
+  },
+  { "parentIdRef": "dn2z902pbv", "title": "KR03 -TBD", "link": "" },
+  { "parentIdRef": "dn2z903pbv", "title": "KR01 - TBD", "link": "" },
+  { "parentIdRef": "dn2z903pbv", "title": "KR02 - TBD", "link": "" },
+  { "parentIdRef": "dn2z903pbv", "title": "KR03 -TBD", "link": "" },
+  {
+    "parentIdRef": "dn2z904pbv",
+    "title": "KR01 - Arbitrum LTIPP grants editor ",
+    "link": "URL"
+  },
+  { "parentIdRef": "dn2z904pbv", "title": "KR02 - TBD", "link": "" },
+  { "parentIdRef": "dn2z904pbv", "title": "KR03 -TBD", "link": "" },
+  {
+    "parentIdRef": "dn2z905pbv",
+    "title": "KR13 - Twitter thread Power brunch 1 ",
+    "link": "https://x.com/PowerhouseDAO/status/1801283667651621155"
+  },
+  {
+    "parentIdRef": "dn2z905pbv",
+    "title": "KR14 - Twitter thread Power brunch 2",
+    "link": "https://x.com/PowerhouseDAO/status/1801623398075736470"
+  },
+  {
+    "parentIdRef": "dn2z905pbv",
+    "title": "KR14 - Twitter thread Power brunch 3",
+    "link": "https://x.com/PowerhouseDAO/status/1802726156816285797"
+  },
+  {
+    "parentIdRef": "dn2z906pbv",
+    "title": "KR01- PowerhouseDAO tokenomics?",
+    "link": ""
+  },
+  { "parentIdRef": "dn2z906pbv", "title": "KR02 - TBD", "link": "" },
+  { "parentIdRef": "dn2z906pbv", "title": "KR03 -TBD", "link": "" },
+  {
+    "parentIdRef": "dn2z907pbv",
+    "title": "KR01- publicly shareable agreement info?",
+    "link": ""
+  },
+  {
+    "parentIdRef": "dn2z907pbv",
+    "title": "KR02 - Next steps forum update?",
+    "link": ""
+  },
+  { "parentIdRef": "dn2z907pbv", "title": "KR03 -TBD", "link": "" },
+  {
+    "parentIdRef": "c3vcxkuo41",
+    "title": "KR01- can we share anything publicly?",
+    "link": ""
+  },
+  { "parentIdRef": "c3vcxkuo41", "title": "KR02 - TBD", "link": "" },
+  { "parentIdRef": "c3vcxkuo41", "title": "KR03 -TBD", "link": "" },
+  {
+    "parentIdRef": "c3vcxkuo42",
+    "title": "KR01- public Pointable progress reference?",
+    "link": ""
+  },
+  { "parentIdRef": "c3vcxkuo42", "title": "KR02 - TBD", "link": "" },
+  { "parentIdRef": "c3vcxkuo42", "title": "KR03 -TBD", "link": "" }
+]
