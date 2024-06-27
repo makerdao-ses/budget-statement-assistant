@@ -50,7 +50,7 @@ const nestDeliverables = (milestones: any[], deliverables: any[]) => {
       }
       // adding workProgress object 
       deliverable.workProgress = {
-        value: deliverable.workProgress
+        value: deliverable.workProgress == 0 ? 0.001 : deliverable.workProgress,
       }
       // adding owner object
       const owner = contributors.find(contributor => contributor.code === deliverable.owner);
@@ -73,7 +73,7 @@ const nestDeliverables = (milestones: any[], deliverables: any[]) => {
       deliverables: milestone.deliverables,
       status: milestone['scope.status'],
       progress: {
-        value: milestone['scope.progress.value'],
+        value: milestone['scope.progress.value'] == 0 ? 0.001 : milestone['scope.progress.value'],
       },
       totalDeliverables: milestone.deliverables.length,
       deliverablesCompleted: milestone.deliverables.filter((deliverable: any) => deliverable.status === 'DELIVERED').length,

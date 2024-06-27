@@ -265,7 +265,7 @@
           "title": "Production grade release of the MakerDAO transparency reporting information.",
           "description": "(scope not final) QA tested and reskined release of MakerDAO transparency reporting information. Including: Atlas Viewer workflow TBC; Reskinned pages on the Fusion dashboard; Complete & correct available financial, team and work information TBC.",
           "status": "TODO",
-          "workProgress": { "value": 0 },
+          "workProgress": { "value": 0.001 },
           "owner": {
             "id": "z6899913",
             "ref": "makerdao/ecosystem-actor",
@@ -309,7 +309,7 @@
           "title": "Production grade deployment of integrated Powerhouse platform.",
           "description": "(scope not final) Production-ready release of an integrated solution comprising Fusion, Switchboard, Connect and Renown where contributor teams can register with their Ethereum identity and manage their own transparency reporting data through the platform. Refactoring work of core products.",
           "status": "TODO",
-          "workProgress": { "value": 0 },
+          "workProgress": { "value": 0.001 },
           "owner": {
             "id": "z6899913",
             "ref": "makerdao/ecosystem-actor",
@@ -440,7 +440,7 @@
           "title": "Atlas document model creation",
           "description": "(scope not final) Creation of document model + viewer to replicate the structure of Notion DB.",
           "status": "TODO",
-          "workProgress": { "value": 0 },
+          "workProgress": { "value": 0.001 },
           "owner": {
             "id": "z6899913",
             "ref": "makerdao/ecosystem-actor",
@@ -481,7 +481,7 @@
           "title": "Atlas viewer USPs exploration",
           "description": "(scope not final) Exploration of the Powerhouse Unique Selling Points that will provide the most value to feature’s stakeholders.",
           "status": "TODO",
-          "workProgress": { "value": 0 },
+          "workProgress": { "value": 0.001 },
           "owner": {
             "id": "z6899913",
             "ref": "makerdao/ecosystem-actor",
@@ -839,7 +839,7 @@
           "title": "Spin-off agreement with MakerDAO",
           "description": "(scope not final) Agreement for MakerDAO Incubation Stake / structure spin-off relationship",
           "status": "TODO",
-          "workProgress": { "value": 0 },
+          "workProgress": { "value": 0.001 },
           "owner": {
             "id": "z6899913",
             "ref": "makerdao/ecosystem-actor",
@@ -915,7 +915,7 @@
           "title": "Endgame advisory & coordination",
           "description": "Endgame advisory and Operational roadmap coordination (Wouter)",
           "status": "IN_PROGRESS",
-          "workProgress": { "value": 0 },
+          "workProgress": { "value": 0.001 },
           "owner": {
             "id": "z6899913",
             "ref": "makerdao/ecosystem-actor",
@@ -956,7 +956,7 @@
           "title": "Management and Delivery of Pointable AI SOW1",
           "description": "Management and Delivery of Pointable AI SOW1, including:* Project Management, Cross Team Collaboration: Content, Front-End, AI, and Infra. * Delivery of Viable Agent with Integrated Front End in coordination with Jetstream and Pointable. * Agent Support Tooling and Hosting Delivery * Scoping of Pointable AI SOW2 to fulfill PH-04 and Ongoing Launch Project Requirements.",
           "status": "IN_PROGRESS",
-          "workProgress": { "value": 0 },
+          "workProgress": { "value": 0.001 },
           "owner": {
             "id": "z6899913",
             "ref": "makerdao/ecosystem-actor",
