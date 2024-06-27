@@ -1,39 +1,45 @@
 [
   {
-    "id": "oy69oibt04",
+    "id": "oy69oibt04\n",
     "parentIdRef": "ustpb52jla",
     "code": "POC1",
     "title": "First technical integration of RWA Portfolio (Connect & Switchboard)",
     "description": "Technical integration demo showcasing for the first time the RWA Portfolio Editor in Connect and the data synchronization with Switchboard.",
-    "status": "Delivered",
+    "status": "DELIVERED",
     "workProgress": 1,
-    "project (1 for now)": "RWA - RWA Portfolio Reporting",
-    "owner": "Powerhouse",
-    "keyResults": ""
+    "owner": "PH",
+    "projectCode": "RWA",
+    "projectTitle": "RWA Portfolio Reporting",
+    "budgetAnchor.workUnitBudget": 1,
+    "budgetAnchor.deliverableBudget": 0
   },
   {
-    "id": "oy69oibt03",
+    "id": "oy69oibt03\n",
     "parentIdRef": "ustpb52jla",
     "code": "POC2",
     "title": "Integration (API endpoints and Queries)",
     "description": "Switchboard API endpoints for integration partners with document model update events and document state queries.",
-    "status": "Delivered",
+    "status": "DELIVERED",
     "workProgress": 1,
-    "project (1 for now)": "PHP - Powerhouse Products POC",
-    "owner": "Powerhouse",
-    "keyResults": ""
+    "owner": "PH",
+    "projectCode": "PHP",
+    "projectTitle": "Powerhouse Products POC",
+    "budgetAnchor.workUnitBudget": 1,
+    "budgetAnchor.deliverableBudget": 0
   },
   {
-    "id": "oy69oibt02",
+    "id": "oy69oibt02\n",
     "parentIdRef": "ustpb52jla",
     "code": "POC3",
     "title": "Expense dashboard increments (on-chain data, budget breakdowns)",
     "description": "Separate incremental release of the MakerDAO expenses platform with on-chain transactional data and budget breakdown views.",
-    "status": "Delivered",
+    "status": "DELIVERED",
     "workProgress": 1,
-    "project (1 for now)": "PEA - Protocol Expense Accounting",
-    "owner": "Powerhouse",
-    "keyResults": ""
+    "owner": "PH",
+    "projectCode": "PEA",
+    "projectTitle": "Protocol Expense Accounting",
+    "budgetAnchor.workUnitBudget": 1,
+    "budgetAnchor.deliverableBudget": 0
   },
   {
     "id": "xnatzcr1mn",
@@ -41,11 +47,13 @@
     "code": "MVP1",
     "title": "MVP release of the MakerDAO transparency reporting information.",
     "description": "MVP Release with MakerDAO transparency reporting information that can be shared publicly. * RWA reporting flow (without e2e encryption & comparison views) * DAO finances (advanced stage) * DAO teams (at least core unit + ecosystem actor profiles) * DAO work (projects & roadmaps in early stage) * Endgame overview (latest updates & budget insights) * New homepage with at-glance insights on various DAO aspects - Finances, governance, Teams, and Work (designs only).",
-    "status": "In progress",
+    "status": "IN_PROGRESS",
     "workProgress": 0.75,
-    "project (1 for now)": "RWA - RWA Portfolio Reporting",
-    "owner": "Powerhouse",
-    "keyResults": ""
+    "owner": "PH",
+    "projectCode": "RWA",
+    "projectTitle": "RWA Portfolio Reporting",
+    "budgetAnchor.workUnitBudget": 1,
+    "budgetAnchor.deliverableBudget": 0
   },
   {
     "id": "xnatzcr2mn",
@@ -53,11 +61,13 @@
     "code": "MVP2",
     "title": "Integrated Powerhouse Platform delivery including Renown",
     "description": "Delivery of integrated platform consisting of Powerhouse core products: Fusion, Switchboard, Connect, and the first release of Renown. * Enhanced expenses.makerdao.network rebranded as Fusion * Switchboard API endpoints that contain the RWA Portfolio Reporting queries. * Other data presented on Fusion will be partially served through Switchboard and partially through the legacy ecosystem API.",
-    "status": "In progress",
+    "status": "IN_PROGRESS",
     "workProgress": 0.65,
-    "project (1 for now)": "PHP - Powerhouse Products POC",
-    "owner": "Powerhouse",
-    "keyResults": ""
+    "owner": "PH",
+    "projectCode": "PHP",
+    "projectTitle": "Powerhouse Products POC",
+    "budgetAnchor.workUnitBudget": 1,
+    "budgetAnchor.deliverableBudget": 0
   },
   {
     "id": "t4wjsoym8u",
@@ -65,11 +75,13 @@
     "code": "PROD1",
     "title": "Production grade release of the MakerDAO transparency reporting information.",
     "description": "(scope not final) QA tested and reskined release of MakerDAO transparency reporting information. Including: Atlas Viewer workflow TBC; Reskinned pages on the Fusion dashboard; Complete & correct available financial, team and work information TBC.",
-    "status": "To do",
+    "status": "TODO",
     "workProgress": 0,
-    "project (1 for now)": "PEA - Protocol Expense Accounting",
-    "owner": "Powerhouse",
-    "keyResults": ""
+    "owner": "PH",
+    "projectCode": "PEA",
+    "projectTitle": " Protocol Expense Accounting",
+    "budgetAnchor.workUnitBudget": 1,
+    "budgetAnchor.deliverableBudget": 0
   },
   {
     "id": "t4wjsoym9u",
@@ -77,11 +89,13 @@
     "code": "PROD2",
     "title": "Production grade deployment of integrated Powerhouse platform.",
     "description": "(scope not final) Production-ready release of an integrated solution comprising Fusion, Switchboard, Connect and Renown where contributor teams can register with their Ethereum identity and manage their own transparency reporting data through the platform. Refactoring work of core products.",
-    "status": "To do",
+    "status": "TODO",
     "workProgress": 0,
-    "project (1 for now)": "PHP - Powerhouse Products POC",
-    "owner": "Powerhouse",
-    "keyResults": ""
+    "owner": "PH",
+    "projectCode": "PHP",
+    "projectTitle": "Powerhouse Products POC",
+    "budgetAnchor.workUnitBudget": 1,
+    "budgetAnchor.deliverableBudget": 0
   },
   {
     "id": "kjjxdnrl1n",
@@ -89,11 +103,13 @@
     "code": "ATLA1",
     "title": "Notion Atlas integration analysis\n",
     "description": "(scope not final) Analysis of the Atlas Axis Notion database setup and identifying how we can pull the data from it, serving as input to creation of document model + viewer.",
-    "status": "In progress",
+    "status": "IN_PROGRESS",
     "workProgress": 0.05,
-    "project (1 for now)": "ATL - Atlas Rulebook prototype",
-    "owner": "Powerhouse",
-    "keyResults": ""
+    "owner": "PH",
+    "projectCode": "ATL",
+    "projectTitle": "Atlas Rulebook Prototype",
+    "budgetAnchor.workUnitBudget": 1,
+    "budgetAnchor.deliverableBudget": 0
   },
   {
     "id": "kjjxdnrl2n",
@@ -101,11 +117,13 @@
     "code": "ATLA2",
     "title": "Atlas document model creation",
     "description": "(scope not final) Creation of document model + viewer to replicate the structure of Notion DB.",
-    "status": "To do",
+    "status": "TODO",
     "workProgress": 0,
-    "project (1 for now)": "ATL - Atlas Rulebook prototype ?",
-    "owner": "Powerhouse",
-    "keyResults": ""
+    "owner": "PH",
+    "projectCode": "ATL",
+    "projectTitle": "Atlas Rulebook Prototype",
+    "budgetAnchor.workUnitBudget": 1,
+    "budgetAnchor.deliverableBudget": 0
   },
   {
     "id": "kjjxdnrl3n",
@@ -113,11 +131,13 @@
     "code": "ATLA3",
     "title": "Atlas viewer USPs exploration",
     "description": "(scope not final) Exploration of the Powerhouse Unique Selling Points that will provide the most value to feature’s stakeholders.",
-    "status": "To do",
+    "status": "TODO",
     "workProgress": 0,
-    "project (1 for now)": "ATL - Atlas Rulebook prototype ?",
-    "owner": "Powerhouse",
-    "keyResults": ""
+    "owner": "PH",
+    "projectCode": "ATL",
+    "projectTitle": "Atlas Rulebook Prototype",
+    "budgetAnchor.workUnitBudget": 1,
+    "budgetAnchor.deliverableBudget": 0
   },
   {
     "id": "dn2z901pbv",
@@ -125,11 +145,13 @@
     "code": "SPIN1",
     "title": "Legal entity setup",
     "description": "(scope not final) Research and setup of legal entities",
-    "status": "In progress",
+    "status": "IN_PROGRESS",
     "workProgress": 0.3,
-    "project (1 for now)": "PLS - Powerhouse legal structuring",
-    "owner": "Powerhouse",
-    "keyResults": ""
+    "owner": "PH",
+    "projectCode": "PLS",
+    "projectTitle": "Powerhouse Legal Structuring",
+    "budgetAnchor.workUnitBudget": 1,
+    "budgetAnchor.deliverableBudget": 0
   },
   {
     "id": "dn2z902pbv",
@@ -137,11 +159,13 @@
     "code": "SPIN2",
     "title": "Business model templates",
     "description": "(scope not final) business modelling work including Powerhouse infrastructure stack & decentralized operations model",
-    "status": "In progress",
+    "status": "IN_PROGRESS",
     "workProgress": 0.3,
-    "project (1 for now)": "PLS - Powerhouse legal structuring",
-    "owner": "Powerhouse",
-    "keyResults": ""
+    "owner": "PH",
+    "projectCode": "PLS",
+    "projectTitle": "Powerhouse Legal Structuring",
+    "budgetAnchor.workUnitBudget": 1,
+    "budgetAnchor.deliverableBudget": 0
   },
   {
     "id": "dn2z903pbv",
@@ -149,11 +173,13 @@
     "code": "SPIN3",
     "title": "OCF + compensation",
     "description": "(scope not final) Work out the OCF structure and the contributor compensation model",
-    "status": "In progress",
+    "status": "IN_PROGRESS",
     "workProgress": 0.15,
-    "project (1 for now)": "PLS - Powerhouse legal structuring",
-    "owner": "Powerhouse",
-    "keyResults": ""
+    "owner": "PH",
+    "projectCode": "PLS",
+    "projectTitle": "Powerhouse Legal Structuring",
+    "budgetAnchor.workUnitBudget": 1,
+    "budgetAnchor.deliverableBudget": 0
   },
   {
     "id": "dn2z904pbv",
@@ -161,11 +187,13 @@
     "code": "SPIN4",
     "title": "New customer",
     "description": "(scope not final) Launch Powerhouse Software with one or more projects outside of the MakerDAO ecosystem",
-    "status": "In progress",
+    "status": "IN_PROGRESS",
     "workProgress": 0.8,
-    "project (1 for now)": "ARB - Arbitrum reporting prototype ?",
-    "owner": "Powerhouse",
-    "keyResults": ""
+    "owner": "PH",
+    "projectCode": "ARB",
+    "projectTitle": "Arbitrum Reporting Prototype",
+    "budgetAnchor.workUnitBudget": 1,
+    "budgetAnchor.deliverableBudget": 0
   },
   {
     "id": "dn2z905pbv",
@@ -173,11 +201,13 @@
     "code": "SPIN5",
     "title": "social media presence",
     "description": "(scope not final) Build social media presence for Powerhouse",
-    "status": "In progress",
+    "status": "IN_PROGRESS",
     "workProgress": 0.2,
-    "project (1 for now)": "PRC - Powerhouse release comms",
-    "owner": "Powerhouse",
-    "keyResults": ""
+    "owner": "PH",
+    "projectCode": "PRC",
+    "projectTitle": "Powerhouse Release Comms",
+    "budgetAnchor.workUnitBudget": 1,
+    "budgetAnchor.deliverableBudget": 0
   },
   {
     "id": "dn2z906pbv",
@@ -185,11 +215,13 @@
     "code": "SPIN6",
     "title": "Powherhouse DAO tokenomics",
     "description": "(scope not final) Work out Powerhouse DAO token model",
-    "status": "In progress",
+    "status": "IN_PROGRESS",
     "workProgress": 0.15,
-    "project (1 for now)": "PLS - Powerhouse legal structuring ?",
-    "owner": "Powerhouse",
-    "keyResults": ""
+    "owner": "PH",
+    "projectCode": "PLS",
+    "projectTitle": "Powerhouse Legal Structuring",
+    "budgetAnchor.workUnitBudget": 1,
+    "budgetAnchor.deliverableBudget": 0
   },
   {
     "id": "dn2z907pbv",
@@ -197,11 +229,13 @@
     "code": "SPIN7",
     "title": "Spin-off agreement with MakerDAO",
     "description": "(scope not final) Agreement for MakerDAO Incubation Stake / structure spin-off relationship",
-    "status": "To do",
+    "status": "TODO",
     "workProgress": 0,
-    "project (1 for now)": "?",
-    "owner": "Powerhouse",
-    "keyResults": ""
+    "owner": "PH",
+    "projectCode": "",
+    "projectTitle": "",
+    "budgetAnchor.workUnitBudget": 1,
+    "budgetAnchor.deliverableBudget": 0
   },
   {
     "id": "c3vcxkuo41",
@@ -209,11 +243,13 @@
     "code": "PMC1",
     "title": "Endgame advisory & coordination",
     "description": "Endgame advisory and Operational roadmap coordination (Wouter)",
-    "status": "In progress",
-    "workProgress": "?%",
-    "project (1 for now)": "?",
-    "owner": "Powerhouse",
-    "keyResults": ""
+    "status": "IN_PROGRESS",
+    "workProgress": 0,
+    "owner": "PH",
+    "projectCode": "",
+    "projectTitle": "",
+    "budgetAnchor.workUnitBudget": 1,
+    "budgetAnchor.deliverableBudget": 0
   },
   {
     "id": "c3vcxkuo42",
@@ -221,10 +257,12 @@
     "code": "PMC2",
     "title": "Management and Delivery of Pointable AI SOW1",
     "description": "Management and Delivery of Pointable AI SOW1, including:* Project Management, Cross Team Collaboration: Content, Front-End, AI, and Infra. * Delivery of Viable Agent with Integrated Front End in coordination with Jetstream and Pointable. * Agent Support Tooling and Hosting Delivery * Scoping of Pointable AI SOW2 to fulfill PH-04 and Ongoing Launch Project Requirements.",
-    "status": "In progress",
-    "workProgress": "?%",
-    "project (1 for now)": "?",
-    "owner": "Powerhouse",
-    "keyResults": ""
+    "status": "IN_PROGRESS",
+    "workProgress": 0,
+    "owner": "PH",
+    "projectCode": "",
+    "projectTitle": "",
+    "budgetAnchor.workUnitBudget": 1,
+    "budgetAnchor.deliverableBudget": 0
   }
 ]
