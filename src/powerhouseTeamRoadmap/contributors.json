@@ -1,44 +1,65 @@
 [
-  {
-    "id": "z6899913",
-    "ref": "makerdao/ecosystem-actor",
-    "name": "Powerhouse",
-    "code": "PH",
-    "imageUrl": "https://makerdao-ses.github.io/ecosystem-dashboard/ecosystem-actors/POWERHOUSE/POWERHOUSE_logo.png"
-  },
-  {
-    "id": "8J076zKu",
-    "ref": "makerdao/contributor",
-    "name": "Layer0x",
-    "code": "Layer0x",
-    "imageUrl": ""
-  },
-  {
-    "id": "M7920c86",
-    "ref": "makerdao/contributor",
-    "name": "teep",
-    "code": "teep",
-    "imageUrl": ""
-  },
-  {
-    "id": "7963g717",
-    "ref": "makerdao/contributor",
-    "name": "meraki",
-    "code": "meraki",
-    "imageUrl": ""
-  },
-  {
-    "id": "1A22qBj6",
-    "ref": "makerdao/contributor",
-    "name": "Prometheus",
-    "code": "Prometheus",
-    "imageUrl": ""
-  },
-  {
-    "id": "2yu84o1a",
-    "ref": "makerdao/contributor",
-    "name": "callmeT",
-    "code": "callmeT",
-    "imageUrl": ""
-  }
+    {
+        "id": "1CvDI199",
+        "ref": "makerdao/ecosystem-actor",
+        "name": "Powerhouse",
+        "code": "PH",
+        "imageUrl": "https://makerdao-ses.github.io/ecosystem-dashboard/ecosystem-actors/POWERHOUSE/POWERHOUSE_logo.png"
+    },
+    {
+        "id": "y565O14Q",
+        "ref": "makerdao/contributor",
+        "name": "Layer0x",
+        "code": "Layer0x",
+        "imageUrl": ""
+    },
+    {
+        "id": "2Zp61nts",
+        "ref": "makerdao/contributor",
+        "name": "teep",
+        "code": "teep",
+        "imageUrl": ""
+    },
+    {
+        "id": "4o9N4Qw9",
+        "ref": "makerdao/contributor",
+        "name": "meraki",
+        "code": "meraki",
+        "imageUrl": ""
+    },
+    {
+        "id": "I88c3i7e",
+        "ref": "makerdao/contributor",
+        "name": "Prometheus",
+        "code": "Prometheus",
+        "imageUrl": ""
+    },
+    {
+        "id": "8Oem8225",
+        "ref": "makerdao/contributor",
+        "name": "callmeT",
+        "code": "callmeT",
+        "imageUrl": ""
+    },
+    {
+        "id": "32ggEbkF",
+        "ref": "makerdao/contributor",
+        "name": "apeiron",
+        "code": "apeiron",
+        "imageUrl": ""
+    },
+    {
+        "id": "6YgKs4L7",
+        "ref": "makerdao/contributor",
+        "name": "Kilgore",
+        "code": "Kilgore",
+        "imageUrl": ""
+    },
+    {
+        "id": "3n353uJ1",
+        "ref": "makerdao/contributor",
+        "name": "Lumen",
+        "code": "Lumen",
+        "imageUrl": ""
+    }
 ]
