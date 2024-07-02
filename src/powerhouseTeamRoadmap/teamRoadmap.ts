@@ -8,6 +8,12 @@ import contributors from './contributors.json' assert { type: 'json'}
 // Helper function to nest deliverables under milestones
 const nestDeliverables = (milestones: any[], deliverables: any[]) => {
   milestones.forEach(milestone => {
+    // parsing target date
+    const originalDate = new Date(milestone.targetDate);
+    originalDate.setHours(originalDate.getHours() + 1);
+    const newDate = originalDate.toISOString();
+    milestone.targetDate = newDate;
+    
     milestone.deliverables = deliverables.filter(deliverable => deliverable.parentIdRef === milestone.id);
   });
 
