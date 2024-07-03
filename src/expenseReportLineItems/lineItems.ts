@@ -2,7 +2,6 @@ import { AnalyticsPath } from '../utils/analytics/AnalyticsPath.js';
 import { AnalyticsStore } from '../utils/analytics/AnalyticsStore.js';
 import knex, { Knex } from 'knex';
 import accounts from '../snapshotReportLineItems/accounts.js'
-import fs from 'fs';
 
 export default class LineItemsScript {
     db: any;
@@ -88,10 +87,10 @@ export default class LineItemsScript {
             };
             series.push(serie);
         }
-        
+
         // add forecasts
         const forcastLineItems = await this.getAllForecastsLineItems();
-        
+
         for (let i = 0; i < forcastLineItems.length; i++) {
             const { BSLI_month, BS_month, address, group, canonicalBudgetCategory, currency, forecast, ownerType, ownerCode, headcountExpense, ownerId } = forcastLineItems[i];
             const headCount = headcountExpense ? 'headcount' : 'non-headcount';

@@ -2,6 +2,7 @@ import BudgetScript from "../scopeArtifacts/scopeArtifactsBudgets.js";
 import Mip40BudgetScript from "../mip40s/mip40Budgets.js";
 import SnapshotLineItemsScript from "../snapshotReportLineItems/snapshotLineItems.js";
 import LineItemsScript from "../expenseReportLineItems/lineItems.js";
+import BudgetStatementCacheValues from '../budgetStatementCacheValues/cacheValues.js';
 
 
 // Script that aggregates all analytics scripts into one command with dynamic options for path and type of analytics to run
@@ -54,6 +55,8 @@ export async function generateAnalytics(path?: string,) {
             break;
     }
 
+    await new BudgetStatementCacheValues().insertCacheValues();
+    console.log('Updating cache values')
     process.exit(0);
 
 }

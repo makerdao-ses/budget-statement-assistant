@@ -125,7 +125,7 @@ export default class BudgetStatementCacheValues {
 
 }
 
-const cacheValues = new BudgetStatementCacheValues();
-await cacheValues.insertCacheValues();
+// const cacheValues = new BudgetStatementCacheValues();
+// await cacheValues.insertCacheValues();
 
 
