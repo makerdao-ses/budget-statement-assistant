@@ -144,7 +144,7 @@ export default class Mip40BudgetScript {
         `;
 
         try {
-            const response = await fetch('https://publish-dev-vpighsmr70zxa92r9w.herokuapp.com/graphql', {
+            const response = await fetch('https://ecosystem-dashboard.herokuapp.com/graphql', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

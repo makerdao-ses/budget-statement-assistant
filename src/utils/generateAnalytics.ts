@@ -55,8 +55,8 @@ export async function generateAnalytics(path?: string,) {
             break;
     }
 
-    await new BudgetStatementCacheValues().insertCacheValues();
     console.log('Updating cache values')
+    await new BudgetStatementCacheValues().insertCacheValues();
     process.exit(0);
 
 }
