@@ -1,7 +1,7 @@
 import { AnalyticsPath } from "../utils/analytics/AnalyticsPath.js"
 import { AnalyticsStore } from "../utils/analytics/AnalyticsStore.js"
 import knex from 'knex';
-import { eachMonthOfInterval } from "date-fns";
+import { eachMonthOfInterval, startOfMonth, endOfMonth, parseISO, addMonths, format } from "date-fns";
 
 export default class Mip40BudgetScript {
 
@@ -80,20 +80,41 @@ export default class Mip40BudgetScript {
                         wallet.mip40BudgetLineItem.forEach((lineItem: any) => {
                             const totalBudget = lineItem.budgetCap * nrOfmonths;
                             const headCount = lineItem.headcountExpense ? 'headcount' : 'non-headcount';
-                            let serie = {
-                                start: new Date(budgetPeriodStart),
-                                end: new Date(budgetPeriodEnd),
-                                source,
-                                value: budgetPeriodStart !== null && budgetPeriodEnd !== null ? totalBudget : lineItem.budgetCap,
-                                unit: 'DAI',
-                                metric: 'Budget',
-                                dimensions: {
-                                    budget: AnalyticsPath.fromString(`atlas/legacy/core-units/${cuCode}`),
-                                    category: AnalyticsPath.fromString(`atlas/${headCount}/mip40/${mip40Budget.mip40Spn}/${wallet.address}/${lineItem.budgetCategory}`),
-                                    wallet: AnalyticsPath.fromString(`atlas/${wallet.name}`),
+
+                            if (nrOfmonths > 1) {
+                                const monthly = this.getListOfMonths(parseISO(budgetPeriodStart), parseISO(budgetPeriodEnd));
+                                for (let i = 0; i < nrOfmonths; i++) {
+                                    let serie = {
+                                        start: monthly[i].periodStart,
+                                        end: monthly[i].periodEnd,
+                                        source,
+                                        value: lineItem.budgetCap,
+                                        unit: 'DAI',
+                                        metric: 'Budget',
+                                        dimensions: {
+                                            budget: AnalyticsPath.fromString(`atlas/legacy/core-units/${cuCode}`),
+                                            category: AnalyticsPath.fromString(`atlas/${headCount}/mip40/${mip40Budget.mip40Spn}/${wallet.address}/${lineItem.budgetCategory}`),
+                                            wallet: AnalyticsPath.fromString(`atlas/${wallet.name}`),
+                                        }
+                                    }
+                                    series.push(serie);
                                 }
+                            } else {
+                                let serie = {
+                                    start: new Date(budgetPeriodStart),
+                                    end: new Date(budgetPeriodEnd),
+                                    source,
+                                    value: budgetPeriodStart !== null && budgetPeriodEnd !== null ? totalBudget : lineItem.budgetCap,
+                                    unit: 'DAI',
+                                    metric: 'Budget',
+                                    dimensions: {
+                                        budget: AnalyticsPath.fromString(`atlas/legacy/core-units/${cuCode}`),
+                                        category: AnalyticsPath.fromString(`atlas/${headCount}/mip40/${mip40Budget.mip40Spn}/${wallet.address}/${lineItem.budgetCategory}`),
+                                        wallet: AnalyticsPath.fromString(`atlas/${wallet.name}`),
+                                    }
+                                }
+                                series.push(serie);
                             }
-                            series.push(serie);
                         })
                     }
                 });
@@ -162,5 +183,28 @@ export default class Mip40BudgetScript {
         const cuId = await this.db('CuMip').where('mipCode', mipCode).select('cuId');
         const cu = await this.db('CoreUnit').where('id', cuId[0].cuId).select('code');
         return cu[0].code;
+    }
+
+    private getListOfMonths = (periodStart: Date, periodEnd: Date) => {
+
+        let currentMonth = startOfMonth(periodStart);
+        const endMonth = startOfMonth(periodEnd);
+
+        const periods = [];
+
+        while (currentMonth <= endMonth) {
+            const startOfMonthDate = currentMonth;
+            const endOfMonthDate = startOfMonth(addMonths(currentMonth, 1));
+
+            periods.push({
+                periodStart: format(startOfMonthDate, 'yyyy-MM-dd'),
+                periodEnd: format(endOfMonthDate, 'yyyy-MM-dd')
+            });
+
+            // Move to the next month
+            currentMonth = addMonths(currentMonth, 1);
+        }
+
+        return periods;
     }
 };
