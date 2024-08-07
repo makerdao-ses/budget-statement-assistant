@@ -3,6 +3,7 @@ import fs from 'fs';
 import knex from 'knex';
 import { AnalyticsStore } from '../utils/analytics/AnalyticsStore.js';
 import { AnalyticsPath } from '../utils/analytics/AnalyticsPath.js';
+import TeamBudgetPath from '../utils/updateTeamBudgetPath.js';
 
 /* 
 This script is used to insert budgets and budget caps in the DB or to save them to a JSON file
@@ -45,6 +46,11 @@ export default class BudgetScript {
         // insert new data
         await store.addSeriesValues(series);
         console.log('Scope Artifacts Series added to DB:');
+
+        // update team budget paths
+        const teamBudgetPath = new TeamBudgetPath();
+        await teamBudgetPath.updateTeamBudgetPath();
+        console.log('Updated team budget paths');
     }
 
     private createSeries = (budgets: any, budgetCaps: any) => {
