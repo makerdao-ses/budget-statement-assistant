@@ -1,0 +1,206 @@
+[
+    {
+        "id": "007309976E",
+        "parentIdRef": "4mbpxdg1os",
+        "title": "On-Chain Wallets Diagram",
+        "link": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/main/ecosystem-dashboard/ecosystem-actors/POWERHOUSE/Projects/PEA/key-results/on-chain-wallets-diagram.png"
+    },
+    {
+        "id": "00AD71D9F4",
+        "parentIdRef": "4mbpxdg1os",
+        "title": "Account Snapshot Design",
+        "link": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/main/ecosystem-dashboard/ecosystem-actors/POWERHOUSE/Projects/PEA/key-results/CU-CU%20Landing%20page-Finances-Transparency%20Reports.png"
+    },
+    {
+        "id": "002FE911D3",
+        "parentIdRef": "4mbpxdg1os",
+        "title": "Frontend Deployment",
+        "link": "https://expenses.makerdao.network/core-unit/SES/finances/reports?viewMonth=Dec2023"
+    },
+    {
+        "id": "00F12336F9",
+        "parentIdRef": "2cxn41t1o0",
+        "title": "Recognized Delegates Design",
+        "link": "https://drive.google.com/file/d/1jfbumQnyhB4N-CkO3hEjJ2su5iBTDXH8/view"
+    },
+    {
+        "id": "00B511CD48",
+        "parentIdRef": "2cxn41t1o0",
+        "title": "Recognized Delegates Deployment",
+        "link": "https://expenses.makerdao.network/recognized-delegates "
+    },
+    {
+        "id": "00981E2B5D",
+        "parentIdRef": "6oms7n5q6g",
+        "title": "SPF Design",
+        "link": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/main/ecosystem-dashboard/key-results/spf-design.png"
+    },
+    {
+        "id": "008CA1C6CC",
+        "parentIdRef": "6oms7n5q6g",
+        "title": "SPF Sparse View Wireframe",
+        "link": "https://drive.google.com/file/d/1e45t88iP42Ozz-1JxbUhyrJgedB9JB-u/view"
+    },
+    {
+        "id": "003023CACE",
+        "parentIdRef": "ouw54bhall",
+        "title": "Dense Aggregated View Design",
+        "link": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/main/ecosystem-dashboard/ecosystem-actors/POWERHOUSE/Projects/PEA/key-results/PEA/key-results/Finance-MakerDAO%20Finances%20Design.png"
+    },
+    {
+        "id": "001811D982",
+        "parentIdRef": "ouw54bhall",
+        "title": "Dense Aggregated View Wireframes",
+        "link": "https://drive.google.com/file/d/15yB0TA5ONtboB9CH5aIO5Ekgiu7CkOl9/view"
+    },
+    {
+        "id": "009DA845C1",
+        "parentIdRef": "kpbo8i75rw",
+        "title": "UI Design For Connect Interface",
+        "link": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/main/ecosystem-dashboard/ecosystem-actors/POWERHOUSE/Projects/PEA/key-results/PEA/key-results/Connect%20Design.png"
+    },
+    {
+        "id": "00BFE0717A",
+        "parentIdRef": "kpbo8i75rw",
+        "title": "Connect Electron Vercel App",
+        "link": "https://connect-ph.vercel.app/"
+    },
+    {
+        "id": "00F73734DB",
+        "parentIdRef": "0dbjdklyf3",
+        "title": "Homepage wireframe",
+        "link": "https://drive.google.com/file/d/123yTPfNFi04Uu-0aPCWAhvEMCbEOrTth/view"
+    },
+    {
+        "id": "00EA3A876E",
+        "parentIdRef": "0dbjdklyf3",
+        "title": "Homepage design",
+        "link": "https://drive.google.com/file/d/1REv0A7uKrfOFRwNJulxCEv7PzoZk_fNK/view"
+    },
+    {
+        "id": "00A63EE98A",
+        "parentIdRef": "0dbjdklyf3",
+        "title": "Homepage deployment",
+        "link": ""
+    },
+    {
+        "id": "00E6F0A692",
+        "parentIdRef": "ytyg91jjo4",
+        "title": "Sparse view (keepers) wireframe",
+        "link": "https://drive.google.com/file/d/1fNbvSFIzRiSqpuzTUHMUsqe0x6mKz7vd/view"
+    },
+    {
+        "id": "005429901E",
+        "parentIdRef": "ytyg91jjo4",
+        "title": "Sparse view implementation",
+        "link": "https://expenses.makerdao.network/finances/legacy/keepers?year=2022"
+    },
+    {
+        "id": "00A9ACE540",
+        "parentIdRef": "v3h9js184z",
+        "title": "",
+        "link": ""
+    },
+    {
+        "id": "00B1C43E06",
+        "parentIdRef": "4t7h2poslu",
+        "title": "Endgame budget design",
+        "link": "https://drive.google.com/file/d/1I1ZhCn4NhxTtjFCkc7b-EzisZoaOlS1q/view"
+    },
+    {
+        "id": "00913A0A47",
+        "parentIdRef": "4t7h2poslu",
+        "title": "Endgame transition design",
+        "link": "https://drive.google.com/file/d/1o-h79Dz8zLFXRCmV5qY75bcU5eKBpbNo/view"
+    },
+    {
+        "id": "007E613B9B",
+        "parentIdRef": "4t7h2poslu",
+        "title": "Endgame finances implementation",
+        "link": "https://expenses.makerdao.network/endgame#budget-transition-status"
+    },
+    {
+        "id": "009AFB5178",
+        "parentIdRef": "oxhmqkmwnn",
+        "title": "More...",
+        "link": ""
+    },
+    {
+        "id": "008D242039",
+        "parentIdRef": "01fv5qq0u1",
+        "title": "Original Reporting Flow",
+        "link": "https://drive.google.com/file/d/1BmX9KAr-gkkpHX4YHuoasZVAppih4Rat/view"
+    },
+    {
+        "id": "00EFB782BC",
+        "parentIdRef": "b5tfk809uv",
+        "title": "RWA document model specification",
+        "link": "https://makerdao-ses.notion.site/makerdao-rwa-portfolio-document-model-specifications-KR-77da583c2c384d04ae36445db45611dd"
+    },
+    {
+        "id": "00E6BB91F5",
+        "parentIdRef": "m1n0lzoznh",
+        "title": "RWA conceptual wireframes",
+        "link": "https://drive.google.com/file/d/1NZXm_Q43sKH5pqwHTwN0DYvSW1uewMlY/view"
+    },
+    {
+        "id": "0059D151DA",
+        "parentIdRef": "wngvicriyz",
+        "title": "RWA API query",
+        "link": "https://makerdao-ses.notion.site/RWA-API-Query-Key-Result-889eab4be0144d799650620794694916"
+    },
+    {
+        "id": "00A5B5C0C7",
+        "parentIdRef": "ogzlyy7ukp",
+        "title": "stakeholder engagement",
+        "link": ""
+    },
+    {
+        "id": "00C832393A",
+        "parentIdRef": "kb8o0w0tfy",
+        "title": "connect document viewer",
+        "link": "https://apps.powerhouse.io/makerdao/connect/d/MakerDAO"
+    },
+    {
+        "id": "0038D9EE18",
+        "parentIdRef": "ryjcnx0174",
+        "title": "Monetalis, Blocktower, Steakhouse, BALabs",
+        "link": ""
+    },
+    {
+        "id": "00D3CC40D4",
+        "parentIdRef": "wu0lb3194m",
+        "title": "RWA data available via Fusion ",
+        "link": "https://drive.google.com/file/d/1hpBmq9AIaaGpmiS4f5OjQh9qKzN7Sir-/view?usp=drive_link"
+    },
+    {
+        "id": "0052C29397",
+        "parentIdRef": "ulwyl79k30",
+        "title": "Minimal legal & ops setup documentation",
+        "link": ""
+    },
+    {
+        "id": "0052EA6E7F",
+        "parentIdRef": "q5hd3erqmt",
+        "title": "Contractual and Legal Entity Specs",
+        "link": "https://makerdao-ses.notion.site/EXT-Powerhouse-Legal-Documentation-Operational-Hub-OH-aa03c414fe00421680e1526c8f1a31a4"
+    },
+    {
+        "id": "00CD9903AC",
+        "parentIdRef": "oldvqgs593",
+        "title": "Jurisdiction and Entity type defined",
+        "link": ""
+    },
+    {
+        "id": "0054CEC60B",
+        "parentIdRef": "ulwyl79k31",
+        "title": "Multisig Participation Agreement",
+        "link": "https://drive.google.com/file/d/1GkOzswYpBj7b4h7IFdFLu4ZiST_ceK-D/view?usp=sharing"
+    },
+    {
+        "id": "00168C8D87",
+        "parentIdRef": "q5hd3erqmt",
+        "title": "Entity incorporation",
+        "link": "https://makerdao-ses.notion.site/EXT-Powerhouse-Legal-Documentation-Operational-Hub-OH-aa03c414fe00421680e1526c8f1a31a4"
+    }
+]

@@ -11,6 +11,7 @@
     "generate-analytics": "node build/utils/generateAnalytics.js",
     "cache-values": "node build/budgetStatementCacheValues/cacheValues.js",
     "team-roadmaps": "tsc && node build/powerhouseTeamRoadmap/teamRoadmap.js",
+    "team-projects": "tsc && node build/powerhouseTeamProjects/teamProject.js",
     "team-budgetPaths": "tsc && node build/utils/updateTeamBudgetPath.js",
     "build": "tsc",
     "test": "jest -c ./jest.config.js --watchAll"
