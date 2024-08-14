@@ -219,7 +219,8 @@ export default class BudgetScript {
                     hierarchy[currentL0][currentL1][currentL2][currentL3] = {};
                     counter = 0;
                 }
-                hierarchy[currentL0][currentL1][currentL2][currentL3][item.L3 + counter++] = item;
+                // hierarchy[currentL0][currentL1][currentL2][currentL3][item.L3 + counter++] = item;
+                hierarchy[currentL0][currentL1][currentL2][currentL3] = item;
 
             }
             if (item.L4) {
@@ -299,6 +300,9 @@ export default class BudgetScript {
                     subtitle: obj[key]['Budget subtitle ']
                 }
 
+                if(name == 'BALabs0') {
+                    console.log(obj[key]['Atlas Reference/ Budget description']);
+                }
 
                 if (!sameBudget) {
                     budgets.push(budget);
