@@ -64,7 +64,8 @@ const nestedSupportedProjects = (supportedProjects: any[], supportedDeliverables
         }
         project.supportedDeliverables = supportedDeliverables.reduce((acc: any[], deliverable: any) => {
             if (deliverable.parentIdRef === project.id) {
-                const contributor: any = contributors.find(contributor => contributor.code === project.projectOwner);
+                const contributor: any = contributors.find(contributor => contributor.code === deliverable.owner);
+                console.log('contributor', contributor)
                 acc.push({
                     ...deliverable,
                     owner: {
@@ -83,11 +84,6 @@ const nestedSupportedProjects = (supportedProjects: any[], supportedDeliverables
         }, []);
     });
 
-    supportedProjects.forEach(project => {
-        project.supportedDeliverables.forEach((deliverable: any) => {
-            deliverable.supportedKeyResults = supportedKeyResults.filter(keyResult => keyResult.parentIdRef === deliverable.id);
-        });
-    });
 }
 
 
