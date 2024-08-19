@@ -17,7 +17,10 @@ export default class BudgetStatementCacheValues {
     public async insertCacheValues() {
 
         const rowsToInsert = await this.getAnalyticsBySnapshot();
-        if (rowsToInsert.length < 1) return;
+        if (rowsToInsert.length < 1) {
+            console.log('No rows to insert into BudgetStatementCacheValues');
+            process.exit(0);
+        };
         //Before inserting, truncate the table
         await this.truncateTable();
         console.log('Truncated BudgetStatementCacheValues');
