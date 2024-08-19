@@ -18,10 +18,17 @@ export default class BudgetStatementCacheValues {
 
         const rowsToInsert = await this.getAnalyticsBySnapshot();
         if (rowsToInsert.length < 1) return;
+        //Before inserting, truncate the table
+        await this.truncateTable();
+        console.log('Truncated BudgetStatementCacheValues');
         const result = await this.insertRows(rowsToInsert);
         console.log('Inserted', result.length, 'rows into BudgetStatementCacheValues');
         process.exit(0);
     };
+
+    private async truncateTable() {
+        return await this.db('BudgetStatementCacheValues').truncate();
+    }
 
     private async getSnapshots() {
 
@@ -29,6 +36,8 @@ export default class BudgetStatementCacheValues {
             .select('*');
 
         const snapshots = result.map((snapshot: any) => {
+            // Add one hour to the date
+            snapshot.month.setUTCHours(snapshot.month.getUTCHours() + 1);
             return {
                 ...snapshot,
                 month: snapshot.month.toISOString().slice(0, 7).split('-').join('/'),
@@ -49,7 +58,7 @@ export default class BudgetStatementCacheValues {
         for (const snapshot of snapshotResult) {
             const analytics = await this.getAnalytics(snapshot.month, snapshot.ownerType, snapshot.ownerId);
             const comparisonValues = analytics.find((a: any) => a.period === snapshot.month);
-            
+
             rowsToInsert.push({
                 snapshotId: snapshot.id,
                 month: snapshot.month,
