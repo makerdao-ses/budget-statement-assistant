@@ -902,10 +902,10 @@ export default [
   {
     Name: "Launch Project",
     "budget path 1": "makerdao",
-    "budget path 2": "protocol",
-    "budget path 3": "",
-    "budget path 4": "",
-    Type: "Protocol",
+    "budget path 2": "scopes",
+    "budget path 3": "ACC",
+    "budget path 4": "launch-project",
+    Type: "",
     Address: "0x3C5142F28567E6a0F172fd0BaaF1f2847f49D02F",
   },
   {
