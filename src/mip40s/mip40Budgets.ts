@@ -67,6 +67,10 @@ export default class Mip40BudgetScript {
                                 budget: AnalyticsPath.fromString(`atlas/legacy/core-units/${cuCode}`),
                                 wallet: AnalyticsPath.fromString(`atlas/${wallet.name}`),
 
+                            },
+                            dimensionMetadata: {
+                                path: AnalyticsPath.fromString(`atlas/legacy/core-units/${cuCode}`),
+                                label: mip40Budget.mip40Spn || null
                             }
                         }
                         series.push(mkrSerie)
@@ -95,6 +99,10 @@ export default class Mip40BudgetScript {
                                             budget: AnalyticsPath.fromString(`atlas/legacy/core-units/${cuCode}`),
                                             category: AnalyticsPath.fromString(`atlas/${headCount}/mip40/${mip40Budget.mip40Spn}/${wallet.address}/${lineItem.budgetCategory}`),
                                             wallet: AnalyticsPath.fromString(`atlas/${wallet.name}`),
+                                        },
+                                        dimensionMetadata: {
+                                            path: AnalyticsPath.fromString(`atlas/legacy/core-units/${cuCode}`),
+                                            label: mip40Budget.mip40Spn || null
                                         }
                                     }
                                     series.push(serie);
@@ -111,6 +119,10 @@ export default class Mip40BudgetScript {
                                         budget: AnalyticsPath.fromString(`atlas/legacy/core-units/${cuCode}`),
                                         category: AnalyticsPath.fromString(`atlas/${headCount}/mip40/${mip40Budget.mip40Spn}/${wallet.address}/${lineItem.budgetCategory}`),
                                         wallet: AnalyticsPath.fromString(`atlas/${wallet.name}`),
+                                    },
+                                    dimensionMetadata: {
+                                        path: AnalyticsPath.fromString(`atlas/legacy/core-units/${cuCode}`),
+                                        label: mip40Budget.mip40Spn || null
                                     }
                                 }
                                 series.push(serie);
