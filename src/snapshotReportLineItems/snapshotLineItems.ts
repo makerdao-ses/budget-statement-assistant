@@ -22,7 +22,11 @@ export default class SnapshotLineItemsScript {
         const store = new AnalyticsStore(this.db);
 
         // clean old lineItem series
-        await store.clearSeriesBySource(AnalyticsPath.fromString('powerhouse/legacy-api/snapshot-reports'), true);
+        if (this.snapshotId) {
+            await store.clearSeriesBySource(AnalyticsPath.fromString(`powerhouse/legacy-api/snapshot-reports/${this.snapshotId}`), true);
+        } else {
+            await store.clearSeriesBySource(AnalyticsPath.fromString('powerhouse/legacy-api/snapshot-reports'), true);
+        }
 
         // insert new data
         await store.addSeriesValues(series);
