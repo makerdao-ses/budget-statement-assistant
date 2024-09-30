@@ -1,16 +1,1 @@
-[
-    {
-        "id": "5rx5LSsa",
-        "ref": "skyecosystem/ecosystem-actor",
-        "name": "Powerhouse",
-        "code": "PH",
-        "imageUrl": "https://makerdao-ses.github.io/ecosystem-dashboard/ecosystem-actors/POWERHOUSE/POWERHOUSE_logo.png"
-    },
-    {
-        "id": "8L461DD1",
-        "ref": "skyecosystem/ecosystem-actor",
-        "name": "Atlas Axis",
-        "code": "AA",
-        "imageUrl": ""
-    }
-]
+[{"id":"e9469b4S","ref":"skyecosystem/ecosystem-actor","name":"Powerhouse","code":"PH","imageUrl":"https://makerdao-ses.github.io/ecosystem-dashboard/ecosystem-actors/POWERHOUSE/POWERHOUSE_logo.png"},{"id":"Id5kh793","ref":"skyecosystem/ecosystem-actor","name":"Atlas Axis","code":"AA","imageUrl":""}]
