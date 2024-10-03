@@ -82,6 +82,14 @@ const nestedSupportedProjects = (supportedProjects: any[], supportedDeliverables
             }
             return acc;
         }, []);
+
+
+    });
+    // add supportedKey reults to supported deliverables
+    supportedProjects.forEach(project => {
+        project.supportedDeliverables.forEach((deliverable: any) => {
+            deliverable.supportedKeyResults = supportedKeyResults.filter(keyResult => keyResult.parentIdRef === deliverable.id);
+        });
     });
 
 }
