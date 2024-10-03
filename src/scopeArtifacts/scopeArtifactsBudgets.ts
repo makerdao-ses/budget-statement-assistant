@@ -363,6 +363,20 @@ export default class BudgetScript {
                     });
                 }
 
+                // Adding SKY budget caps
+                const skyAmount = obj[key]['SKY Commited Budget'] || 0;
+                const skyStart = this.formatToTimeZone(obj[key]['SKY Start Date']) || null;
+                const skyEnd = this.formatToTimeZone(obj[key]['SKY End Date']) || null;
+                if (skyAmount !== 0 && skyStart !== skyEnd) {
+                    budgetCaps.push({
+                        budgetId: id,
+                        amount: skyAmount,
+                        currency: 'SKY',
+                        start: skyStart,
+                        end: skyEnd
+                    });
+                }
+
                 this.processObject(obj[key], id, budgets, budgetCaps);
             }
         }
