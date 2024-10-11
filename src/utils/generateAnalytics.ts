@@ -20,6 +20,7 @@ export async function generateAnalytics(path?: string,) {
             }
             const budgetScript = new LineItemsScript(pathParameter);
             await budgetScript.insertInAnalyticsStore();
+            await budgetScript.updateMaterializedView();
             break;
         case 'mip40':
             let mip40PathParameter = undefined;

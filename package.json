@@ -13,6 +13,7 @@
     "team-roadmaps": "tsc && node build/powerhouseTeamRoadmap/teamRoadmap.js",
     "team-projects": "tsc && node build/powerhouseTeamProjects/teamProject.js",
     "team-budgetPaths": "tsc && node build/utils/updateTeamBudgetPath.js",
+    "auto-analytics": "tsc && node build/autoAnalytics/autoanalytics.js",
     "build": "tsc",
     "test": "jest -c ./jest.config.js --watchAll"
   },
