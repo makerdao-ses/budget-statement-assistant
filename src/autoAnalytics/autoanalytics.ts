@@ -12,7 +12,7 @@ class AutoAnalytics {
     }
 
     async validateNumbers() {
-        const budgetStatements = await this.getBudgetStatement("1082");
+        const budgetStatements = await this.getBudgetStatement(undefined);
         const reports = [];
         const statementsToUpdate = [];
 
@@ -56,7 +56,7 @@ class AutoAnalytics {
             }
         }
 
-        console.log('Validation Reports:', reports);
+        console.log('Validation Reports:', reports.length);
         console.log('Budget Statements to Update:', statementsToUpdate.length, statementsToUpdate);
 
         return statementsToUpdate;
@@ -120,6 +120,7 @@ class AutoAnalytics {
 
         try {
             // https://ecosystem-dashboard.herokuapp.com/graphql
+            // https://publish-dev-vpighsmr70zxa92r9w.herokuapp.com/graphql
             const response = await fetch('http://localhost:4000/graphql', {
                 method: 'POST',
                 headers: {
